@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c80avvvpjl4u5"]
+
+[ext_resource type="Script" uid="uid://cbvo6130wdhqe" path="res://assets/weapons/bullets/default_bullet/default_bullet.gd" id="1_cp6jq"]
+[ext_resource type="Resource" uid="uid://byotrctfih6j8" path="res://assets/weapons/bullets/default_bullet/default_bullet_data.tres" id="2_rt8gh"]
+[ext_resource type="Texture2D" uid="uid://b6qorjllobcpt" path="res://assets/weapons/bullets/default_bullet/defaut_bullet.png" id="3_cp6jq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_og7an"]
+radius = 3.0
+height = 36.0
+
+[node name="DefaultBullet" type="CharacterBody2D" unique_id=24501818]
+script = ExtResource("1_cp6jq")
+data = ExtResource("2_rt8gh")
+metadata/_custom_type_script = "uid://fm5l40dn2uxe"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=598933823]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("3_cp6jq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=419501630]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=349556742]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_og7an")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

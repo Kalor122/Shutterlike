@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://y7n6uvikhh4i"]
+
+[ext_resource type="Script" uid="uid://7hx5crjr8v3e" path="res://assets/enemies/test_enemy/test_enemy.gd" id="1_4tp1g"]
+[ext_resource type="Resource" uid="uid://ddwosdl8s2wi" path="res://assets/enemies/test_enemy/test_enemy_data.tres" id="2_2eieo"]
+[ext_resource type="Texture2D" uid="uid://bhqi3k8csj37c" path="res://default_enemy_sprite.png" id="3_2eieo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2eieo"]
+radius = 30.0
+
+[node name="TestEnemy" type="CharacterBody2D" unique_id=333818710]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("1_4tp1g")
+data = ExtResource("2_2eieo")
+metadata/_custom_type_script = "uid://dtri2y40fhvbb"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1293226100]
+texture = ExtResource("3_2eieo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1633800495]
+shape = SubResource("CircleShape2D_2eieo")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=249931672]
+target_position = Vector2(40, 0)
