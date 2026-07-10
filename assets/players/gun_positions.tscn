@@ -9,22 +9,22 @@ script = ExtResource("1_eop8t")
 position = Vector2(0, -88)
 
 [node name="2" type="Marker2D" parent="." unique_id=362519883]
-position = Vector2(96, -88)
+position = Vector2(72, -64)
 
 [node name="3" type="Marker2D" parent="." unique_id=188239740]
-position = Vector2(96, 0)
+position = Vector2(72, 0)
 
 [node name="4" type="Marker2D" parent="." unique_id=587412314]
-position = Vector2(96, 88)
+position = Vector2(72, 64)
 
 [node name="5" type="Marker2D" parent="." unique_id=1306067744]
 position = Vector2(0, 88)
 
 [node name="6" type="Marker2D" parent="." unique_id=1470767442]
-position = Vector2(-96, 88)
+position = Vector2(-72, 64)
 
 [node name="7" type="Marker2D" parent="." unique_id=1293400336]
-position = Vector2(-96, 0)
+position = Vector2(-72, 0)
 
 [node name="8" type="Marker2D" parent="." unique_id=1299311027]
-position = Vector2(-96, -88)
+position = Vector2(-72, -64)

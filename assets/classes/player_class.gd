@@ -44,18 +44,18 @@ func _update_animation():
 
 func _create_weapons():
 	if Globals.bought_weapons[0] != null:
-		gun_positions._1.add_child(load(load(Globals.bought_weapons[0]).scene_path).instantiate())
+		gun_positions._1.add_child(load(Globals.bought_weapons[0].scene_path).instantiate())
 	if Globals.bought_weapons[1] != null:
-		gun_positions._2.add_child(load(load(Globals.bought_weapons[1]).scene_path).instantiate())
+		gun_positions._2.add_child(load(Globals.bought_weapons[1].scene_path).instantiate())
 	if Globals.bought_weapons[2] != null:
-		gun_positions._3.add_child(load(load(Globals.bought_weapons[2]).scene_path).instantiate())
+		gun_positions._3.add_child(load(Globals.bought_weapons[2].scene_path).instantiate())
 	if Globals.bought_weapons[3] != null:
-		gun_positions._4.add_child(load(load(Globals.bought_weapons[3]).scene_path).instantiate())
+		gun_positions._4.add_child(load(Globals.bought_weapons[3].scene_path).instantiate())
 	if Globals.bought_weapons[4] != null:
-		gun_positions._5.add_child(load(load(Globals.bought_weapons[4]).scene_path).instantiate())
+		gun_positions._5.add_child(load(Globals.bought_weapons[4].scene_path).instantiate())
 	if Globals.bought_weapons[5] != null:
-		gun_positions._6.add_child(load(load(Globals.bought_weapons[5]).scene_path).instantiate())
+		gun_positions._6.add_child(load(Globals.bought_weapons[5].scene_path).instantiate())
 	if Globals.bought_weapons[6] != null:
-		gun_positions._7.add_child(load(load(Globals.bought_weapons[6]).scene_path).instantiate())
+		gun_positions._7.add_child(load(Globals.bought_weapons[6].scene_path).instantiate())
 	if Globals.bought_weapons[7] != null:
-		gun_positions._8.add_child(load(load(Globals.bought_weapons[7]).scene_path).instantiate())
+		gun_positions._8.add_child(load(Globals.bought_weapons[7].scene_path).instantiate())

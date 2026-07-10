@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cujlyes4hb3xs"]
+
+[ext_resource type="Script" uid="uid://ba45it72nefmu" path="res://assets/weapons/ak47/ak_47.gd" id="1_yaj7m"]
+[ext_resource type="Resource" uid="uid://cttxjglx1h1v1" path="res://assets/weapons/ak47/ak47_data.tres" id="2_yaj7m"]
+[ext_resource type="Texture2D" uid="uid://dqeksnpkxr8ys" path="res://assets/weapons/ak47/ak47.png" id="3_er6rv"]
+
+[node name="AK47" type="Node2D" unique_id=1745927477]
+script = ExtResource("1_yaj7m")
+data = ExtResource("2_yaj7m")
+metadata/_custom_type_script = "uid://cgugmfbarfajx"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=169392328]
+position = Vector2(0, 8)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_er6rv")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=869736662]
+position = Vector2(77, -9.999998)
+
+[node name="Timer" type="Timer" parent="." unique_id=962073369]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

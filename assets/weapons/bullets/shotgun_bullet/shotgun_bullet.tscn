@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bjc7xebagp5i"]
+
+[ext_resource type="Script" uid="uid://d22mxfauisnv3" path="res://assets/weapons/bullets/shotgun_bullet/shotgun_bullet.gd" id="1_03xh5"]
+[ext_resource type="Resource" uid="uid://caay1uff8amk8" path="res://assets/weapons/bullets/shotgun_bullet/shotgun_bullet_data.tres" id="2_v7d01"]
+[ext_resource type="Texture2D" uid="uid://cqasbh1iil81f" path="res://assets/weapons/bullets/shotgun_bullet/shootgun_bullet.png" id="3_v4qd3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 8.0
+
+[node name="ShotgunBullet" type="CharacterBody2D" unique_id=1167484648]
+script = ExtResource("1_03xh5")
+data = ExtResource("2_v7d01")
+metadata/_custom_type_script = "uid://fm5l40dn2uxe"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1736827469]
+scale = Vector2(0.044, 0.044)
+texture = ExtResource("3_v4qd3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=965891544]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=142638601]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Timer" type="Timer" parent="." unique_id=1839985380]
+wait_time = 0.3
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

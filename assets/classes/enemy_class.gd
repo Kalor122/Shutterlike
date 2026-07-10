@@ -8,10 +8,12 @@ var stage: Stage
 var distance_from_target: Vector2
 
 @export var speed: float
-@export var health: int
+var health: BigNumber = BigNumber.new()
 
 func _ready() -> void:
-	health = data.health
+	health.mantissa = 0
+	health.exponent = 0
+	health.plus_equals(data.health)
 	speed = data.speed
 	start()
 

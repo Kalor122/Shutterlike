@@ -11,7 +11,7 @@ func start():
 func update(delta: float):
 	ray_cast.look_at(target.global_position)
 	
-	if health <= 0:
+	if health.is_less_than(1):
 		GlobalSignals.enemy_killed.emit(self)
 		queue_free()
 

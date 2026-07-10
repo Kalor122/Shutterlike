@@ -14,3 +14,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		GlobalSignals.enemy_hit.emit(body, parent)
 		print(damage)
 	queue_free()
+
+func _on_timer_timeout() -> void:
+	queue_free()

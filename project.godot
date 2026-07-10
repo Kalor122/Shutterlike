@@ -30,6 +30,7 @@ general/default_playback_type.web=0
 
 Globals="*uid://owmv7gimli51"
 GlobalSignals="*uid://1djr3ik0xebi"
+Weapons="*uid://cd5xbfn0gs8t0"
 
 [display]
 
@@ -87,3 +88,4 @@ common/physics_interpolation=true
 
 textures/canvas_textures/default_texture_filter=0
 textures/canvas_textures/default_texture_repeat=1
+environment/defaults/default_clear_color=Color(1, 1, 1, 1)

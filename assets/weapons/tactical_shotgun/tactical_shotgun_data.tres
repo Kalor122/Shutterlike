@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://c01uhpbha1s5f"]
+
+[ext_resource type="Script" uid="uid://c0ege22loaddf" path="res://assets/classes/weapon_data_class.gd" id="1_b0l5b"]
+[ext_resource type="Texture2D" uid="uid://cyss0mvhr0j08" path="res://assets/weapons/tactical_shotgun/tactical_shotgun_portrait.png" id="2_iwa1j"]
+
+[resource]
+script = ExtResource("1_b0l5b")
+weapon_id = 2
+weapon_name = "Tactical Shotgun"
+weapon_portrait = ExtResource("2_iwa1j")
+price = 10.0
+damage = 1.5
+fire_rate = 1.0
+scene_path = "res://assets/weapons/tactical_shotgun/tactical_shotgun.tscn"
+metadata/_custom_type_script = "uid://c0ege22loaddf"

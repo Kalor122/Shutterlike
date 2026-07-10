@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bnaco8rwm4sqm"]
+
+[ext_resource type="Script" uid="uid://beh0atgw72byh" path="res://assets/classes/loading_scene_class.gd" id="1_8kify"]
+
+[node name="LoadingScene" type="CanvasLayer" unique_id=127485374]
+script = ExtResource("1_8kify")
+
+[node name="Control" type="Control" parent="." unique_id=212380870]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1329273299]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
