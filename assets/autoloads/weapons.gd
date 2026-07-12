@@ -4,6 +4,7 @@ var weapon_list = [
 	"uid://c3nrx4k5j8x35",
 	"uid://cttxjglx1h1v1",
 	"uid://c01uhpbha1s5f",
+	"uid://bsbfvb8gebf10",
 ]
 
 func get_weapon_by_id(id: int):

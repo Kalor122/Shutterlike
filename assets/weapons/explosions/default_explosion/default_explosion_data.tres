@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ExplosionData" format=3 uid="uid://bu2rpf6ge1m4j"]
+
+[ext_resource type="Script" uid="uid://ck6fvbe6uovre" path="res://assets/classes/explosion_data.gd" id="1_385ms"]
+
+[resource]
+script = ExtResource("1_385ms")
+metadata/_custom_type_script = "uid://ck6fvbe6uovre"

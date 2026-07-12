@@ -88,4 +88,4 @@ common/physics_interpolation=true
 
 textures/canvas_textures/default_texture_filter=0
 textures/canvas_textures/default_texture_repeat=1
-environment/defaults/default_clear_color=Color(1, 1, 1, 1)
+environment/defaults/default_clear_color=Color(0.63375676, 0.6337568, 0.63375676, 1)

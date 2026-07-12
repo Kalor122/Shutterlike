@@ -15,9 +15,11 @@ func _process(delta: float) -> void:
 		price.text = Globals.format(data.big_price)
 
 func _on_buy_pressed() -> void:
-	for i in range(Globals.bought_weapons.size()):
-		if Globals.bought_weapons[i] == null:
-			Globals.bought_weapons[i] = data
-			print(Globals.bought_weapons)
-			break
-	queue_free()
+	if Globals.rupies.is_greater_than_or_equal_to(data.big_price):
+		for i in range(Globals.bought_weapons.size()):
+			if Globals.bought_weapons[i] == null:
+				Globals.bought_weapons[i] = data
+				print(Globals.bought_weapons)
+				break
+		Globals.rupies.minus_equals(data.big_price)
+		queue_free()

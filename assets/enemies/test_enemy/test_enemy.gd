@@ -2,6 +2,7 @@ extends EnemyEntity
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var ray_cast: RayCast2D = $RayCast2D
+@onready var animation_player: AnimationPlayer = $Sprite2D/AnimationPlayer
 
 func start():
 	stage = get_parent()
@@ -13,6 +14,7 @@ func update(delta: float):
 	
 	if health.is_less_than(1):
 		GlobalSignals.enemy_killed.emit(self)
+		_give_cash()
 		queue_free()
 
 func physics_update(delta: float):
@@ -25,3 +27,8 @@ func _update_animation():
 		sprite.flip_h = false
 	if distance_from_target.x > 0:
 		sprite.flip_h = true
+
+func _enemy_hit(who: EnemyEntity, parent: Node2D):
+	if who == self:
+		animation_player.stop()
+		animation_player.play("hit")

@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_joocj")
 enemy_name = "TestEnemy"
+scene_path = "res://assets/enemies/test_enemy/test_enemy.tscn"
 metadata/_custom_type_script = "uid://bnrca80fvc2tp"

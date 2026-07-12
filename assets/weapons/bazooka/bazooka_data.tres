@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bsbfvb8gebf10"]
+
+[ext_resource type="Script" uid="uid://c0ege22loaddf" path="res://assets/classes/weapon_data_class.gd" id="1_huu0s"]
+[ext_resource type="Texture2D" uid="uid://ei4atlwxrpjy" path="res://assets/weapons/bazooka/bazooka.png" id="2_31k1v"]
+
+[resource]
+script = ExtResource("1_huu0s")
+weapon_id = 4
+weapon_name = "Bazooka"
+weapon_portrait = ExtResource("2_31k1v")
+price = 100.0
+damage = 10.0
+fire_rate = 2.0
+scene_path = "res://assets/weapons/bazooka/bazooka.tscn"
+metadata/_custom_type_script = "uid://c0ege22loaddf"

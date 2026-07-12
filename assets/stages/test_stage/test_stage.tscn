@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://cmjw3y2k8ju7w"]
 
-[ext_resource type="Script" uid="uid://bevx7n6smofp6" path="res://assets/classes/stage_class.gd" id="1_11kma"]
+[ext_resource type="Script" uid="uid://bejk67be4cki5" path="res://assets/stages/test_stage/test_stage.gd" id="1_y3224"]
 [ext_resource type="Script" uid="uid://cindxylfseat6" path="res://assets/stages/camera.gd" id="2_jijik"]
 [ext_resource type="PackedScene" uid="uid://do6brtito37yn" path="res://assets/players/default/player_default.tscn" id="3_25jh6"]
-[ext_resource type="PackedScene" uid="uid://y7n6uvikhh4i" path="res://assets/enemies/test_enemy/test_enemy.tscn" id="4_k2jv8"]
 
 [node name="TestStage" type="Node2D" unique_id=1105023431 node_paths=PackedStringArray("camera", "player")]
-script = ExtResource("1_11kma")
+script = ExtResource("1_y3224")
 camera = NodePath("StageCamera")
 player = NodePath("PlayerDefault")
 
@@ -16,131 +15,8 @@ target = NodePath("../PlayerDefault")
 
 [node name="PlayerDefault" parent="." unique_id=1467011244 instance=ExtResource("3_25jh6")]
 
-[node name="TestEnemy" parent="." unique_id=333818710 instance=ExtResource("4_k2jv8")]
-position = Vector2(-970, 467)
+[node name="Timer" type="Timer" parent="." unique_id=1322591678]
+wait_time = 0.5
+autostart = true
 
-[node name="TestEnemy2" parent="." unique_id=75634746 instance=ExtResource("4_k2jv8")]
-position = Vector2(-773, -452)
-
-[node name="TestEnemy5" parent="." unique_id=726680532 instance=ExtResource("4_k2jv8")]
-position = Vector2(-1211, -255)
-
-[node name="TestEnemy6" parent="." unique_id=1426757447 instance=ExtResource("4_k2jv8")]
-position = Vector2(-1384, -593)
-
-[node name="TestEnemy7" parent="." unique_id=1460174250 instance=ExtResource("4_k2jv8")]
-position = Vector2(-1726, -179)
-
-[node name="TestEnemy8" parent="." unique_id=1854659885 instance=ExtResource("4_k2jv8")]
-position = Vector2(-1798, -469)
-
-[node name="TestEnemy9" parent="." unique_id=860533012 instance=ExtResource("4_k2jv8")]
-position = Vector2(-1353, -58)
-
-[node name="TestEnemy10" parent="." unique_id=1240549255 instance=ExtResource("4_k2jv8")]
-position = Vector2(-987, -72)
-
-[node name="TestEnemy11" parent="." unique_id=195048621 instance=ExtResource("4_k2jv8")]
-position = Vector2(-621, -196)
-
-[node name="TestEnemy12" parent="." unique_id=1707830485 instance=ExtResource("4_k2jv8")]
-position = Vector2(-75, -1235)
-
-[node name="TestEnemy13" parent="." unique_id=1842441870 instance=ExtResource("4_k2jv8")]
-position = Vector2(-513, -1038)
-
-[node name="TestEnemy14" parent="." unique_id=699974098 instance=ExtResource("4_k2jv8")]
-position = Vector2(-686, -1376)
-
-[node name="TestEnemy15" parent="." unique_id=148654656 instance=ExtResource("4_k2jv8")]
-position = Vector2(-1028, -962)
-
-[node name="TestEnemy16" parent="." unique_id=1481073082 instance=ExtResource("4_k2jv8")]
-position = Vector2(-1100, -1252)
-
-[node name="TestEnemy17" parent="." unique_id=1509572111 instance=ExtResource("4_k2jv8")]
-position = Vector2(-655, -841)
-
-[node name="TestEnemy18" parent="." unique_id=304592318 instance=ExtResource("4_k2jv8")]
-position = Vector2(-289, -855)
-
-[node name="TestEnemy19" parent="." unique_id=248357141 instance=ExtResource("4_k2jv8")]
-position = Vector2(77, -979)
-
-[node name="TestEnemy20" parent="." unique_id=1906983366 instance=ExtResource("4_k2jv8")]
-position = Vector2(-1824, 286)
-
-[node name="TestEnemy21" parent="." unique_id=1628329794 instance=ExtResource("4_k2jv8")]
-position = Vector2(-2262, 483)
-
-[node name="TestEnemy22" parent="." unique_id=1867195714 instance=ExtResource("4_k2jv8")]
-position = Vector2(-2435, 145)
-
-[node name="TestEnemy23" parent="." unique_id=62620045 instance=ExtResource("4_k2jv8")]
-position = Vector2(-2777, 559)
-
-[node name="TestEnemy24" parent="." unique_id=318625986 instance=ExtResource("4_k2jv8")]
-position = Vector2(-2849, 269)
-
-[node name="TestEnemy25" parent="." unique_id=1297217269 instance=ExtResource("4_k2jv8")]
-position = Vector2(-2404, 680)
-
-[node name="TestEnemy26" parent="." unique_id=1998110254 instance=ExtResource("4_k2jv8")]
-position = Vector2(-2038, 666)
-
-[node name="TestEnemy27" parent="." unique_id=1278650663 instance=ExtResource("4_k2jv8")]
-position = Vector2(-1672, 542)
-
-[node name="TestEnemy28" parent="." unique_id=1894721486 instance=ExtResource("4_k2jv8")]
-position = Vector2(-2041, -1079)
-
-[node name="TestEnemy29" parent="." unique_id=417373386 instance=ExtResource("4_k2jv8")]
-position = Vector2(-2479, -882)
-
-[node name="TestEnemy30" parent="." unique_id=208875825 instance=ExtResource("4_k2jv8")]
-position = Vector2(-2652, -1220)
-
-[node name="TestEnemy31" parent="." unique_id=2058165923 instance=ExtResource("4_k2jv8")]
-position = Vector2(-2994, -806)
-
-[node name="TestEnemy32" parent="." unique_id=1118196787 instance=ExtResource("4_k2jv8")]
-position = Vector2(-3066, -1096)
-
-[node name="TestEnemy33" parent="." unique_id=1021164292 instance=ExtResource("4_k2jv8")]
-position = Vector2(-2621, -685)
-
-[node name="TestEnemy34" parent="." unique_id=1934282801 instance=ExtResource("4_k2jv8")]
-position = Vector2(-2255, -699)
-
-[node name="TestEnemy35" parent="." unique_id=1006493000 instance=ExtResource("4_k2jv8")]
-position = Vector2(-1889, -823)
-
-[node name="TestEnemy36" parent="." unique_id=1567153335 instance=ExtResource("4_k2jv8")]
-position = Vector2(2058, -98)
-
-[node name="TestEnemy37" parent="." unique_id=346500223 instance=ExtResource("4_k2jv8")]
-position = Vector2(1620, 99)
-
-[node name="TestEnemy38" parent="." unique_id=397521673 instance=ExtResource("4_k2jv8")]
-position = Vector2(1447, -239)
-
-[node name="TestEnemy39" parent="." unique_id=1855160527 instance=ExtResource("4_k2jv8")]
-position = Vector2(1105, 175)
-
-[node name="TestEnemy40" parent="." unique_id=394057083 instance=ExtResource("4_k2jv8")]
-position = Vector2(1033, -115)
-
-[node name="TestEnemy41" parent="." unique_id=1080531561 instance=ExtResource("4_k2jv8")]
-position = Vector2(1478, 296)
-
-[node name="TestEnemy42" parent="." unique_id=1206884820 instance=ExtResource("4_k2jv8")]
-position = Vector2(1844, 282)
-
-[node name="TestEnemy43" parent="." unique_id=613892965 instance=ExtResource("4_k2jv8")]
-position = Vector2(2210, 158)
-
-[node name="TestEnemy3" parent="." unique_id=694293607 instance=ExtResource("4_k2jv8")]
-position = Vector2(1008, 581)
-
-[node name="TestEnemy4" parent="." unique_id=1284895686 instance=ExtResource("4_k2jv8")]
-position = Vector2(790, -458)
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

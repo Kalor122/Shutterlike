@@ -13,6 +13,7 @@ var bought_weapons: Array = [
 	null,
 	]
 
+var rupies: BigNumber = BigNumber.new()
 var global_weapon_price_mult: float = 1.0
 
 var formatter = Formatter.new()
@@ -144,6 +145,8 @@ func delete_file(directory: String, file_name: String):
 func _ready() -> void:
 	g.mantissa = 10
 	g.exponent = 100
+	
+	rupies.plus_equals(9999)
 	
 	for i in range(10):
 		gp.multiply_equals(g)

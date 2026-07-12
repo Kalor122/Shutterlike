@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bey1pr02wbmv2"]
+
+[ext_resource type="Script" uid="uid://d1t2vh2fxq6f5" path="res://assets/weapons/bazooka/bazooka.gd" id="1_fvmox"]
+[ext_resource type="Texture2D" uid="uid://ei4atlwxrpjy" path="res://assets/weapons/bazooka/bazooka.png" id="2_c13x2"]
+[ext_resource type="Resource" uid="uid://bsbfvb8gebf10" path="res://assets/weapons/bazooka/bazooka_data.tres" id="2_fvmox"]
+
+[node name="Bazooka" type="Node2D" unique_id=714615798]
+script = ExtResource("1_fvmox")
+data = ExtResource("2_fvmox")
+metadata/_custom_type_script = "uid://cgugmfbarfajx"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1545704841]
+position = Vector2(0, -6)
+rotation = 0.72082096
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_c13x2")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1566303107]
+position = Vector2(59, -3)
+
+[node name="Timer" type="Timer" parent="." unique_id=552903805]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

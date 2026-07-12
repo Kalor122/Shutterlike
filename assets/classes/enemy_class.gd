@@ -7,14 +7,20 @@ var target: Entity
 var stage: Stage
 var distance_from_target: Vector2
 
-@export var speed: float
+var speed: float
 var health: BigNumber = BigNumber.new()
+var cash: int = 3
+
+func _give_cash():
+	Globals.rupies.plus_equals(randi_range(1, cash))
 
 func _ready() -> void:
 	health.mantissa = 0
 	health.exponent = 0
 	health.plus_equals(data.health)
 	speed = data.speed
+	cash = data.cash
+	GlobalSignals.enemy_hit.connect(_enemy_hit)
 	start()
 
 func _process(delta: float) -> void:
@@ -31,4 +37,7 @@ func update(delta: float):
 	pass
 
 func physics_update(delta: float):
+	pass
+
+func _enemy_hit(who: EnemyEntity, parent: Node2D):
 	pass
