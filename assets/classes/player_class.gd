@@ -8,14 +8,16 @@ class_name PlayerEntity
 var direction_x = 1
 var direction_y = 1
 
-@export var speed: float
-@export var acceleration: float
-@export var health: int
+var speed: float
+var acceleration: float
+var health: BigNumber = BigNumber.new()
 
 func _ready():
-	speed = data.speed
-	acceleration = data.acceleration
-	health = data.health
+	health.exponent = 0
+	health.mantissa = 0
+	speed = Globals.get_percentage(data.speed, PlayerStats.speed_percent)
+	acceleration = Globals.get_percentage(data.acceleration, PlayerStats.speed_percent)
+	health.plus_equals(PlayerStats.health)
 	_create_weapons()
 	GlobalSignals.round_start.emit()
 

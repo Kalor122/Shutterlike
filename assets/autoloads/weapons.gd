@@ -1,16 +1,25 @@
 extends Node
 
 var weapon_list = [
-	"uid://c3nrx4k5j8x35",
-	"uid://cttxjglx1h1v1",
-	"uid://c01uhpbha1s5f",
-	"uid://bsbfvb8gebf10",
+	load("uid://c3nrx4k5j8x35"),
+	load("uid://cttxjglx1h1v1"),
+	load("uid://c01uhpbha1s5f"),
+	load("uid://bsbfvb8gebf10"),
 ]
 
 func get_weapon_by_id(id: int):
 	for i in weapon_list:
-		if load(i).weapon_id == id:
-			return load(i)
+		if i.weapon_id == id:
+			return i
+
+func get_weapon_on_slot(slot: int):
+	return Globals.bought_weapons[slot]
 
 func choose_weapon():
-	return load(weapon_list.pick_random())
+	var w = weapon_list.pick_random()
+	print(w.weapon_rarity)
+	if Globals.chance(w.weapon_rarity):
+		print("choosen: ", w.weapon_rarity)
+		return w
+	else:
+		return null

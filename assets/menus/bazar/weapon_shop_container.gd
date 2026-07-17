@@ -7,7 +7,8 @@ extends PanelContainer
 @export var data: WeaponData
 
 func _ready() -> void:
-	data.calculate_money()
+	if data:
+		data.calculate_money()
 
 func _process(delta: float) -> void:
 	if data:
@@ -22,4 +23,7 @@ func _on_buy_pressed() -> void:
 				print(Globals.bought_weapons)
 				break
 		Globals.rupies.minus_equals(data.big_price)
+		GlobalSignals.thing_bought.emit(data)
 		queue_free()
+	else:
+		GlobalSignals.cant_afford.emit(data)

@@ -3,11 +3,16 @@
 [ext_resource type="Script" uid="uid://bejk67be4cki5" path="res://assets/stages/test_stage/test_stage.gd" id="1_y3224"]
 [ext_resource type="Script" uid="uid://cindxylfseat6" path="res://assets/stages/camera.gd" id="2_jijik"]
 [ext_resource type="PackedScene" uid="uid://do6brtito37yn" path="res://assets/players/default/player_default.tscn" id="3_25jh6"]
+[ext_resource type="PackedScene" uid="uid://dbbk822q1756e" path="res://assets/stages/stage_ui.tscn" id="4_k2jv8"]
+[ext_resource type="Script" uid="uid://dmyujbuhnkas8" path="res://assets/classes/scene_loader_class.gd" id="5_lsbqo"]
+[ext_resource type="PackedScene" uid="uid://bnaco8rwm4sqm" path="res://assets/loading_scenes/loading_scene.tscn" id="6_68wdc"]
 
-[node name="TestStage" type="Node2D" unique_id=1105023431 node_paths=PackedStringArray("camera", "player")]
+[node name="TestStage" type="Node2D" unique_id=1105023431 node_paths=PackedStringArray("camera", "player", "timer", "scene_loader")]
 script = ExtResource("1_y3224")
 camera = NodePath("StageCamera")
 player = NodePath("PlayerDefault")
+timer = NodePath("Timer")
+scene_loader = NodePath("SceneLoader")
 
 [node name="StageCamera" type="Camera2D" parent="." unique_id=335813605 node_paths=PackedStringArray("target")]
 script = ExtResource("2_jijik")
@@ -15,8 +20,18 @@ target = NodePath("../PlayerDefault")
 
 [node name="PlayerDefault" parent="." unique_id=1467011244 instance=ExtResource("3_25jh6")]
 
-[node name="Timer" type="Timer" parent="." unique_id=1322591678]
+[node name="TimerEnemy" type="Timer" parent="." unique_id=1322591678]
 wait_time = 0.5
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Timer" type="Timer" parent="." unique_id=1440296022]
+autostart = true
+
+[node name="StageUI" parent="." unique_id=316831656 instance=ExtResource("4_k2jv8")]
+
+[node name="SceneLoader" type="Node" parent="." unique_id=782321492]
+script = ExtResource("5_lsbqo")
+loading_screen = ExtResource("6_68wdc")
+metadata/_custom_type_script = "uid://dmyujbuhnkas8"
+
+[connection signal="timeout" from="TimerEnemy" to="." method="_on_timer_timeout"]

@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cnnsmsto30nrb"]
+
+[ext_resource type="PackedScene" uid="uid://bnof6xg33u171" path="res://assets/players/wi_container.tscn" id="1_grvof"]
+[ext_resource type="Script" uid="uid://duucylbvvak41" path="res://assets/players/weapon_inventory.gd" id="1_surg0"]
+
+[node name="WeaponInventory" type="PanelContainer" unique_id=212941455]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -417.0
+offset_top = -119.0
+offset_right = 417.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_surg0")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1238142956]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=208980283]
+layout_mode = 2
+
+[node name="WIContainer" parent="MarginContainer/HBoxContainer" unique_id=400722762 instance=ExtResource("1_grvof")]
+layout_mode = 2
+
+[node name="WIContainer2" parent="MarginContainer/HBoxContainer" unique_id=1983183756 instance=ExtResource("1_grvof")]
+layout_mode = 2
+slot = 1
+
+[node name="WIContainer3" parent="MarginContainer/HBoxContainer" unique_id=1523283544 instance=ExtResource("1_grvof")]
+layout_mode = 2
+slot = 2
+
+[node name="WIContainer4" parent="MarginContainer/HBoxContainer" unique_id=347186504 instance=ExtResource("1_grvof")]
+layout_mode = 2
+slot = 3
+
+[node name="WIContainer5" parent="MarginContainer/HBoxContainer" unique_id=1958625720 instance=ExtResource("1_grvof")]
+layout_mode = 2
+slot = 4
+
+[node name="WIContainer6" parent="MarginContainer/HBoxContainer" unique_id=858095233 instance=ExtResource("1_grvof")]
+layout_mode = 2
+slot = 5
+
+[node name="WIContainer7" parent="MarginContainer/HBoxContainer" unique_id=621628648 instance=ExtResource("1_grvof")]
+layout_mode = 2
+slot = 6
+
+[node name="WIContainer8" parent="MarginContainer/HBoxContainer" unique_id=1624306375 instance=ExtResource("1_grvof")]
+layout_mode = 2
+slot = 7

@@ -13,8 +13,42 @@ var bought_weapons: Array = [
 	null,
 	]
 
+var wi_container_hovered: int
+
+func swap_weapons(slot: int, target_slot: int):
+	var s1 = bought_weapons[slot]
+	var s2 = bought_weapons[target_slot]
+	
+	bought_weapons[slot] = s2
+	bought_weapons[target_slot] = s1
+
+func no_weapons():
+	var no = false
+	for i in bought_weapons:
+		if i == null:
+			no = true
+		else:
+			no = false
+			break
+	return no
+
+func give_weapon(data: WeaponData):
+	for i in range(bought_weapons.size()):
+		if bought_weapons[i] == null:
+			bought_weapons[i] = data
+			break
+		else:
+			continue
+
+enum Rarities {COMMON = 100, RARE = 50, EPIC = 15, GODLIKE = 1}
+
+var round: int = 1
+var zone: int = 1
+
 var rupies: BigNumber = BigNumber.new()
 var global_weapon_price_mult: float = 1.0
+
+var current_weapon_pool = []
 
 var formatter = Formatter.new()
 

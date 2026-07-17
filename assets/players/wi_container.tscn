@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bnof6xg33u171"]
+
+[ext_resource type="Script" uid="uid://d0n1hifi5d3rl" path="res://assets/players/wi_container.gd" id="1_vk7ls"]
+
+[node name="WIContainer" type="PanelContainer" unique_id=400722762]
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+script = ExtResource("1_vk7ls")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2030031960]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=610691186]
+layout_mode = 2
+offset_transform_enabled = true
+expand_mode = 3
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="gui_input" from="MarginContainer/TextureRect" to="." method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="MarginContainer/TextureRect" to="." method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/TextureRect" to="." method="_on_texture_rect_mouse_exited"]

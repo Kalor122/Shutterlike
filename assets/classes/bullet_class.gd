@@ -6,11 +6,13 @@ var direction = Vector2.RIGHT
 var parent: Node2D
 var distance_from_parent: Vector2
 
-@export var speed: float = 1500.0
-@export var damage: float = 0.0
+var speed: float = 1500.0
+var damage: BigNumber = BigNumber.new()
 
 func _ready() -> void:
-	damage = data.damage
+	damage.exponent = 0
+	damage.mantissa = 0
+	damage.plus_equals(data.damage)
 	speed = data.speed
 	start()
 

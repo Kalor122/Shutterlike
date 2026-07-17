@@ -15,6 +15,6 @@ func _enemy_killed(who: EnemyEntity):
 
 func _enemy_hit(who: EnemyEntity, parent: Node2D):
 	if parent == self:
-		damage += Globals.get_percentage(damage, 2)
+		damage.plus_equals(Globals.get_percentage(damage.to_float(), 2))
 		print(damage)
 		print("Helath: ", who.health.to_float())

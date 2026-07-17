@@ -8,6 +8,7 @@ script = ExtResource("1_b0l5b")
 weapon_id = 2
 weapon_name = "Tactical Shotgun"
 weapon_portrait = ExtResource("2_iwa1j")
+weapon_rarity = 100
 price = 40.0
 damage = 1.5
 fire_rate = 1.0

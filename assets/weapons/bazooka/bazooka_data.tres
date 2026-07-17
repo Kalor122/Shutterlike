@@ -5,9 +5,10 @@
 
 [resource]
 script = ExtResource("1_huu0s")
-weapon_id = 4
+weapon_id = 3
 weapon_name = "Bazooka"
 weapon_portrait = ExtResource("2_31k1v")
+weapon_rarity = 50
 price = 100.0
 damage = 10.0
 fire_rate = 2.0

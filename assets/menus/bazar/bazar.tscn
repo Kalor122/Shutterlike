@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cxo33jspk8epc"]
 
 [ext_resource type="Script" uid="uid://pvc50vn4yfq4" path="res://assets/menus/bazar/bazar.gd" id="1_ulinv"]
+[ext_resource type="VideoStream" uid="uid://bpssptm36foa5" path="res://assets/menus/bazar/morshu/morshu_normal/morshu_normal1.ogv" id="2_34l6l"]
+[ext_resource type="PackedScene" uid="uid://cnnsmsto30nrb" path="res://assets/players/weapon_inventory.tscn" id="2_6685u"]
 [ext_resource type="Script" uid="uid://dmyujbuhnkas8" path="res://assets/classes/scene_loader_class.gd" id="2_ulinv"]
 [ext_resource type="PackedScene" uid="uid://bnaco8rwm4sqm" path="res://assets/loading_scenes/loading_scene.tscn" id="3_34l6l"]
+[ext_resource type="Texture2D" uid="uid://dwao0t0bp0rba" path="res://assets/weapons/ak47/ak47_portrait.png" id="6_8hso1"]
 
 [node name="Bazar" type="Control" unique_id=1625850591]
 layout_mode = 3
@@ -46,23 +49,125 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer" unique_id=26764962]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer" unique_id=470540513]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=26764962]
 layout_mode = 2
 text = "Weapons:"
 
-[node name="WSCBox" type="HBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer" unique_id=901001074]
+[node name="WeaponsInfo" type="Button" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1505217891]
 layout_mode = 2
+text = "?"
+
+[node name="Control" type="Control" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1106917903]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WeaponReroll" type="Button" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1750654485]
+layout_mode = 2
+text = "Reroll"
+
+[node name="PanelContainer" type="PanelContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer" unique_id=587502986]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer" unique_id=308581124]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="WSCBox" type="HBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=901001074]
+layout_mode = 2
+alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer" unique_id=977027950]
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="PanelContainer" type="PanelContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=631281001]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer" unique_id=1305581311]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer" unique_id=944220737]
+layout_mode = 2
+size_flags_vertical = 3
+stream = ExtResource("2_34l6l")
+autoplay = true
+expand = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=626513303]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer2" type="PanelContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1270394233]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer2" unique_id=1497316040]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer2/MarginContainer" unique_id=1367147462]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=892088424]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer" unique_id=1634761736]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer/MarginContainer" unique_id=26407575]
+layout_mode = 2
+
 [node name="Continue" type="Button" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=323694401]
 layout_mode = 2
 text = "CONTINUE!"
+
+[node name="WeaponInventory" parent="TabContainer/Shop" unique_id=212941455 instance=ExtResource("2_6685u")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 64.0
+offset_top = -118.0
+offset_right = 898.0
+offset_bottom = -16.0
+grow_horizontal = 1
 
 [node name="SceneLoader" type="Node" parent="." unique_id=1116408364]
 script = ExtResource("2_ulinv")
 loading_screen = ExtResource("3_34l6l")
 
+[node name="WeaponImage" type="TextureRect" parent="." unique_id=1598451592]
+visible = false
+custom_minimum_size = Vector2(95, 95)
+layout_mode = 0
+offset_right = 95.0
+offset_bottom = 95.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("6_8hso1")
+expand_mode = 3
+
+[connection signal="pressed" from="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/WeaponsInfo" to="." method="_on_weapons_info_pressed"]
+[connection signal="pressed" from="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/WeaponReroll" to="." method="_on_weapon_reroll_pressed"]
 [connection signal="pressed" from="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/Continue" to="." method="_on_continue_pressed"]

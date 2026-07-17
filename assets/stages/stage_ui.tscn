@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dbbk822q1756e"]
+
+[ext_resource type="Script" uid="uid://08v4lbn8j6rn" path="res://assets/stages/stage_ui.gd" id="1_8n6ya"]
+[ext_resource type="PackedScene" uid="uid://cnnsmsto30nrb" path="res://assets/players/weapon_inventory.tscn" id="2_81acu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
+font_size = 20
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font_size = 30
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="StageUI" type="CanvasLayer" unique_id=316831656]
+script = ExtResource("1_8n6ya")
+
+[node name="Control" type="Control" parent="." unique_id=900532606]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RoundZone" type="Label" parent="Control" unique_id=513420722]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.5
+offset_top = 8.0
+offset_right = 64.5
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Round 1 - Zone 1"
+label_settings = SubResource("LabelSettings_yf5fn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="Control" unique_id=111345760]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 48.0
+offset_right = 20.0
+offset_bottom = 90.0
+grow_horizontal = 2
+text = "10"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cash" type="Label" parent="Control" unique_id=525242642]
+layout_mode = 1
+offset_right = 231.0
+offset_bottom = 28.0
+text = "Cash: 0"
+label_settings = SubResource("LabelSettings_yf5fn")
+vertical_alignment = 1
+
+[node name="WeaponInventory" parent="Control" unique_id=212941455 instance=ExtResource("2_81acu")]
+layout_mode = 1
+offset_top = -102.0
+offset_bottom = 0.0

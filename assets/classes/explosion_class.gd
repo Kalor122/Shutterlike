@@ -3,12 +3,14 @@ class_name ExplosionEntity
 
 @export var data: ExplosionData
 
-var damage: float = 100.0
+var damage: BigNumber = BigNumber.new()
 var size: float = 1.0
 var duration: float = 0.5
 
 func _ready():
-	damage = data.damage
+	damage.exponent = 0
+	damage.mantissa = 0
+	damage.plus_equals(data.damage)
 	size = data.size
 	duration = data.duration
 	_start()

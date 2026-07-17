@@ -7,6 +7,7 @@
 script = ExtResource("1_d405j")
 weapon_name = "Test"
 weapon_portrait = ExtResource("2_grxws")
+weapon_rarity = 1
 price = 10.0
 damage = 1.0
 scene_path = "res://assets/weapons/test_weapon/test_weapon.tscn"
