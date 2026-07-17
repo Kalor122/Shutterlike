@@ -1,11 +1,13 @@
 extends Control
 
 const WEAPON_SHOP_CONTAINER = preload("uid://feyrdmek04nu")
+const ITEM_SHOP_CONTAINER = preload("uid://dojps7rk6v4sj")
 const MORSHU_NORMAL_1 = preload("uid://bpssptm36foa5")
 const MORSHU_NORMAL_2 = preload("uid://dr6nsfdselfia")
 const MORSHU_WEAPONS = preload("uid://ds8fpl8lnis2w")
 
 @onready var wsc_box: HBoxContainer = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/WSCBox
+@onready var isc_box: HBoxContainer = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer2/MarginContainer/ISCBox
 @onready var scene_loader: SceneLoader = $SceneLoader
 @onready var video_stream_player: VideoStreamPlayer = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VideoStreamPlayer
 @onready var weapon_image: TextureRect = $WeaponImage
@@ -17,6 +19,7 @@ func _ready():
 	GlobalSignals.wi_weapon_dropped.connect(_wi_weapon_dropped)
 	
 	_choose_weapons()
+	_choose_items()
 
 func _choose_weapons():
 	for i in wsc_box.get_children():
@@ -28,6 +31,17 @@ func _choose_weapons():
 		while w.data == null:
 			w.data = Weapons.choose_weapon()
 		wsc_box.add_child(w)
+
+func _choose_items():
+	for i in isc_box.get_children():
+		i.queue_free()
+	
+	for i in range(4):
+		var ic = ITEM_SHOP_CONTAINER.instantiate()
+		ic.data = Items.choose_item()
+		while ic.data == null:
+			ic.data = Items.choose_item()
+		isc_box.add_child(ic)
 
 func _process(delta: float) -> void:
 	weapon_image.global_position = get_global_mouse_position()

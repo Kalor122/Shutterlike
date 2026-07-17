@@ -13,6 +13,8 @@ var bought_weapons: Array = [
 	null,
 	]
 
+var bought_items: Array = []
+
 var wi_container_hovered: int
 
 func swap_weapons(slot: int, target_slot: int):
@@ -47,6 +49,7 @@ var zone: int = 1
 
 var rupies: BigNumber = BigNumber.new()
 var global_weapon_price_mult: float = 1.0
+var global_item_price_mult: float = 1.0
 
 var current_weapon_pool = []
 

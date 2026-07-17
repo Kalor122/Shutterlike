@@ -19,6 +19,7 @@ func _ready():
 	acceleration = Globals.get_percentage(data.acceleration, PlayerStats.speed_percent)
 	health.plus_equals(PlayerStats.health)
 	_create_weapons()
+	_create_items()
 	GlobalSignals.round_start.emit()
 
 func _physics_process(delta: float) -> void:
@@ -61,3 +62,7 @@ func _create_weapons():
 		gun_positions._7.add_child(load(Globals.bought_weapons[6].scene_path).instantiate())
 	if Globals.bought_weapons[7] != null:
 		gun_positions._8.add_child(load(Globals.bought_weapons[7].scene_path).instantiate())
+
+func _create_items():
+	for i in Globals.bought_items:
+		add_child(load(i.scene_path).instantiate())

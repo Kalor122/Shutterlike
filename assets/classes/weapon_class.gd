@@ -19,7 +19,16 @@ func _ready() -> void:
 	GlobalSignals.enemy_hit.connect(_enemy_hit)
 	GlobalSignals.round_start.connect(_round_start)
 	GlobalSignals.round_end.connect(_round_end)
+	GlobalSignals.recalculate_stats.connect(_recalculate_stats)
 	_start()
+
+func _recalculate_stats():
+	damage.exponent = 0
+	damage.mantissa = 0
+	damage.plus_equals(Globals.get_percentage(data.damage, PlayerStats.damage_percent))
+	fire_rate = Globals.get_percentage(data.fire_rate, PlayerStats.attack_speed_percent)
+	print(damage.to_float(), " ", fire_rate)
+	GlobalSignals.after_recalculate.emit()
 
 func _process(delta: float) -> void:
 	_update(delta)
