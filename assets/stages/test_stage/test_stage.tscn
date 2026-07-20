@@ -21,7 +21,7 @@ target = NodePath("../PlayerDefault")
 [node name="PlayerDefault" parent="." unique_id=1467011244 instance=ExtResource("3_25jh6")]
 
 [node name="TimerEnemy" type="Timer" parent="." unique_id=1322591678]
-wait_time = 0.5
+wait_time = 0.2
 autostart = true
 
 [node name="Timer" type="Timer" parent="." unique_id=1440296022]

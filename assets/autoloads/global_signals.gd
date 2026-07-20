@@ -5,7 +5,7 @@ signal after_recalculate
 
 signal enemy_spawned(who: EnemyEntity)
 signal enemy_killed(who: EnemyEntity)
-signal enemy_hit(who: EnemyEntity, parent: Node2D)
+signal enemy_hit(who: EnemyEntity, parent: Node2D, damage: BigNumber)
 
 signal round_start
 signal round_end

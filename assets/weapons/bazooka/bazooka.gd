@@ -10,3 +10,4 @@ func _start():
 
 func _on_timer_timeout() -> void:
 	_shoot(BAZOOKA_BULLET, marker_2d, damage)
+	timer.start(fire_rate)

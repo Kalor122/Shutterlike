@@ -10,5 +10,6 @@ weapon_portrait = ExtResource("2_grxws")
 weapon_rarity = 1
 price = 10.0
 damage = 1.0
+fire_rate = 0.5
 scene_path = "res://assets/weapons/test_weapon/test_weapon.tscn"
 metadata/_custom_type_script = "uid://c0ege22loaddf"

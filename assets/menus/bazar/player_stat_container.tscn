@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://q7bd6dgg8c8b"]
+
+[ext_resource type="Script" uid="uid://biiu83sk5qgup" path="res://assets/menus/bazar/player_stat_container.gd" id="1_xh4rx"]
+
+[node name="PlayerStatContainer" type="PanelContainer" unique_id=1295273937]
+script = ExtResource("1_xh4rx")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1349990943]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=263984578]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer" unique_id=432330081]
+layout_mode = 2
+text = "10"
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1646777608]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1293597316]
+layout_mode = 2
+text = "Health"

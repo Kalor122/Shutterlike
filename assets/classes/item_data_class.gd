@@ -8,6 +8,13 @@ class_name ItemData
 @export var price: float
 @export_file_path("*.tscn") var scene_path: String
 
+@export_group("Player Stats")
+@export var health: float
+@export var health_regeneration: float
+@export var damage_percent: float
+@export var attack_speed_percent: float
+@export var speed_percent: float
+
 var big_price: BigNumber = BigNumber.new()
 
 func calculate_money():

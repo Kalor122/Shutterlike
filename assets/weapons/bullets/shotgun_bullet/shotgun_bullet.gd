@@ -11,7 +11,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			body.health.minus_equals(damage)
 		else:
 			body.health.minus_equals(body.health)
-		GlobalSignals.enemy_hit.emit(body, parent)
+		GlobalSignals.enemy_hit.emit(body, parent, damage)
 		print(damage)
 	queue_free()
 

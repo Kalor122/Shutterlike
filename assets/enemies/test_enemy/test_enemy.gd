@@ -28,7 +28,12 @@ func _update_animation():
 	if distance_from_target.x > 0:
 		sprite.flip_h = true
 
-func _enemy_hit(who: EnemyEntity, parent: Node2D):
+func _enemy_hit(who: EnemyEntity, parent: Node2D, damage: BigNumber):
 	if who == self:
 		animation_player.stop()
 		animation_player.play("hit")
+		var d = DAMAGE_LABEL.instantiate()
+		d.global_position.y = randf_range(who.global_position.y - 5, who.global_position.y + 5)
+		d.global_position.x = randf_range(who.global_position.x - 20, who.global_position.x + 20)
+		get_tree().current_scene.add_child(d)
+		d.display("-" + str(Globals.format(damage)))

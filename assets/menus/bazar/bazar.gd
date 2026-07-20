@@ -5,12 +5,14 @@ const ITEM_SHOP_CONTAINER = preload("uid://dojps7rk6v4sj")
 const MORSHU_NORMAL_1 = preload("uid://bpssptm36foa5")
 const MORSHU_NORMAL_2 = preload("uid://dr6nsfdselfia")
 const MORSHU_WEAPONS = preload("uid://ds8fpl8lnis2w")
+const PLAYER_STAT_CONTAINER = preload("uid://q7bd6dgg8c8b")
 
 @onready var wsc_box: HBoxContainer = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/WSCBox
 @onready var isc_box: HBoxContainer = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer2/MarginContainer/ISCBox
 @onready var scene_loader: SceneLoader = $SceneLoader
 @onready var video_stream_player: VideoStreamPlayer = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VideoStreamPlayer
 @onready var weapon_image: TextureRect = $WeaponImage
+@onready var ps_container: VBoxContainer = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer/MarginContainer/PSContainer
 
 func _ready():
 	GlobalSignals.thing_bought.connect(_thing_bought)
@@ -18,6 +20,7 @@ func _ready():
 	GlobalSignals.wi_weapon_grabbed.connect(_wi_weapon_grabbed)
 	GlobalSignals.wi_weapon_dropped.connect(_wi_weapon_dropped)
 	
+	_create_stats()
 	_choose_weapons()
 	_choose_items()
 
@@ -47,7 +50,12 @@ func _process(delta: float) -> void:
 	weapon_image.global_position = get_global_mouse_position()
 
 func _thing_bought(what):
-	if what == Weapons.get_weapon_by_id(0):
+	if what is ItemData:
+		PlayerStats.health.plus_equals(what.health)
+		PlayerStats.health_regeneration.plus_equals(what.health_regeneration)
+		PlayerStats.damage_percent.plus_equals(what.damage_percent)
+		PlayerStats.attack_speed_percent += what.attack_speed_percent
+		PlayerStats.speed_percent += what.speed_percent
 		print(what)
 
 func _cant_afford(what):
@@ -64,8 +72,9 @@ func _on_weapons_info_pressed() -> void:
 	video_stream_player.play()
 
 func _wi_weapon_grabbed(what: WeaponData):
-	weapon_image.texture = what.weapon_portrait
-	weapon_image.show()
+	if what:
+		weapon_image.texture = what.weapon_portrait
+		weapon_image.show()
 
 func _wi_weapon_dropped(what: WeaponData, slot: int, target_slot: int):
 	weapon_image.hide()
@@ -74,3 +83,9 @@ func _wi_weapon_dropped(what: WeaponData, slot: int, target_slot: int):
 
 func _on_weapon_reroll_pressed() -> void:
 	_choose_weapons()
+
+func _create_stats():
+	for i in PlayerStats.stats.keys():
+		var p = PLAYER_STAT_CONTAINER.instantiate()
+		ps_container.add_child(p)
+		p.stat_name = i

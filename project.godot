@@ -32,10 +32,10 @@ ModLoaderStore="*uid://no32omvrpo0a"
 ModLoader="*uid://d0bjxsrdh706a"
 Globals="*uid://owmv7gimli51"
 GlobalSignals="*uid://1djr3ik0xebi"
+PlayerStats="*uid://iax4jlnsoh45"
 Weapons="*uid://cd5xbfn0gs8t0"
 Console="*uid://ouiu5xh1cs8n"
 ConsoleCommands="*uid://baheh075pb38r"
-PlayerStats="*uid://iax4jlnsoh45"
 Items="*uid://b57opdtl1auw4"
 
 [display]
@@ -55,7 +55,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/console/plugin.cfg", "res://addons/mod_loader/_export_plugin/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/console/plugin.cfg", "res://addons/mod_loader/_export_plugin/plugin.cfg")
 
 [input]
 

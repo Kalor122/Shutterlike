@@ -18,3 +18,4 @@ func _on_timer_timeout() -> void:
 	_shoot(SHOTGUN_BULLET, marker_2d_3, damage)
 	_shoot(SHOTGUN_BULLET, marker_2d_4, damage)
 	_shoot(SHOTGUN_BULLET, marker_2d_5, damage)
+	timer.start(fire_rate)

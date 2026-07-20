@@ -42,7 +42,7 @@ func give_weapon(data: WeaponData):
 		else:
 			continue
 
-enum Rarities {COMMON = 100, RARE = 50, EPIC = 15, GODLIKE = 1}
+enum Rarities {COMMON = 100, RARE = 45, EPIC = 15, GODLIKE = 1}
 
 var round: int = 1
 var zone: int = 1
@@ -56,6 +56,9 @@ var current_weapon_pool = []
 var formatter = Formatter.new()
 
 var max_int: int = 9_223_372_036_854_775_807
+var max_int_unsigned: int = 18_446_744_073_709_551_615
+var pi = 3.1415926535897932384626433832795
+var e = 2.7182818284590452353602874713527
 var g = BigNumber.new()
 var gp = BigNumber.new()
 var gdp = BigNumber.new()
@@ -235,7 +238,7 @@ func _ready() -> void:
 
 func format(value: BigNumber):
 	if value.to_float() < 1_000_000_000_000.0:
-		return str(formatter.format(int(value.to_float())))
+		return str(formatter.format(ceilf(value.to_float())))
 	else:
 		if value.to_float() >= 1_000_000_000_000.0 and value.to_float() < 999_999_999_999_999.0:
 			return value.to_prefix() + "T"

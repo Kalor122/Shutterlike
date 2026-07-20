@@ -15,11 +15,12 @@ var health: BigNumber = BigNumber.new()
 func _ready():
 	health.exponent = 0
 	health.mantissa = 0
-	speed = Globals.get_percentage(data.speed, PlayerStats.speed_percent)
-	acceleration = Globals.get_percentage(data.acceleration, PlayerStats.speed_percent)
+	speed = Globals.get_percentage(data.speed, 100 + PlayerStats.speed_percent)
+	acceleration = Globals.get_percentage(data.acceleration, 100 + PlayerStats.speed_percent)
 	health.plus_equals(PlayerStats.health)
 	_create_weapons()
 	_create_items()
+	GlobalSignals.recalculate_stats.emit()
 	GlobalSignals.round_start.emit()
 
 func _physics_process(delta: float) -> void:

@@ -11,6 +11,8 @@ var speed: float
 var health: BigNumber = BigNumber.new()
 var cash: int = 3
 
+const DAMAGE_LABEL = preload("uid://dtq2itvuajs1m")
+
 func _give_cash():
 	Globals.rupies.plus_equals(randi_range(1, cash))
 
@@ -39,5 +41,5 @@ func update(delta: float):
 func physics_update(delta: float):
 	pass
 
-func _enemy_hit(who: EnemyEntity, parent: Node2D):
+func _enemy_hit(who: EnemyEntity, parent: Node2D, damage: BigNumber):
 	pass
