@@ -8,7 +8,3 @@ extends Node2D
 @onready var _6: Marker2D = $"6"
 @onready var _7: Marker2D = $"7"
 @onready var _8: Marker2D = $"8"
-
-func _process(delta: float) -> void:
-	for i in get_children():
-		i.look_at(get_global_mouse_position())

@@ -11,9 +11,9 @@ class_name ItemData
 @export_group("Player Stats")
 @export var health: float
 @export var health_regeneration: float
-@export var damage_percent: float
-@export var attack_speed_percent: float
-@export var speed_percent: float
+@export var damage_multiplier: float
+@export var attack_speed: int
+@export var speed: int
 
 var big_price: BigNumber = BigNumber.new()
 

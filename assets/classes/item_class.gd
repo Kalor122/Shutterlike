@@ -3,6 +3,8 @@ class_name Item
 
 @export var data: ItemData
 
+var player: PlayerEntity
+
 func _ready() -> void:
 	GlobalSignals.enemy_spawned.connect(_enemy_spawned)
 	GlobalSignals.enemy_killed.connect(_enemy_killed)
@@ -10,6 +12,7 @@ func _ready() -> void:
 	GlobalSignals.round_start.connect(_round_start)
 	GlobalSignals.round_end.connect(_round_end)
 	GlobalSignals.time_passed.connect(_time_passed)
+	player = get_parent()
 	_start()
 
 func _process(delta: float) -> void:

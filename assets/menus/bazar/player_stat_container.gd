@@ -8,6 +8,8 @@ var stat_name
 func _process(delta: float) -> void:
 	if PlayerStats.stats[stat_name] is BigNumber:
 		label_2.text = Globals.format(PlayerStats.stats[stat_name])
+	elif PlayerStats.stats[stat_name] is float:
+		label_2.text = "x" + str(PlayerStats.stats[stat_name])
 	else:
 		label_2.text = str(PlayerStats.stats[stat_name])
 	label.text = stat_name

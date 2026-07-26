@@ -19,7 +19,6 @@ func _ready():
 	GlobalSignals.cant_afford.connect(_cant_afford)
 	GlobalSignals.wi_weapon_grabbed.connect(_wi_weapon_grabbed)
 	GlobalSignals.wi_weapon_dropped.connect(_wi_weapon_dropped)
-	
 	_create_stats()
 	_choose_weapons()
 	_choose_items()
@@ -53,9 +52,9 @@ func _thing_bought(what):
 	if what is ItemData:
 		PlayerStats.health.plus_equals(what.health)
 		PlayerStats.health_regeneration.plus_equals(what.health_regeneration)
-		PlayerStats.damage_percent.plus_equals(what.damage_percent)
-		PlayerStats.attack_speed_percent += what.attack_speed_percent
-		PlayerStats.speed_percent += what.speed_percent
+		PlayerStats.damage_multiplier += what.damage_multiplier
+		PlayerStats.attack_speed += what.attack_speed
+		PlayerStats.speed += what.speed
 		print(what)
 
 func _cant_afford(what):

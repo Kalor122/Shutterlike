@@ -20,4 +20,5 @@ func _enemy_killed(who: EnemyEntity):
 
 func _enemy_hit(who: EnemyEntity, parent: Node2D, damage: BigNumber):
 	if parent == self:
-		_mult_damage(999)
+		add_damage(1)
+		pow_damage(5)

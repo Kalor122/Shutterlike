@@ -5,6 +5,17 @@ class_name PlayerEntity
 @export var sprite: AnimatedSprite2D
 @export var gun_positions: Node2D
 
+var held_weapons: Array[Weapon] = [
+	null,
+	null,
+	null,
+	null,
+	null,
+	null,
+	null,
+	null,
+	]
+
 var direction_x = 1
 var direction_y = 1
 
@@ -15,8 +26,8 @@ var health: BigNumber = BigNumber.new()
 func _ready():
 	health.exponent = 0
 	health.mantissa = 0
-	speed = Globals.get_percentage(data.speed, 100 + PlayerStats.speed_percent)
-	acceleration = Globals.get_percentage(data.acceleration, 100 + PlayerStats.speed_percent)
+	speed = Globals.get_percentage(data.speed, 100 + PlayerStats.speed)
+	acceleration = Globals.get_percentage(data.acceleration, 100 + PlayerStats.speed)
 	health.plus_equals(PlayerStats.health)
 	_create_weapons()
 	_create_items()
@@ -49,20 +60,30 @@ func _update_animation():
 func _create_weapons():
 	if Globals.bought_weapons[0] != null:
 		gun_positions._1.add_child(load(Globals.bought_weapons[0].scene_path).instantiate())
+		held_weapons[0] = gun_positions._1.get_children()[0]
 	if Globals.bought_weapons[1] != null:
 		gun_positions._2.add_child(load(Globals.bought_weapons[1].scene_path).instantiate())
+		held_weapons[1] = gun_positions._2.get_children()[0]
 	if Globals.bought_weapons[2] != null:
 		gun_positions._3.add_child(load(Globals.bought_weapons[2].scene_path).instantiate())
+		held_weapons[2] = gun_positions._3.get_children()[0]
 	if Globals.bought_weapons[3] != null:
 		gun_positions._4.add_child(load(Globals.bought_weapons[3].scene_path).instantiate())
+		held_weapons[3] = gun_positions._4.get_children()[0]
 	if Globals.bought_weapons[4] != null:
 		gun_positions._5.add_child(load(Globals.bought_weapons[4].scene_path).instantiate())
+		held_weapons[4] = gun_positions._5.get_children()[0]
 	if Globals.bought_weapons[5] != null:
 		gun_positions._6.add_child(load(Globals.bought_weapons[5].scene_path).instantiate())
+		held_weapons[5] = gun_positions._6.get_children()[0]
 	if Globals.bought_weapons[6] != null:
 		gun_positions._7.add_child(load(Globals.bought_weapons[6].scene_path).instantiate())
+		held_weapons[6] = gun_positions._7.get_children()[0]
 	if Globals.bought_weapons[7] != null:
 		gun_positions._8.add_child(load(Globals.bought_weapons[7].scene_path).instantiate())
+		held_weapons[7] = gun_positions._8.get_children()[0]
+	
+	print("Held Weapons: ", held_weapons)
 
 func _create_items():
 	for i in Globals.bought_items:

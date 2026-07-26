@@ -2,6 +2,8 @@ extends Node
 
 const SAVE_ENCRYPTION_KEY = "youlostthegame"
 
+var current_seed = floor(randf_range(-999_999_999_999_999_999_999_999.0, 999_999_999_999_999_999_999_999.0))
+
 var bought_weapons: Array = [
 	null,
 	null,
@@ -55,8 +57,8 @@ var current_weapon_pool = []
 
 var formatter = Formatter.new()
 
-var max_int: int = 9_223_372_036_854_775_807
-var max_int_unsigned: int = 18_446_744_073_709_551_615
+var max_int: float = 9_223_372_036_854_775_807
+var max_int_unsigned: float = 18_446_744_073_709_551_615
 var pi = 3.1415926535897932384626433832795
 var e = 2.7182818284590452353602874713527
 var g = BigNumber.new()
@@ -77,14 +79,23 @@ var gqdep = BigNumber.new()
 var gqidep = BigNumber.new()
 var gsxdep = BigNumber.new()
 
-func chance(percentage: int):
-	if randi_range(1, 100) <= percentage:
+## Rolls a random number between 1 and 100, if target is lower or equal to that number returns true. Otherwise returns false.
+func chance(target: int):
+	if randi_range(1, 100) <= target:
 		return true
 	else:
 		return false
 
-func get_percentage(value: float, per: float):
-	return value * (per / 100)
+## Rolls a random number between 1 and max_num, if target is lower or equal to that number returns true. Otherwise returns false.
+func advanced_chance(target: float, max_num: float):
+	if floorf(randf_range(1, max_num)) <= target:
+		return true
+	else:
+		return false
+
+## Returns the percentage of value.
+func get_percentage(value: float, percentage: float):
+	return (value * percentage) / 100
 
 ## Loads a JSON file into a dictionary and returns it. If the file doesn't exsist, it returns null.
 func load_json(file_path: String):
@@ -238,7 +249,7 @@ func _ready() -> void:
 
 func format(value: BigNumber):
 	if value.to_float() < 1_000_000_000_000.0:
-		return str(formatter.format(ceilf(value.to_float())))
+		return str(formatter.format(ceili(value.to_float())))
 	else:
 		if value.to_float() >= 1_000_000_000_000.0 and value.to_float() < 999_999_999_999_999.0:
 			return value.to_prefix() + "T"
