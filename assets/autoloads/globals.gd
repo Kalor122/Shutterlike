@@ -97,6 +97,9 @@ func advanced_chance(target: float, max_num: float):
 func get_percentage(value: float, percentage: float):
 	return (value * percentage) / 100
 
+func round_to_dec(num, digit):
+	return round(num * pow(10.0, digit)) / pow(10.0, digit)
+
 ## Loads a JSON file into a dictionary and returns it. If the file doesn't exsist, it returns null.
 func load_json(file_path: String):
 	var path = file_path
@@ -194,10 +197,9 @@ func delete_file(directory: String, file_name: String):
 		dir.remove(file_name)
 
 func _ready() -> void:
-	g.mantissa = 10
-	g.exponent = 100
-	
-	rupies.plus_equals(9999)
+	g.mantissa = 0
+	g.exponent = 0
+	g.plus_equals(10**100)
 	
 	for i in range(10):
 		gp.multiply_equals(g)

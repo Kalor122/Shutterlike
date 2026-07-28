@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cv76b18imrrpt"]
+
+[ext_resource type="Script" uid="uid://dyy3f6rjwft5f" path="res://assets/enemies/entity_effects_label.gd" id="1_ujac4"]
+
+[node name="EntityEffectsLabel" type="GridContainer" unique_id=365717247]
+offset_left = -13.0
+offset_top = -75.0
+offset_right = 17.0
+offset_bottom = -45.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+columns = 50
+script = ExtResource("1_ujac4")

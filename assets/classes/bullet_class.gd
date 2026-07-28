@@ -9,6 +9,8 @@ var distance_from_parent: Vector2
 var speed: float = 1500.0
 var damage: BigNumber = BigNumber.new()
 
+var entity_effects: Array[EntityEffectData] = []
+
 func _ready() -> void:
 	damage.exponent = 0
 	damage.mantissa = 0

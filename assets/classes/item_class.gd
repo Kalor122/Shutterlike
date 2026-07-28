@@ -9,6 +9,7 @@ func _ready() -> void:
 	GlobalSignals.enemy_spawned.connect(_enemy_spawned)
 	GlobalSignals.enemy_killed.connect(_enemy_killed)
 	GlobalSignals.enemy_hit.connect(_enemy_hit)
+	GlobalSignals.entity_damaged.connect(_entity_damaged)
 	GlobalSignals.round_start.connect(_round_start)
 	GlobalSignals.round_end.connect(_round_end)
 	GlobalSignals.time_passed.connect(_time_passed)
@@ -37,6 +38,9 @@ func _enemy_killed(who: EnemyEntity):
 	pass
 
 func _enemy_hit(who: EnemyEntity, parent: Node2D):
+	pass
+
+func _entity_damaged(who: EnemyEntity, damage: BigNumber):
 	pass
 
 func _round_start():

@@ -10,10 +10,15 @@ class_name ItemData
 
 @export_group("Player Stats")
 @export var health: float
+@export_enum("Sum", "Sub", "Mult", "Div", "Pow") var h_equation: int
 @export var health_regeneration: float
+@export_enum("Sum", "Sub", "Mult", "Div", "Pow") var hr_equation: int
 @export var damage_multiplier: float
+@export_enum("Sum", "Sub", "Mult", "Div", "Pow") var dm_equation: int
 @export var attack_speed: int
+@export_enum("Sum", "Sub", "Mult", "Div", "Pow") var as_equation: int
 @export var speed: int
+@export_enum("Sum", "Sub", "Mult", "Div", "Pow") var s_equation: int
 
 var big_price: BigNumber = BigNumber.new()
 

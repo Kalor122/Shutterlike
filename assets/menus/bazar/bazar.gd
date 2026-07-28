@@ -50,12 +50,61 @@ func _process(delta: float) -> void:
 
 func _thing_bought(what):
 	if what is ItemData:
-		PlayerStats.health.plus_equals(what.health)
-		PlayerStats.health_regeneration.plus_equals(what.health_regeneration)
-		PlayerStats.damage_multiplier += what.damage_multiplier
-		PlayerStats.attack_speed += what.attack_speed
-		PlayerStats.speed += what.speed
-		print(what)
+		match what.h_equation:
+			0:
+				PlayerStats.health.plus_equals(what.health)
+			1:
+				PlayerStats.health.minus_equals(what.health)
+			2:
+				PlayerStats.health.multiply_equals(what.health)
+			3:
+				PlayerStats.health.divide_equals(what.health)
+			4:
+				PlayerStats.health.power_equals(what.health)
+		match what.hr_equation:
+			0:
+				PlayerStats.health_regeneration.plus_equals(what.health_regeneration)
+			1:
+				PlayerStats.health_regeneration.minus_equals(what.health_regeneration)
+			2:
+				PlayerStats.health_regeneration.multiply_equals(what.health_regeneration)
+			3:
+				PlayerStats.health_regeneration.divide_equals(what.health_regeneration)
+			4:
+				PlayerStats.health_regeneration.power_equals(what.health_regeneration)
+		match what.dm_equation:
+			0:
+				PlayerStats.damage_multiplier += what.damage_multiplier
+			1:
+				PlayerStats.damage_multiplier -= what.damage_multiplier
+			2:
+				PlayerStats.damage_multiplier *= what.damage_multiplier
+			3:
+				PlayerStats.damage_multiplier /= what.damage_multiplier
+			4:
+				PlayerStats.damage_multiplier **= what.damage_multiplier
+		match what.as_equation:
+			0:
+				PlayerStats.attack_speed += what.attack_speed
+			1:
+				PlayerStats.attack_speed -= what.attack_speed
+			2:
+				PlayerStats.attack_speed *= what.attack_speed
+			3:
+				PlayerStats.attack_speed /= what.attack_speed
+			4:
+				PlayerStats.attack_speed **= what.attack_speed
+		match what.s_equation:
+			0:
+				PlayerStats.speed += what.speed
+			1:
+				PlayerStats.speed -= what.speed
+			2:
+				PlayerStats.speed *= what.speed
+			3:
+				PlayerStats.speed /= what.speed
+			4:
+				PlayerStats.speed **= what.speed
 
 func _cant_afford(what):
 	video_stream_player.stream = MORSHU_NORMAL_2

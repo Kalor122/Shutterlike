@@ -1,9 +1,8 @@
-[gd_scene format=3 uid="uid://y7n6uvikhh4i"]
+[gd_scene format=3 uid="uid://b4g1y78ptq21"]
 
-[ext_resource type="Script" uid="uid://7hx5crjr8v3e" path="res://assets/enemies/test_enemy/test_enemy.gd" id="1_4tp1g"]
-[ext_resource type="Resource" uid="uid://ddwosdl8s2wi" path="res://assets/enemies/test_enemy/test_enemy_data.tres" id="2_2eieo"]
-[ext_resource type="Texture2D" uid="uid://bhqi3k8csj37c" path="res://assets/enemies/test_enemy/default_enemy_sprite.png" id="3_2eieo"]
-[ext_resource type="PackedScene" uid="uid://cv76b18imrrpt" path="res://assets/enemies/entity_effects_label.tscn" id="4_voagq"]
+[ext_resource type="Script" uid="uid://p0eg4tthnwtj" path="res://assets/enemies/test_big_enemy/test_big_enemy.gd" id="1_bp1sc"]
+[ext_resource type="Resource" uid="uid://dfeu4o1y0411q" path="res://assets/enemies/test_big_enemy/test_big_enemy_data.tres" id="2_kvsmw"]
+[ext_resource type="Texture2D" uid="uid://qfueoymxcpus" path="res://assets/enemies/test_big_enemy/default_enemy_sprite.png" id="3_p00uo"]
 
 [sub_resource type="Animation" id="Animation_2eieo"]
 length = 0.001
@@ -45,16 +44,17 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_2eieo"]
 radius = 30.0
 
-[node name="TestEnemy" type="CharacterBody2D" unique_id=333818710]
+[node name="TestBigEnemy" type="CharacterBody2D" unique_id=333818710]
+scale = Vector2(2.5, 2.5)
 collision_layer = 4
 collision_mask = 6
-script = ExtResource("1_4tp1g")
-data = ExtResource("2_2eieo")
+script = ExtResource("1_bp1sc")
+data = ExtResource("2_kvsmw")
 metadata/_custom_type_script = "uid://dtri2y40fhvbb"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1293226100]
 scale = Vector2(0.048, 0.048)
-texture = ExtResource("3_2eieo")
+texture = ExtResource("3_p00uo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1621878019]
 libraries/ = SubResource("AnimationLibrary_axc53")
@@ -64,5 +64,3 @@ shape = SubResource("CircleShape2D_2eieo")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=249931672]
 target_position = Vector2(40, 0)
-
-[node name="EntityEffectsLabel" parent="." unique_id=365717247 instance=ExtResource("4_voagq")]

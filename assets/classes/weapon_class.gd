@@ -11,6 +11,8 @@ var fire_rate: float
 var damage_extra: BigNumber = BigNumber.new()
 var fire_rate_extra: float
 
+var entity_effects: Array[EntityEffectData] = []
+
 var player: PlayerEntity
 
 func _ready() -> void:
@@ -57,6 +59,7 @@ func _shoot(bullet: PackedScene, exit: Node2D, damage: BigNumber):
 		instance.damage.exponent = 0
 		instance.damage.mantissa = 0
 		instance.damage.plus_equals(damage)
+		instance.entity_effects = entity_effects
 
 func add_damage(value: float):
 	damage.plus_equals(value)

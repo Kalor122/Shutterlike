@@ -61,6 +61,7 @@ enabled=PackedStringArray("res://addons/_Godot-IDE_/plugin.cfg", "res://addons/c
 
 folder_colors={
 "res://addons/_Godot-IDE_/plugins": "blue",
+"res://addons/_Godot-IDE_/plugins/": "blue",
 "res://addons/_Godot-IDE_/shared_resources/": "teal"
 }
 
@@ -96,7 +97,6 @@ down={
 [physics]
 
 common/physics_ticks_per_second=144
-common/physics_interpolation=true
 
 [rendering]
 

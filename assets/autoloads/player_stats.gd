@@ -17,6 +17,6 @@ var stats = {
 func _process(delta: float) -> void:
 	stats["Health"] = health
 	stats["Health Regeneration"] = health_regeneration
-	stats["Damage Mult"] = damage_multiplier
+	stats["Damage Mult"] = Globals.round_to_dec(damage_multiplier, 3)
 	stats["Attack Speed"] = attack_speed
 	stats["Speed"] = speed

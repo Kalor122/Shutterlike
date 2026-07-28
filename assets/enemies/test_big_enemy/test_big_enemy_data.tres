@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dfeu4o1y0411q"]
+
+[ext_resource type="Script" uid="uid://bnrca80fvc2tp" path="res://assets/classes/enemy_data_class.gd" id="1_jc1le"]
+
+[resource]
+script = ExtResource("1_jc1le")
+enemy_name = "TestBigEnemy"
+speed = 50.0
+health = 5000
+cash = 50
+scene_path = "res://assets/enemies/test_big_enemy/test_big_enemy.tscn"
+metadata/_custom_type_script = "uid://bnrca80fvc2tp"

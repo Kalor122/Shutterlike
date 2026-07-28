@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EntityEffectData" format=3 uid="uid://b75jttpq1liqr"]
+
+[ext_resource type="Script" uid="uid://iqx3uv07110" path="res://assets/classes/entity_effect_data_class.gd" id="1_1pn7k"]
+[ext_resource type="Texture2D" uid="uid://ddb27j1mbett2" path="res://assets/weapons/test_weapon/test_weapon_portrait.png" id="1_ptj7b"]
+
+[resource]
+script = ExtResource("1_1pn7k")
+effect_name = "Fire"
+effect_description = "df"
+effect_image = ExtResource("1_ptj7b")
+scene_path = "res://assets/effects/entity_effects/fire_entity_effect/fire_entity_effect.tscn"
+metadata/_custom_type_script = "uid://iqx3uv07110"

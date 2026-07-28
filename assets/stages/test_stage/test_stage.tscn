@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dbbk822q1756e" path="res://assets/stages/stage_ui.tscn" id="4_k2jv8"]
 [ext_resource type="Script" uid="uid://dmyujbuhnkas8" path="res://assets/classes/scene_loader_class.gd" id="5_lsbqo"]
 [ext_resource type="PackedScene" uid="uid://bnaco8rwm4sqm" path="res://assets/loading_scenes/loading_scene.tscn" id="6_68wdc"]
+[ext_resource type="PackedScene" uid="uid://b4g1y78ptq21" path="res://assets/enemies/test_big_enemy/test_big_enemy.tscn" id="7_am41p"]
 
 [node name="TestStage" type="Node2D" unique_id=1105023431 node_paths=PackedStringArray("camera", "player", "timer", "scene_loader")]
 script = ExtResource("1_y3224")
@@ -33,5 +34,8 @@ autostart = true
 script = ExtResource("5_lsbqo")
 loading_screen = ExtResource("6_68wdc")
 metadata/_custom_type_script = "uid://dmyujbuhnkas8"
+
+[node name="TestBigEnemy" parent="." unique_id=333818710 instance=ExtResource("7_am41p")]
+position = Vector2(1420, 177)
 
 [connection signal="timeout" from="TimerEnemy" to="." method="_on_timer_timeout"]

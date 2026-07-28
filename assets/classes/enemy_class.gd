@@ -19,10 +19,11 @@ func _give_cash():
 func _ready() -> void:
 	health.mantissa = 0
 	health.exponent = 0
-	health.plus_equals(data.health)
+	health.plus_equals(data.health * (log(PlayerStats.damage_multiplier) + 1))
 	speed = data.speed
 	cash = data.cash
 	GlobalSignals.enemy_hit.connect(_enemy_hit)
+	GlobalSignals.entity_damaged.connect(_entity_damaged)
 	start()
 
 func _process(delta: float) -> void:
@@ -42,4 +43,7 @@ func physics_update(delta: float):
 	pass
 
 func _enemy_hit(who: EnemyEntity, parent: Node2D, damage: BigNumber):
+	pass
+
+func _entity_damaged(who: EnemyEntity, damage: BigNumber):
 	pass

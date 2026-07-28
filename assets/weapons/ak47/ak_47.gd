@@ -7,6 +7,8 @@ const DEFAULT_BULLET = preload("uid://c80avvvpjl4u5")
 
 func _start():
 	timer.start(fire_rate)
+	entity_effects.append(load("uid://b75jttpq1liqr"))
+	print(entity_effects)
 
 func _on_timer_timeout() -> void:
 	_shoot(DEFAULT_BULLET, marker_2d, damage)
