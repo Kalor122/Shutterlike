@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EntityEffectData" format=3 uid="uid://bgc7bxikgi5yf"]
+
+[ext_resource type="Texture2D" uid="uid://8bm7lpdev0fd" path="res://assets/effects/entity_effects/poison_entity_effect/poison_entity_effect.png" id="1_wtluk"]
+[ext_resource type="Script" uid="uid://iqx3uv07110" path="res://assets/classes/entity_effect_data_class.gd" id="2_bgiav"]
+
+[resource]
+script = ExtResource("2_bgiav")
+effect_id = 1
+effect_name = "Poison"
+effect_description = "sdfdf"
+effect_image = ExtResource("1_wtluk")
+max_stack = 3.0
+scene_path = "res://assets/effects/entity_effects/poison_entity_effect/poison_entity_effect.tscn"
+metadata/_custom_type_script = "uid://iqx3uv07110"

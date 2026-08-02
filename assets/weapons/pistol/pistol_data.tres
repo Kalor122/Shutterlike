@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://c3nrx4k5j8x35"]
+
+[ext_resource type="Script" uid="uid://c0ege22loaddf" path="res://assets/classes/weapon_data_class.gd" id="1_w5ace"]
+[ext_resource type="Texture2D" uid="uid://ddb27j1mbett2" path="res://assets/weapons/pistol/pistol_portrait.png" id="2_j44hx"]
+
+[resource]
+script = ExtResource("1_w5ace")
+weapon_name = "Pistol"
+weapon_portrait = ExtResource("2_j44hx")
+weapon_rarity = 100
+price = 5.0
+damage = 1.0
+fire_rate = 0.5
+scene_path = "res://assets/weapons/pistol/pistol.tscn"
+metadata/_custom_type_script = "uid://c0ege22loaddf"

@@ -12,6 +12,12 @@ func get_weapon_by_id(id: int):
 		if i.weapon_id == id:
 			return i
 
+func get_weapon_by_name(w_name: String):
+	for i in weapon_list:
+		if i is WeaponData:
+			if i.weapon_name == w_name:
+				return i
+
 func get_weapon_on_slot(slot: int):
 	return Globals.bought_weapons[slot]
 

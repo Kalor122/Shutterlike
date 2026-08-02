@@ -44,6 +44,9 @@ func give_weapon(data: WeaponData):
 		else:
 			continue
 
+func give_item(data: ItemData):
+	bought_items.append(data)
+
 enum Rarities {COMMON = 100, RARE = 45, EPIC = 15, GODLIKE = 1}
 
 var round: int = 1
@@ -57,8 +60,8 @@ var current_weapon_pool = []
 
 var formatter = Formatter.new()
 
-var max_int: float = 9_223_372_036_854_775_807
-var max_int_unsigned: float = 18_446_744_073_709_551_615
+var max_int: float = 9_223_372_036_854_775_807.0
+var max_int_unsigned: float = 18_446_744_073_709_551_615.0
 var pi = 3.1415926535897932384626433832795
 var e = 2.7182818284590452353602874713527
 var g = BigNumber.new()
@@ -86,9 +89,9 @@ func chance(target: int):
 	else:
 		return false
 
-## Rolls a random number between 1 and max_num, if target is lower or equal to that number returns true. Otherwise returns false.
+## Rolls a random number between 0.001 and max_num, if target is lower or equal to that number returns true. Otherwise returns false.
 func advanced_chance(target: float, max_num: float):
-	if floorf(randf_range(1, max_num)) <= target:
+	if round_to_dec(randf_range(0.001, max_num), 3) <= target:
 		return true
 	else:
 		return false
@@ -97,6 +100,7 @@ func advanced_chance(target: float, max_num: float):
 func get_percentage(value: float, percentage: float):
 	return (value * percentage) / 100
 
+## Rounds a float to a specific decimal point.
 func round_to_dec(num, digit):
 	return round(num * pow(10.0, digit)) / pow(10.0, digit)
 
@@ -248,6 +252,7 @@ func _ready() -> void:
 	
 	for i in range(10):
 		gsxdep.multiply_equals(gqidep)
+	print(round_to_dec(pi, 3))
 
 func format(value: BigNumber):
 	if value.to_float() < 1_000_000_000_000.0:

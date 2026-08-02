@@ -19,10 +19,10 @@ func take_damage(health: BigNumber, ammount: BigNumber, entity_effects: Array[En
 				if x is EntityEffect:
 					if x.data.effect_id == i.effect_id:
 						effect_exist = true
+						break
 					else:
 						effect_exist = false
-						break
-			if not effect_exist:
+			if effect_exist == false:
 				add_child(load(i.scene_path).instantiate())
 			effect_gained.emit(i)
 			

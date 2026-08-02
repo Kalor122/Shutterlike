@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://7hx5crjr8v3e" path="res://assets/enemies/test_enemy/test_enemy.gd" id="1_4tp1g"]
 [ext_resource type="Resource" uid="uid://ddwosdl8s2wi" path="res://assets/enemies/test_enemy/test_enemy_data.tres" id="2_2eieo"]
 [ext_resource type="Texture2D" uid="uid://bhqi3k8csj37c" path="res://assets/enemies/test_enemy/default_enemy_sprite.png" id="3_2eieo"]
-[ext_resource type="PackedScene" uid="uid://cv76b18imrrpt" path="res://assets/enemies/entity_effects_label.tscn" id="4_voagq"]
+[ext_resource type="PackedScene" uid="uid://cv76b18imrrpt" path="res://assets/enemies/entity_effects_container.tscn" id="4_voagq"]
 
 [sub_resource type="Animation" id="Animation_2eieo"]
 length = 0.001
@@ -66,3 +66,7 @@ shape = SubResource("CircleShape2D_2eieo")
 target_position = Vector2(40, 0)
 
 [node name="EntityEffectsLabel" parent="." unique_id=365717247 instance=ExtResource("4_voagq")]
+offset_left = -22.466
+offset_top = 32.0
+offset_right = 22.534
+offset_bottom = 62.0

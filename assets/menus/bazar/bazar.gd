@@ -74,15 +74,15 @@ func _thing_bought(what):
 				PlayerStats.health_regeneration.power_equals(what.health_regeneration)
 		match what.dm_equation:
 			0:
-				PlayerStats.damage_multiplier += what.damage_multiplier
+				PlayerStats.damage_multiplier += Globals.round_to_dec(what.damage_multiplier, 3)
 			1:
-				PlayerStats.damage_multiplier -= what.damage_multiplier
+				PlayerStats.damage_multiplier -= Globals.round_to_dec(what.damage_multiplier, 3)
 			2:
-				PlayerStats.damage_multiplier *= what.damage_multiplier
+				PlayerStats.damage_multiplier *= Globals.round_to_dec(what.damage_multiplier, 3)
 			3:
-				PlayerStats.damage_multiplier /= what.damage_multiplier
+				PlayerStats.damage_multiplier /= Globals.round_to_dec(what.damage_multiplier, 3)
 			4:
-				PlayerStats.damage_multiplier **= what.damage_multiplier
+				PlayerStats.damage_multiplier **= Globals.round_to_dec(what.damage_multiplier, 3)
 		match what.as_equation:
 			0:
 				PlayerStats.attack_speed += what.attack_speed

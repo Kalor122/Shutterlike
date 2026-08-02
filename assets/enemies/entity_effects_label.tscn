@@ -1,12 +1,22 @@
-[gd_scene format=3 uid="uid://cv76b18imrrpt"]
+[gd_scene format=3 uid="uid://cegvdahsf4pqk"]
 
-[ext_resource type="Script" uid="uid://dyy3f6rjwft5f" path="res://assets/enemies/entity_effects_label.gd" id="1_ujac4"]
+[ext_resource type="Script" uid="uid://crq2thmrunyea" path="res://assets/enemies/entity_effects_label.gd" id="1_ujac4"]
+[ext_resource type="Texture2D" uid="uid://dx0g0ah6scp0g" path="res://assets/effects/entity_effects/fire_entity_effect/fire_entity_effect.png" id="2_ujac4"]
 
-[node name="EntityEffectsLabel" type="GridContainer" unique_id=365717247]
-offset_left = -13.0
-offset_top = -75.0
-offset_right = 17.0
-offset_bottom = -45.0
-pivot_offset_ratio = Vector2(0.5, 0.5)
-columns = 50
+[sub_resource type="LabelSettings" id="LabelSettings_ujac4"]
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="EntityEffectsLabel" type="HBoxContainer" unique_id=1178349083]
 script = ExtResource("1_ujac4")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2060570607]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_ujac4")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=714625729]
+layout_mode = 2
+text = "x123.0"
+label_settings = SubResource("LabelSettings_ujac4")

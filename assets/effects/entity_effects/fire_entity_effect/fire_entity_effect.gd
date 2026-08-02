@@ -13,7 +13,8 @@ func _on_duration_timeout() -> void:
 
 func _effect_gained(what: EntityEffectData):
 	if what.effect_id == data.effect_id:
-		stack += 1
+		if stack < max_stack:
+			stack += 1
 		damage.mantissa = 0
 		damage.exponent = 0
 		damage.plus_equals(1)

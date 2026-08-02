@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bx7vbbd6pltpc"]
+
+[ext_resource type="Script" uid="uid://d215vs2q4u2n5" path="res://assets/effects/entity_effects/poison_entity_effect/poison_entity_effect.gd" id="1_mb1o0"]
+[ext_resource type="Resource" uid="uid://bgc7bxikgi5yf" path="res://assets/effects/entity_effects/poison_entity_effect/poison_entity_effect_data.tres" id="2_mb1o0"]
+
+[node name="PoisonEntityEffect" type="Node" unique_id=573409512]
+script = ExtResource("1_mb1o0")
+data = ExtResource("2_mb1o0")
+metadata/_custom_type_script = "uid://cx2yd1j48icbp"
+
+[node name="Timer" type="Timer" parent="." unique_id=817337650]
+wait_time = 0.5
+autostart = true
+
+[node name="Duration" type="Timer" parent="." unique_id=176006906]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Duration" to="." method="_on_duration_timeout"]

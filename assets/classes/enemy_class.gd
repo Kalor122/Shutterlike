@@ -14,7 +14,7 @@ var cash: int = 3
 const DAMAGE_LABEL = preload("uid://dtq2itvuajs1m")
 
 func _give_cash():
-	Globals.rupies.plus_equals(randi_range(1, cash))
+	Globals.rupies.plus_equals(cash)
 
 func _ready() -> void:
 	health.mantissa = 0

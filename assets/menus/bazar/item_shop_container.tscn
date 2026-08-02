@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dojps7rk6v4sj"]
 
 [ext_resource type="Script" uid="uid://msixf4wxnirh" path="res://assets/menus/bazar/item_shop_container.gd" id="1_nx6kl"]
-[ext_resource type="Texture2D" uid="uid://ddb27j1mbett2" path="res://assets/weapons/test_weapon/test_weapon_portrait.png" id="2_r2h5y"]
+[ext_resource type="Texture2D" uid="uid://ddb27j1mbett2" path="res://assets/weapons/pistol/pistol_portrait.png" id="2_r2h5y"]
 
 [node name="ItemShopContainer" type="PanelContainer" unique_id=1804938132]
 script = ExtResource("1_nx6kl")
