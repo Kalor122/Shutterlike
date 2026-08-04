@@ -71,9 +71,11 @@ text = "Reroll"
 [node name="PanelContainer" type="PanelContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer" unique_id=587502986]
 custom_minimum_size = Vector2(0, 210)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer" unique_id=308581124]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -81,6 +83,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="WSCBox" type="HBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=901001074]
 layout_mode = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1898247192]
@@ -204,4 +207,5 @@ expand_mode = 3
 
 [connection signal="pressed" from="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/WeaponsInfo" to="." method="_on_weapons_info_pressed"]
 [connection signal="pressed" from="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/WeaponReroll" to="." method="_on_weapon_reroll_pressed"]
+[connection signal="pressed" from="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/ItemsReroll" to="." method="_on_items_reroll_pressed"]
 [connection signal="pressed" from="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/Continue" to="." method="_on_continue_pressed"]

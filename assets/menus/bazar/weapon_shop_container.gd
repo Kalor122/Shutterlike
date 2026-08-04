@@ -1,14 +1,19 @@
 extends PanelContainer
 
+const WEAPON_TOOLTIP = preload("uid://bl8iqg2wwr4a4")
+
 @onready var weapon_portrait: TextureRect = $MarginContainer/VBoxContainer/WeaponPortrait
 @onready var buy: Button = $MarginContainer/VBoxContainer/Buy
 @onready var price: Label = $MarginContainer/VBoxContainer/HBoxContainer/Price
 
 @export var data: WeaponData
 
+var w_tooltip
+
 func _ready() -> void:
 	if data:
 		data.calculate_money()
+		_create_tooltip()
 
 func _process(delta: float) -> void:
 	if data:
@@ -27,3 +32,16 @@ func _on_buy_pressed() -> void:
 		queue_free()
 	else:
 		GlobalSignals.cant_afford.emit(data)
+
+func _create_tooltip():
+	var w = WEAPON_TOOLTIP.instantiate()
+	w.data = data
+	w_tooltip = w
+	get_tree().current_scene.add_child(w_tooltip)
+	w_tooltip.hide()
+
+func _on_mouse_entered() -> void:
+	w_tooltip.should_hide.emit(false)
+
+func _on_mouse_exited() -> void:
+	w_tooltip.should_hide.emit(true)

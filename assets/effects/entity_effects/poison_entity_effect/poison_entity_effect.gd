@@ -2,6 +2,9 @@ extends EntityEffect
 
 var damage = BigNumber.new()
 
+func  _start():
+	stack = 1
+
 func _effect_gained(what: EntityEffectData):
 	if what.effect_id == data.effect_id:
 		if stack < max_stack:

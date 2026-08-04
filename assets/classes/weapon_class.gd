@@ -31,7 +31,7 @@ func _recalculate_stats():
 	damage.exponent = 0
 	damage.mantissa = 0
 	damage.plus_equals(data.damage * PlayerStats.damage_multiplier)
-	fire_rate = data.fire_rate - ((float(PlayerStats.attack_speed) ** 0.6) / 100)
+	fire_rate = Globals.round_to_dec(data.fire_rate - ((float(PlayerStats.attack_speed) ** 0.6) / 100), 2)
 	damage.plus_equals(damage_extra)
 	fire_rate += fire_rate_extra
 	print(damage.to_float(), " ", fire_rate)

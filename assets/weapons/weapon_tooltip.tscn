@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://bl8iqg2wwr4a4"]
+
+[ext_resource type="Texture2D" uid="uid://dwao0t0bp0rba" path="res://assets/weapons/ak47/ak47_portrait.png" id="1_53ili"]
+[ext_resource type="Script" uid="uid://dsuiyru41103o" path="res://assets/weapons/weapon_tooltip.gd" id="1_p4uia"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font_size = 13
+
+[sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
+font_size = 14
+
+[node name="WeaponTooltip" type="PanelContainer" unique_id=1138871158]
+offset_right = 448.0
+offset_bottom = 241.0
+mouse_filter = 2
+script = ExtResource("1_p4uia")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1784005232]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1599774336]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=407934915]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="WImage" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1393164397]
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(80, 80)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_53ili")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1077977550]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="WName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2113330257]
+layout_mode = 2
+text = "AK-47"
+label_settings = SubResource("LabelSettings_yf5fn")
+
+[node name="WRarity" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1120215026]
+layout_mode = 2
+text = "COMMON"
+label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1311756449]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="WTags" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=789583993]
+layout_mode = 2
+text = "Gun, Automatic"
+label_settings = SubResource("LabelSettings_57qmd")
+
+[node name="BaseDamage" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=719854738]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/BaseDamage" unique_id=1710700197]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/BaseDamage/MarginContainer" unique_id=199043591]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/BaseDamage/MarginContainer/HBoxContainer" unique_id=426411481]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Base Damage:"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/BaseDamage/MarginContainer/HBoxContainer" unique_id=1561966790]
+layout_mode = 2
+text = "10"
+
+[node name="FireRate" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1700022288]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/FireRate" unique_id=1790818289]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/FireRate/MarginContainer" unique_id=890893603]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/FireRate/MarginContainer/HBoxContainer" unique_id=1268467846]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Fire Rate:"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/FireRate/MarginContainer/HBoxContainer" unique_id=1067900498]
+layout_mode = 2
+text = "0.5s"
+
+[node name="WDescription" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=684270102]
+custom_maximum_size = Vector2(439, 3000)
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "This is a description."
+fit_content = true

@@ -137,3 +137,6 @@ func _create_stats():
 		var p = PLAYER_STAT_CONTAINER.instantiate()
 		ps_container.add_child(p)
 		p.stat_name = i
+
+func _on_items_reroll_pressed() -> void:
+	_choose_items()
