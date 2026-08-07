@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c0xbs4bm4duke"]
+
+[ext_resource type="Script" uid="uid://casrvyxwubqof" path="res://assets/items/test_item_3/test_item_3.gd" id="1_hidkd"]
+[ext_resource type="Resource" uid="uid://c3pud6dpxcapx" path="res://assets/items/test_item_3/test_item_3_data.tres" id="2_5yekr"]
+
+[node name="TestItem3" type="Node" unique_id=122557465]
+script = ExtResource("1_hidkd")
+data = ExtResource("2_5yekr")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"
+
+[node name="Timer" type="Timer" parent="." unique_id=1890079533]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

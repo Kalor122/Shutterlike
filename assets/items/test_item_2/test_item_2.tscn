@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://srisueulrdbk"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_6nsud"]
+[ext_resource type="Resource" uid="uid://beqqge760ddf2" path="res://assets/items/test_item_2/test_item_2_data.tres" id="2_6nsud"]
+
+[node name="TestItem2" type="Node" unique_id=122557465]
+script = ExtResource("1_6nsud")
+data = ExtResource("2_6nsud")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

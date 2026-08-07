@@ -5,6 +5,7 @@ class_name ItemData
 @export var item_name: String
 @export var item_portrait: CompressedTexture2D
 @export var item_rarity: Globals.Rarities
+@export_multiline() var item_description: String
 @export var price: float
 @export_file_path("*.tscn") var scene_path: String
 

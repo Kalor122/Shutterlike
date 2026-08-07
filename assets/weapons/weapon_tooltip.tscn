@@ -1,21 +1,51 @@
 [gd_scene format=3 uid="uid://bl8iqg2wwr4a4"]
 
-[ext_resource type="Texture2D" uid="uid://dwao0t0bp0rba" path="res://assets/weapons/ak47/ak47_portrait.png" id="1_53ili"]
 [ext_resource type="Script" uid="uid://dsuiyru41103o" path="res://assets/weapons/weapon_tooltip.gd" id="1_p4uia"]
+[ext_resource type="Script" uid="uid://cjmmhbp1b5312" path="res://addons/StyleboxFancy/StyleBorder.gd" id="1_vl8ek"]
+[ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleboxFancy/StyleBoxFancy.gd" id="2_y7qcr"]
+[ext_resource type="Texture2D" uid="uid://b1vjvgdhqgb23" path="res://assets/menus/bazar/rarities/common.png" id="3_bb0dk"]
+
+[sub_resource type="Resource" id="Resource_57qmd"]
+script = ExtResource("1_vl8ek")
+blend = true
+width_left = 2
+width_top = 2
+width_right = 2
+width_bottom = 2
+metadata/_custom_type_script = "uid://cjmmhbp1b5312"
+
+[sub_resource type="StyleBox" id="StyleBox_yf5fn"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+script = ExtResource("2_y7qcr")
+color = Color(0.00998121, 6.016344e-09, 0.14714798, 1)
+borders = Array[ExtResource("1_vl8ek")]([SubResource("Resource_57qmd")])
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+metadata/_custom_type_script = "uid://bkl6g25jwb47h"
+
+[sub_resource type="Theme" id="Theme_g4v7s"]
+PanelContainer/styles/panel = SubResource("StyleBox_yf5fn")
 
 [sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
 font_size = 20
-
-[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
-font_size = 13
 
 [sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
 font_size = 14
 
 [node name="WeaponTooltip" type="PanelContainer" unique_id=1138871158]
+self_modulate = Color(1, 1, 1, 0.7647059)
 offset_right = 448.0
-offset_bottom = 241.0
+offset_bottom = 192.0
 mouse_filter = 2
+theme = SubResource("Theme_g4v7s")
 script = ExtResource("1_p4uia")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1784005232]
@@ -35,27 +65,21 @@ layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="WImage" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1393164397]
-custom_minimum_size = Vector2(80, 80)
-custom_maximum_size = Vector2(80, 80)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("1_53ili")
-expand_mode = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1077977550]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="WName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2113330257]
+[node name="WName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2113330257]
 layout_mode = 2
 text = "AK-47"
 label_settings = SubResource("LabelSettings_yf5fn")
 
-[node name="WRarity" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1120215026]
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1579210575]
 layout_mode = 2
-text = "COMMON"
-label_settings = SubResource("LabelSettings_g4v7s")
+size_flags_horizontal = 3
+
+[node name="WRarity" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=169295655]
+custom_minimum_size = Vector2(145.725, 34)
+custom_maximum_size = Vector2(145.725, 34)
+layout_mode = 2
+texture = ExtResource("3_bb0dk")
+expand_mode = 3
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1311756449]
 layout_mode = 2
@@ -117,7 +141,7 @@ layout_mode = 2
 text = "0.5s"
 
 [node name="WDescription" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=684270102]
-custom_maximum_size = Vector2(439, 3000)
+custom_maximum_size = Vector2(434.62, 3000)
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true

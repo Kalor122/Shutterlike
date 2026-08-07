@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://beqqge760ddf2"]
+
+[ext_resource type="Texture2D" uid="uid://8bm7lpdev0fd" path="res://assets/effects/entity_effects/poison_entity_effect/poison_entity_effect.png" id="1_ga23p"]
+[ext_resource type="Script" uid="uid://bn8hlonkpv137" path="res://assets/classes/item_data_class.gd" id="2_mlu1r"]
+
+[resource]
+script = ExtResource("2_mlu1r")
+item_id = 1
+item_name = "Test Item 2"
+item_portrait = ExtResource("1_ga23p")
+item_rarity = 45
+item_description = "[color=yellow]> Passive[/color]
++15 Attack Speed"
+scene_path = "res://assets/items/test_item_2/test_item_2.tscn"
+attack_speed = 15
+metadata/_custom_type_script = "uid://bn8hlonkpv137"

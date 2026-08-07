@@ -1,0 +1,33 @@
+[gd_resource type="Theme" format=3 uid="uid://ct5uvugrf1rtx"]
+
+[ext_resource type="Script" uid="uid://cjmmhbp1b5312" path="res://addons/StyleboxFancy/StyleBorder.gd" id="1_1gua4"]
+[ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleboxFancy/StyleBoxFancy.gd" id="2_7lbcx"]
+
+[sub_resource type="Resource" id="Resource_57qmd"]
+script = ExtResource("1_1gua4")
+blend = true
+width_left = 2
+width_top = 2
+width_right = 2
+width_bottom = 2
+metadata/_custom_type_script = "uid://cjmmhbp1b5312"
+
+[sub_resource type="StyleBox" id="StyleBox_yf5fn"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+script = ExtResource("2_7lbcx")
+color = Color(0.00998121, 6.016344e-09, 0.14714798, 1)
+borders = Array[ExtResource("1_1gua4")]([SubResource("Resource_57qmd")])
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+metadata/_custom_type_script = "uid://bkl6g25jwb47h"
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBox_yf5fn")

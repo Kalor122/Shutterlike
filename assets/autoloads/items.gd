@@ -1,7 +1,9 @@
 extends Node
 
 var item_list = [
-	load("uid://bcyer2tev8baw")
+	load("uid://bcyer2tev8baw"),
+	load("uid://beqqge760ddf2"),
+	load("uid://c3pud6dpxcapx"),
 ]
 
 func get_item_by_id(id: int):

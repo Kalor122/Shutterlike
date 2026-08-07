@@ -16,7 +16,11 @@ func _ready() -> void:
 func load_scene(_scene_path: String):
 	scene_path = _scene_path
 	
-	var new_load_screen = loading_screen.instantiate()
+	var new_load_screen
+	if loading_screen:
+		new_load_screen = loading_screen.instantiate()
+	else:
+		new_load_screen = load("uid://bnaco8rwm4sqm").instantiate()
 	add_child(new_load_screen)
 	progress_changed.connect(new_load_screen.on_progress_changed)
 	load_finished.connect(new_load_screen.on_load_finished)

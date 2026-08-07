@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://5tfugo6smf6x"]
+
+[ext_resource type="Theme" uid="uid://ct5uvugrf1rtx" path="res://assets/themes/tooltip_theme.tres" id="1_e5lad"]
+[ext_resource type="Script" uid="uid://ce1kyoc8wauxi" path="res://assets/items/item_tooltip.gd" id="3_qxjvm"]
+[ext_resource type="Texture2D" uid="uid://b1vjvgdhqgb23" path="res://assets/menus/bazar/rarities/common.png" id="4_isjkx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
+font_size = 14
+
+[node name="ItemTooltip" type="PanelContainer" unique_id=1138871158]
+self_modulate = Color(1, 1, 1, 0.7647059)
+custom_minimum_size = Vector2(447.935, 121)
+custom_maximum_size = Vector2(447.935, 3000)
+propagate_maximum_size = false
+offset_right = 448.0
+offset_bottom = 117.0
+mouse_filter = 2
+theme = ExtResource("1_e5lad")
+script = ExtResource("3_qxjvm")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1784005232]
+propagate_maximum_size = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1599774336]
+propagate_maximum_size = false
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=407934915]
+propagate_maximum_size = false
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="IName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2113330257]
+layout_mode = 2
+text = "AK-47"
+label_settings = SubResource("LabelSettings_yf5fn")
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1752882912]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IRarity" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=169295655]
+custom_minimum_size = Vector2(145.725, 34)
+custom_maximum_size = Vector2(145.725, 30.175)
+layout_mode = 2
+texture = ExtResource("4_isjkx")
+expand_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1311756449]
+propagate_maximum_size = false
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ITags" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=789583993]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gun, Automatic"
+label_settings = SubResource("LabelSettings_57qmd")
+
+[node name="IDescription" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=684270102]
+custom_minimum_size = Vector2(434.62, 22)
+custom_maximum_size = Vector2(434.62, 3000)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+bbcode_enabled = true
+text = "grfddffhdd"
+fit_content = true

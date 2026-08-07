@@ -8,15 +8,23 @@ var follow_mouse: bool = true
 var damage: BigNumber = BigNumber.new()
 var fire_rate: float
 
-var damage_extra: BigNumber = BigNumber.new()
-var fire_rate_extra: float
+var damage_extra_sum: float = 0
+var damage_extra_sub: float = 0
+var damage_extra_mult: float = 1
+var damage_extra_div: float = 1
+var damage_extra_pow: float = 1
+
+var fire_rate_extra_sum: float = 0
+var fire_rate_extra_sub: float = 0
+var fire_rate_extra_mult: float = 1
+var fire_rate_extra_div: float = 1
+var fire_rate_extra_pow: float = 1
 
 var entity_effects: Array[EntityEffectData] = []
 
 var player: PlayerEntity
 
 func _ready() -> void:
-	damage_extra.minus_equals(1)
 	_recalculate_stats()
 	player = get_tree().current_scene.player
 	GlobalSignals.enemy_spawned.connect(_enemy_spawned)
@@ -31,15 +39,31 @@ func _recalculate_stats():
 	damage.exponent = 0
 	damage.mantissa = 0
 	damage.plus_equals(data.damage * PlayerStats.damage_multiplier)
-	fire_rate = Globals.round_to_dec(data.fire_rate - ((float(PlayerStats.attack_speed) ** 0.6) / 100), 2)
-	damage.plus_equals(damage_extra)
-	fire_rate += fire_rate_extra
+	fire_rate = Globals.round_to_dec(data.fire_rate - (float(PlayerStats.attack_speed) / 1000), 3)
+	damage.plus_equals(damage_extra_sum)
+	damage.multiply_equals(damage_extra_mult)
+	damage.power_equals(damage_extra_pow)
+	if damage.is_less_than(damage_extra_sub):
+		damage.exponent = 0
+		damage.mantissa = 1
+	else:
+		damage.minus_equals(damage_extra_sub)
+	damage.divide_equals(damage_extra_div)
+	fire_rate += fire_rate_extra_sum
+	fire_rate *= fire_rate_extra_mult
+	fire_rate **= fire_rate_extra_pow
+	fire_rate -= fire_rate_extra_sub
+	fire_rate /= fire_rate_extra_div
 	print(damage.to_float(), " ", fire_rate)
 	GlobalSignals.after_recalculate.emit()
 
 func _process(delta: float) -> void:
 	if fire_rate <= 0.01:
 		fire_rate = 0.01
+	
+	if damage.is_less_than(1):
+		damage.exponent = 0
+		damage.mantissa = 1
 	
 	if follow_mouse:
 		look_at(get_global_mouse_position())
@@ -62,44 +86,44 @@ func _shoot(bullet: PackedScene, exit: Node2D, damage: BigNumber):
 		instance.entity_effects = entity_effects
 
 func add_damage(value: float):
-	damage.plus_equals(value)
-	damage_extra.plus_equals(value)
+	damage_extra_sum += value
+	GlobalSignals.recalculate_stats.emit()
 
 func sub_damage(value: float):
-	damage.minus_equals(value)
-	damage_extra.minus_equals(value)
+	damage_extra_sub += value
+	GlobalSignals.recalculate_stats.emit()
 
 func mult_damage(value: float):
-	damage.multiply_equals(value)
-	damage_extra.multiply_equals(value)
+	damage_extra_mult += value
+	GlobalSignals.recalculate_stats.emit()
 
 func div_damage(value: float):
-	damage.divide_equals(value)
-	damage_extra.divide_equals(value)
+	damage_extra_div += value
+	GlobalSignals.recalculate_stats.emit()
 
 func pow_damage(value: float):
-	damage.power_equals(value)
-	damage_extra.power_equals(value)
+	damage_extra_pow += value
+	GlobalSignals.recalculate_stats.emit()
 
 func add_fire_rate(value: float):
-	fire_rate += value
-	fire_rate_extra += value
+	fire_rate_extra_sum += value
+	GlobalSignals.recalculate_stats.emit()
 
 func sub_fire_rate(value: float):
-	fire_rate -= value
-	fire_rate_extra -= value
+	fire_rate_extra_sub += value
+	GlobalSignals.recalculate_stats.emit()
 
 func mult_fire_rate(value: float):
-	fire_rate *= value
-	fire_rate_extra *= value
+	fire_rate_extra_mult += value
+	GlobalSignals.recalculate_stats.emit()
 
 func div_fire_rate(value: float):
-	fire_rate /= value
-	fire_rate_extra /= value
+	fire_rate_extra_div += value
+	GlobalSignals.recalculate_stats.emit()
 
 func pow_fire_rate(value: float):
-	fire_rate = fire_rate ** value
-	fire_rate_extra = fire_rate_extra ** value
+	fire_rate_extra_pow += value
+	GlobalSignals.recalculate_stats.emit()
 
 func _start():
 	pass

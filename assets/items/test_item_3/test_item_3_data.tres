@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c3pud6dpxcapx"]
+
+[ext_resource type="Texture2D" uid="uid://dx0g0ah6scp0g" path="res://assets/effects/entity_effects/fire_entity_effect/fire_entity_effect.png" id="1_8h3cw"]
+[ext_resource type="Script" uid="uid://bn8hlonkpv137" path="res://assets/classes/item_data_class.gd" id="2_2xr2i"]
+
+[resource]
+script = ExtResource("2_2xr2i")
+item_id = 2
+item_name = "Test Item 3"
+item_portrait = ExtResource("1_8h3cw")
+item_rarity = 15
+item_description = "[color=yellow]> Round Starts[/color]
++^20 Damage to weapon in slot #4
+[color=yellow]> Every Second[/color]
+-1000 Damage to weapon in slot #4"
+price = 50.0
+scene_path = "res://assets/items/test_item_3/test_item_3.tscn"
+metadata/_custom_type_script = "uid://bn8hlonkpv137"
