@@ -1,2 +1,2 @@
 # Shutterlike
-**Shutterlike** is a Brotato-inspired rouguelike/rouguelite game with an absolute disregard to a coherent art-style.
+**Shutterlike** is a Brotato-inspired roguelike/roguelite game with an absolute disregard to a coherent art-style.
