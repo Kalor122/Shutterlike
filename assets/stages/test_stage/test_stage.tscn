@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://bnaco8rwm4sqm" path="res://assets/loading_scenes/loading_scene.tscn" id="6_68wdc"]
 [ext_resource type="PackedScene" uid="uid://b4g1y78ptq21" path="res://assets/enemies/test_big_enemy/test_big_enemy.tscn" id="7_am41p"]
 
-[node name="TestStage" type="Node2D" unique_id=1105023431 node_paths=PackedStringArray("camera", "player", "timer", "scene_loader")]
+[node name="TestStage" type="Node2D" unique_id=1105023431 node_paths=PackedStringArray("camera", "player", "stage_ui", "timer", "scene_loader")]
 script = ExtResource("1_y3224")
 camera = NodePath("StageCamera")
 player = NodePath("PlayerDefault")
+stage_ui = NodePath("StageUI")
 timer = NodePath("Timer")
 scene_loader = NodePath("SceneLoader")
 

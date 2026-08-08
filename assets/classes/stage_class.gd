@@ -4,6 +4,7 @@ class_name Stage
 var data: StageData
 @export var camera: StageCamera
 @export var player: PlayerEntity
+@export var stage_ui: CanvasLayer
 @export var timer: Timer
 @export var scene_loader: SceneLoader
 

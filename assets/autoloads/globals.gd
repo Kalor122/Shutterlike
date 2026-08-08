@@ -254,11 +254,26 @@ func _ready() -> void:
 		gsxdep.multiply_equals(gqidep)
 	print(round_to_dec(pi, 3))
 
-func format(value: BigNumber):
-	if value.to_float() < 1_000_000_000_000.0:
+func format(number: Variant):
+	var value = BigNumber.new()
+	
+	if number is BigNumber:
+		value = number
+	elif number is float:
+		value.mantissa = 0
+		value.exponent = 0
+		value.plus_equals(number)
+	elif number is int:
+		value.mantissa = 0
+		value.exponent = 0
+		value.plus_equals(number)
+	
+	if value.to_float() < 1_000_000_000.0:
 		return str(formatter.format(ceili(value.to_float())))
 	else:
-		if value.to_float() >= 1_000_000_000_000.0 and value.to_float() < 999_999_999_999_999.0:
+		if value.to_float() >= 1_000_000_000.0 and value.to_float() < 999_999_999_999.0:
+			return value.to_prefix() + "B"
+		elif value.to_float() >= 1_000_000_000_000.0 and value.to_float() < 999_999_999_999_999.0:
 			return value.to_prefix() + "T"
 		elif value.to_float() >= 1_000_000_000_000_000.0 and value.to_float() < 999_999_999_999_999_999.0:
 			return value.to_prefix() + "Qa"

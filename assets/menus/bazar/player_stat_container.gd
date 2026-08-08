@@ -9,7 +9,10 @@ func _process(delta: float) -> void:
 	if PlayerStats.stats[stat_name] is BigNumber:
 		label_2.text = Globals.format(PlayerStats.stats[stat_name])
 	elif PlayerStats.stats[stat_name] is float:
-		label_2.text = "x" + str(PlayerStats.stats[stat_name])
+		if PlayerStats.stats[stat_name] < 1_000_000_000.0:
+			label_2.text = "x" + str(PlayerStats.stats[stat_name])
+		else:
+			label_2.text = "x" + str(Globals.format(PlayerStats.stats[stat_name]))
 	else:
-		label_2.text = str(PlayerStats.stats[stat_name])
+		label_2.text = str(Globals.formatter.format(PlayerStats.stats[stat_name]))
 	label.text = stat_name

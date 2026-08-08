@@ -54,7 +54,7 @@ func _recalculate_stats():
 	fire_rate **= fire_rate_extra_pow
 	fire_rate -= fire_rate_extra_sub
 	fire_rate /= fire_rate_extra_div
-	print(damage.to_float(), " ", fire_rate)
+	#print(damage.to_float(), " ", fire_rate)
 	GlobalSignals.after_recalculate.emit()
 
 func _process(delta: float) -> void:

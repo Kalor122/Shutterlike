@@ -20,3 +20,6 @@ func _process(delta: float) -> void:
 	stats["Damage Mult"] = Globals.round_to_dec(damage_multiplier, 3)
 	stats["Attack Speed"] = attack_speed
 	stats["Speed"] = speed
+	
+	if damage_multiplier >= 999999999999999950000000000000000.0:
+		damage_multiplier = 999999999999999950000000000000000.0

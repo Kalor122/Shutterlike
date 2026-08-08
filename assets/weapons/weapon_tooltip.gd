@@ -16,6 +16,8 @@ var data: WeaponData
 
 var dmg = BigNumber.new()
 
+var slot = 0
+
 func _enter_tree() -> void:
 	name = "WeaponTooltip"
 
@@ -36,13 +38,16 @@ func _process(delta: float) -> void:
 		match data.weapon_rarity:
 			Globals.Rarities.COMMON:
 				w_rarity.texture = COMMON
-				
 			Globals.Rarities.RARE:
 				w_rarity.texture = RARE
 			Globals.Rarities.EPIC:
 				w_rarity.texture = EPIC
-		bd_label.text = Globals.format(dmg.plus(data.damage * PlayerStats.damage_multiplier))
-		fr_label.text = str(Globals.round_to_dec(data.fire_rate - (float(PlayerStats.attack_speed) / 1000), 3)) + "s"
+		if get_tree().current_scene is Stage:
+			bd_label.text = Globals.format(get_tree().current_scene.player.held_weapons[slot].damage)
+			fr_label.text = str(get_tree().current_scene.player.held_weapons[slot].fire_rate) + "s"
+		else:
+			bd_label.text = Globals.format(dmg.plus(data.damage * PlayerStats.damage_multiplier))
+			fr_label.text = str(Globals.round_to_dec(data.fire_rate - (float(PlayerStats.attack_speed) / 1000), 3)) + "s"
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
