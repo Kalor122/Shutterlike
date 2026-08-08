@@ -4,5 +4,5 @@ func _start():
 	print(data.item_name)
 
 func _time_passed(time: int):
-	PlayerStats.damage_multiplier *= 1.75
+	PlayerStats.damage_multiplier *= 1.89
 	GlobalSignals.recalculate_stats.emit()
