@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://08v4lbn8j6rn" path="res://assets/stages/stage_ui.gd" id="1_8n6ya"]
 [ext_resource type="PackedScene" uid="uid://cnnsmsto30nrb" path="res://assets/players/weapon_inventory.tscn" id="2_81acu"]
+[ext_resource type="Texture2D" uid="uid://bcfkmoe1degg3" path="res://assets/menus/bazar/door_PNG17591.png" id="3_ebnq6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
 font_size = 20
@@ -12,6 +13,156 @@ outline_color = Color(0, 0, 0, 1)
 font_size = 30
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_ebnq6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door2:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c1mdl"]
+resource_name = "closing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1.5157168, 1),
+"update": 0,
+"values": [Vector2(970, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door2:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1.52, 1),
+"update": 0,
+"values": [Vector2(-970, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_td1ox"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1.5157168),
+"update": 0,
+"values": [Vector2(970, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door2:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1.52),
+"update": 0,
+"values": [Vector2(-970, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_plxd0"]
+resource_name = "idle_close"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1.5132501),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door2:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1.5132501),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h7ixh"]
+resource_name = "opening"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1.5132501, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(970, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door2:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1.5132501, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-970, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h7ixh"]
+_data = {
+&"RESET": SubResource("Animation_ebnq6"),
+&"closing": SubResource("Animation_c1mdl"),
+&"idle": SubResource("Animation_td1ox"),
+&"idle_close": SubResource("Animation_plxd0"),
+&"opening": SubResource("Animation_h7ixh")
+}
 
 [node name="StageUI" type="CanvasLayer" unique_id=316831656]
 script = ExtResource("1_8n6ya")
@@ -64,5 +215,30 @@ vertical_alignment = 1
 
 [node name="WeaponInventory" parent="Control" unique_id=212941455 instance=ExtResource("2_81acu")]
 layout_mode = 1
-offset_top = -102.0
-offset_bottom = 0.0
+offset_top = -126.0
+offset_bottom = -24.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=147884156]
+offset_left = -80.0
+offset_top = -568.0
+offset_right = 2005.0
+offset_bottom = 2133.0
+mouse_filter = 2
+theme_override_constants/separation = -7
+
+[node name="Door2" type="TextureRect" parent="HBoxContainer" unique_id=524329322]
+layout_mode = 2
+offset_transform_enabled = true
+mouse_filter = 2
+texture = ExtResource("3_ebnq6")
+
+[node name="Door" type="TextureRect" parent="HBoxContainer" unique_id=490866537]
+layout_mode = 2
+offset_transform_enabled = true
+mouse_filter = 2
+texture = ExtResource("3_ebnq6")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HBoxContainer" unique_id=1010336418]
+libraries/ = SubResource("AnimationLibrary_h7ixh")
+autoplay = &"opening"

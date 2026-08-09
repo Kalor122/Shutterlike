@@ -2,6 +2,7 @@ extends Control
 
 const WEAPON_SHOP_CONTAINER = preload("uid://feyrdmek04nu")
 const ITEM_SHOP_CONTAINER = preload("uid://dojps7rk6v4sj")
+const ITEM_GRID_CONTAINER = preload("uid://f788xtfb06c0")
 const MORSHU_NORMAL_1 = preload("uid://bpssptm36foa5")
 const MORSHU_NORMAL_2 = preload("uid://dr6nsfdselfia")
 const MORSHU_WEAPONS = preload("uid://ds8fpl8lnis2w")
@@ -13,8 +14,12 @@ const PLAYER_STAT_CONTAINER = preload("uid://q7bd6dgg8c8b")
 @onready var video_stream_player: VideoStreamPlayer = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer/VideoStreamPlayer
 @onready var weapon_image: TextureRect = $WeaponImage
 @onready var ps_container: VBoxContainer = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer/MarginContainer/PSContainer
+@onready var h_box_container: HBoxContainer = $HBoxContainer
+@onready var item_grid: GridContainer = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer2/ScrollContainer/MarginContainer/ItemGrid
+@onready var door_animation_player: AnimationPlayer = $HBoxContainer/DoorAnimationPlayer
 
 func _ready():
+	h_box_container.show()
 	GlobalSignals.thing_bought.connect(_thing_bought)
 	GlobalSignals.cant_afford.connect(_cant_afford)
 	GlobalSignals.wi_weapon_grabbed.connect(_wi_weapon_grabbed)
@@ -22,6 +27,7 @@ func _ready():
 	_create_stats()
 	_choose_weapons()
 	_choose_items()
+	_create_item_grid()
 
 func _choose_weapons():
 	for i in wsc_box.get_children():
@@ -49,6 +55,7 @@ func _process(delta: float) -> void:
 	weapon_image.global_position = get_global_mouse_position()
 
 func _thing_bought(what):
+	_create_item_grid()
 	if what is ItemData:
 		match what.h_equation:
 			0:
@@ -113,6 +120,8 @@ func _cant_afford(what):
 
 func _on_continue_pressed() -> void:
 	Globals.round += 1
+	door_animation_player.play("closing")
+	await door_animation_player.animation_finished
 	scene_loader.load_scene("res://assets/stages/test_stage/test_stage.tscn")
 
 func _on_weapons_info_pressed() -> void:
@@ -140,3 +149,11 @@ func _create_stats():
 
 func _on_items_reroll_pressed() -> void:
 	_choose_items()
+
+func _create_item_grid():
+	for i in item_grid.get_children():
+		i.queue_free()
+	for i in Globals.bought_items:
+		var igc = ITEM_GRID_CONTAINER.instantiate()
+		igc.data = i
+		item_grid.add_child(igc)

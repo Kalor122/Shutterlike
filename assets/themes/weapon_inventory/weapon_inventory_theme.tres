@@ -1,0 +1,26 @@
+[gd_resource type="Theme" format=3 uid="uid://bly7h0yh6mnxr"]
+
+[ext_resource type="Script" uid="uid://cjmmhbp1b5312" path="res://addons/StyleboxFancy/StyleBorder.gd" id="1_kn3gg"]
+[ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleboxFancy/StyleBoxFancy.gd" id="2_2xhcf"]
+[ext_resource type="Texture2D" uid="uid://cx0tlmdpbnxhj" path="res://assets/themes/weapon_inventory/svoyu8isrh3nvebbnewgmqihnwwtba3dffgoonohj6jmrda5i7qghyu79rgoe3zu-o.jpg" id="3_myuw6"]
+
+[sub_resource type="StyleBox" id="StyleBox_hj11r"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("2_2xhcf")
+texture = ExtResource("3_myuw6")
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_enabled = true
+shadow_blur = 14
+shadow_spread = Vector2(-8.285, -8.285)
+metadata/_custom_type_script = "uid://bkl6g25jwb47h"
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBox_hj11r")

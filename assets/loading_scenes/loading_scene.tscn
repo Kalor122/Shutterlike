@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://beh0atgw72byh" path="res://assets/classes/loading_scene_class.gd" id="1_8kify"]
 
 [node name="LoadingScene" type="CanvasLayer" unique_id=127485374]
+layer = 5
 script = ExtResource("1_8kify")
 
 [node name="Control" type="Control" parent="." unique_id=212380870]
@@ -13,11 +14,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1329273299]
-layout_mode = 1
-anchors_preset = 15
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=750335537]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -51.0
+offset_right = -24.0
+offset_bottom = -24.0
 grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+grow_vertical = 0
+max_value = 1.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1897305908]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

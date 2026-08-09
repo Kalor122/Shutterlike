@@ -51,8 +51,8 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBox_g4v7s")
 
 [node name="WeaponPortrait" type="TextureRect" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1585247712]
-custom_minimum_size = Vector2(120, 0)
-custom_maximum_size = Vector2(120, -1)
+custom_minimum_size = Vector2(140, 0)
+custom_maximum_size = Vector2(140, -1)
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("1_yc0da")

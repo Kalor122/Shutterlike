@@ -5,8 +5,9 @@
 [ext_resource type="VideoStream" uid="uid://bpssptm36foa5" path="res://assets/menus/bazar/morshu/morshu_normal/morshu_normal1.ogv" id="2_34l6l"]
 [ext_resource type="PackedScene" uid="uid://cnnsmsto30nrb" path="res://assets/players/weapon_inventory.tscn" id="2_6685u"]
 [ext_resource type="Script" uid="uid://dmyujbuhnkas8" path="res://assets/classes/scene_loader_class.gd" id="2_ulinv"]
-[ext_resource type="Theme" uid="uid://dwl7finoljkpt" path="res://assets/themes/bazar_shop_theme.tres" id="2_wtkvo"]
 [ext_resource type="PackedScene" uid="uid://bnaco8rwm4sqm" path="res://assets/loading_scenes/loading_scene.tscn" id="3_34l6l"]
+[ext_resource type="Theme" uid="uid://pm11u1c8tqw4" path="res://assets/themes/bazar_shop_theme/bazar_shop_theme.tres" id="3_hxebb"]
+[ext_resource type="Texture2D" uid="uid://poylr6xd57nr" path="res://assets/menus/bazar/morshu_shop.png" id="4_6065m"]
 [ext_resource type="Texture2D" uid="uid://dhx5k4qg0s3u1" path="res://assets/themes/bazar_shop_theme/2-23772_vintage-television-png-tv-aesthetic-transparent.png" id="5_hhkjh"]
 [ext_resource type="Texture2D" uid="uid://cyu8uw43t8yy3" path="res://assets/themes/bazar_shop_theme/static/164.png" id="5_hxebb"]
 [ext_resource type="Texture2D" uid="uid://dwao0t0bp0rba" path="res://assets/weapons/ak47/ak47_portrait.png" id="6_8hso1"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dxpcfn8sk0nkh" path="res://assets/themes/bazar_shop_theme/static/169.png" id="10_yyujj"]
 [ext_resource type="Texture2D" uid="uid://rij4wpmd68df" path="res://assets/themes/bazar_shop_theme/static/170.png" id="11_78nbc"]
 [ext_resource type="Texture2D" uid="uid://dov0uufboykgn" path="res://assets/themes/bazar_shop_theme/static/171.png" id="12_aooyp"]
+[ext_resource type="Texture2D" uid="uid://bcfkmoe1degg3" path="res://assets/menus/bazar/door_PNG17591.png" id="19_7org7"]
 
 [sub_resource type="Animation" id="Animation_lfgm7"]
 length = 0.001
@@ -56,6 +58,156 @@ _data = {
 &"new_animation": SubResource("Animation_hb80w")
 }
 
+[sub_resource type="Animation" id="Animation_ebnq6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door2:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c1mdl"]
+resource_name = "closing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1.5157168, 1),
+"update": 0,
+"values": [Vector2(970, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door2:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1.52, 1),
+"update": 0,
+"values": [Vector2(-970, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_td1ox"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1.5157168),
+"update": 0,
+"values": [Vector2(970, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door2:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1.52),
+"update": 0,
+"values": [Vector2(-970, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_plxd0"]
+resource_name = "idle_close"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1.5132501),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door2:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1.5132501),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h7ixh"]
+resource_name = "opening"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1.5132501, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(970, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door2:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1.5132501, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-970, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f3la5"]
+_data = {
+&"RESET": SubResource("Animation_ebnq6"),
+&"closing": SubResource("Animation_c1mdl"),
+&"idle": SubResource("Animation_td1ox"),
+&"idle_close": SubResource("Animation_plxd0"),
+&"opening": SubResource("Animation_h7ixh")
+}
+
 [node name="Bazar" type="Control" unique_id=1625850591]
 layout_mode = 3
 anchors_preset = 15
@@ -88,7 +240,7 @@ current_tab = 0
 
 [node name="Shop" type="Control" parent="TabContainer" unique_id=1835929956]
 layout_mode = 2
-theme = ExtResource("2_wtkvo")
+theme = ExtResource("3_hxebb")
 metadata/_tab_index = 0
 
 [node name="Panel" type="Panel" parent="TabContainer/Shop" unique_id=413613104]
@@ -119,6 +271,10 @@ theme_override_constants/separation = 15
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer" unique_id=537004178]
+layout_mode = 2
+texture = ExtResource("4_6065m")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer" unique_id=470540513]
 layout_mode = 2
@@ -242,16 +398,23 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer2" unique_id=1497316040]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer2" unique_id=1706386235]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
 
-[node name="GridContainer" type="GridContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer2/MarginContainer" unique_id=1367147462]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer2/ScrollContainer" unique_id=1497316040]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 13
+theme_override_constants/margin_top = 13
+theme_override_constants/margin_right = 13
+theme_override_constants/margin_bottom = 13
+
+[node name="ItemGrid" type="GridContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer2/ScrollContainer/MarginContainer" unique_id=1367147462]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+columns = 6
 
 [node name="PanelContainer" type="PanelContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=892088424]
 layout_mode = 2
@@ -280,10 +443,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
 anchor_right = 0.0
-offset_left = 0.0
-offset_top = -102.0
-offset_right = 834.0
-offset_bottom = 0.0
+offset_left = 16.0
+offset_top = -118.0
+offset_right = 850.0
+offset_bottom = -16.0
 grow_horizontal = 1
 
 [node name="WeaponImage" type="TextureRect" parent="." unique_id=1598451592]
@@ -296,6 +459,33 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("6_8hso1")
 expand_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=731535049]
+visible = false
+layout_mode = 0
+offset_left = -80.0
+offset_top = -568.0
+offset_right = 2005.0
+offset_bottom = 2133.0
+mouse_filter = 2
+theme_override_constants/separation = -7
+
+[node name="Door2" type="TextureRect" parent="HBoxContainer" unique_id=1387352532]
+layout_mode = 2
+offset_transform_enabled = true
+mouse_filter = 2
+texture = ExtResource("19_7org7")
+
+[node name="Door" type="TextureRect" parent="HBoxContainer" unique_id=1836315266]
+layout_mode = 2
+offset_transform_enabled = true
+mouse_filter = 2
+texture = ExtResource("19_7org7")
+flip_h = true
+
+[node name="DoorAnimationPlayer" type="AnimationPlayer" parent="HBoxContainer" unique_id=2066193052]
+libraries/ = SubResource("AnimationLibrary_f3la5")
+autoplay = &"opening"
 
 [connection signal="pressed" from="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/WeaponsInfo" to="." method="_on_weapons_info_pressed"]
 [connection signal="pressed" from="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/WeaponReroll" to="." method="_on_weapon_reroll_pressed"]

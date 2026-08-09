@@ -1,10 +1,37 @@
 [gd_scene format=3 uid="uid://bnof6xg33u171"]
 
+[ext_resource type="Script" uid="uid://cjmmhbp1b5312" path="res://addons/StyleboxFancy/StyleBorder.gd" id="1_cqnrr"]
 [ext_resource type="Script" uid="uid://d0n1hifi5d3rl" path="res://assets/players/wi_container.gd" id="1_vk7ls"]
+[ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleboxFancy/StyleBoxFancy.gd" id="2_3fc3n"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0qgd4"]
+load_path = "res://.godot/imported/Wrinkle-Paper-Textures-2-Deeezy-4.jpeg-ce3a80373996950cd44b0e6dde5daa28.ctex"
+
+[sub_resource type="StyleBox" id="StyleBox_v7miu"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("2_3fc3n")
+texture = SubResource("CompressedTexture2D_0qgd4")
+texture_stretch_mode = 3
+texture_repeat = 2
+texture_scale = 1.56
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_enabled = true
+shadow_blur = 8
+shadow_spread = Vector2(-7.435, -7.435)
+metadata/_custom_type_script = "uid://bkl6g25jwb47h"
 
 [node name="WIContainer" type="PanelContainer" unique_id=400722762]
 pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBox_v7miu")
 script = ExtResource("1_vk7ls")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2030031960]
