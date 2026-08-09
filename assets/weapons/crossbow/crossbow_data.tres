@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://ct4wfyu5j2xut"]
+
+[ext_resource type="Script" uid="uid://c0ege22loaddf" path="res://assets/classes/weapon_data_class.gd" id="1_ahgfb"]
+[ext_resource type="Texture2D" uid="uid://bw1hfjsd54a3g" path="res://assets/weapons/crossbow/crossbow_portrait.png" id="2_thil3"]
+
+[resource]
+script = ExtResource("1_ahgfb")
+weapon_id = 6
+weapon_name = "Crossbow"
+weapon_portrait = ExtResource("2_thil3")
+weapon_rarity = 45
+price = 100.0
+damage = 3.0
+fire_rate = 1.0
+scene_path = "res://assets/weapons/crossbow/crossbow.tscn"
+metadata/_custom_type_script = "uid://c0ege22loaddf"

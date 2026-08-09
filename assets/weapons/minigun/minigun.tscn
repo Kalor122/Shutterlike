@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bap2eh8uktwvk"]
+
+[ext_resource type="Script" uid="uid://btncd64q78lxx" path="res://assets/weapons/minigun/minigun.gd" id="1_m3nbe"]
+[ext_resource type="Resource" uid="uid://c01spn1mlse78" path="res://assets/weapons/minigun/minigun_data.tres" id="2_m3nbe"]
+[ext_resource type="Texture2D" uid="uid://dqg3hpr5wyoed" path="res://assets/weapons/minigun/minigun.png" id="3_vlwdq"]
+
+[node name="Minigun" type="Node2D" unique_id=1154084343]
+script = ExtResource("1_m3nbe")
+data = ExtResource("2_m3nbe")
+metadata/_custom_type_script = "uid://cgugmfbarfajx"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1860661673]
+scale = Vector2(0.3545456, 0.35454544)
+texture = ExtResource("3_vlwdq")
+flip_h = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1383753557]
+position = Vector2(117, 4)
+
+[node name="Timer" type="Timer" parent="." unique_id=1138397631]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://belk6qud6w1tt"
-path="res://.godot/imported/double_barrel.png-68891968ee0791767557086a31b9829d.ctex"
+uid="uid://bb87ratykl408"
+path="res://.godot/imported/firework_bullet1.png-e7567f7d7fdbe86c65bf3dfc06cc7453.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://double_barrel.png"
-dest_files=["res://.godot/imported/double_barrel.png-68891968ee0791767557086a31b9829d.ctex"]
+source_file="res://assets/weapons/bullets/firework_bullet/firework_bullet1.png"
+dest_files=["res://.godot/imported/firework_bullet1.png-e7567f7d7fdbe86c65bf3dfc06cc7453.ctex"]
 
 [params]
 

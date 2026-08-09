@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bnaco8rwm4sqm" path="res://assets/loading_scenes/loading_scene.tscn" id="3_34l6l"]
 [ext_resource type="Theme" uid="uid://pm11u1c8tqw4" path="res://assets/themes/bazar_shop_theme/bazar_shop_theme.tres" id="3_hxebb"]
 [ext_resource type="Texture2D" uid="uid://poylr6xd57nr" path="res://assets/menus/bazar/morshu_shop.png" id="4_6065m"]
+[ext_resource type="Script" uid="uid://cjmmhbp1b5312" path="res://addons/StyleboxFancy/StyleBorder.gd" id="4_kajfg"]
 [ext_resource type="Texture2D" uid="uid://dhx5k4qg0s3u1" path="res://assets/themes/bazar_shop_theme/2-23772_vintage-television-png-tv-aesthetic-transparent.png" id="5_hhkjh"]
 [ext_resource type="Texture2D" uid="uid://cyu8uw43t8yy3" path="res://assets/themes/bazar_shop_theme/static/164.png" id="5_hxebb"]
+[ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleboxFancy/StyleBoxFancy.gd" id="5_yyujj"]
 [ext_resource type="Texture2D" uid="uid://dwao0t0bp0rba" path="res://assets/weapons/ak47/ak47_portrait.png" id="6_8hso1"]
 [ext_resource type="Texture2D" uid="uid://cgka70yufipkn" path="res://assets/themes/bazar_shop_theme/static/165.png" id="6_6065m"]
 [ext_resource type="Texture2D" uid="uid://cq5c3sfmoc85c" path="res://assets/themes/bazar_shop_theme/static/166.png" id="7_7org7"]
@@ -19,6 +21,43 @@
 [ext_resource type="Texture2D" uid="uid://rij4wpmd68df" path="res://assets/themes/bazar_shop_theme/static/170.png" id="11_78nbc"]
 [ext_resource type="Texture2D" uid="uid://dov0uufboykgn" path="res://assets/themes/bazar_shop_theme/static/171.png" id="12_aooyp"]
 [ext_resource type="Texture2D" uid="uid://bcfkmoe1degg3" path="res://assets/menus/bazar/door_PNG17591.png" id="19_7org7"]
+
+[sub_resource type="Resource" id="Resource_na3uy"]
+script = ExtResource("4_kajfg")
+color = Color(1, 0.9116667, 0.47000003, 0.70980394)
+blend = true
+width_left = 2
+width_top = 2
+width_right = 2
+width_bottom = 2
+metadata/_custom_type_script = "uid://cjmmhbp1b5312"
+
+[sub_resource type="StyleBox" id="StyleBox_78nbc"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 2.0
+content_margin_top = 3.0
+content_margin_right = 2.0
+content_margin_bottom = 0.0
+script = ExtResource("5_yyujj")
+color = Color(0.27, 0.27, 0.27, 1)
+borders = Array[ExtResource("4_kajfg")]([SubResource("Resource_na3uy")])
+texture = ExtResource("2_4txaj")
+texture_stretch_mode = 3
+texture_repeat = 2
+texture_scale = 2.068
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_curvature_top_left = -1.6050000000000004
+corner_curvature_top_right = -1.6050000000000004
+corner_curvature_bottom_right = -1.6050000000000004
+corner_curvature_bottom_left = -1.6050000000000004
+shadow_enabled = true
+shadow_blur = 8
+shadow_spread = Vector2(-7.435, -7.435)
+metadata/_custom_type_script = "uid://bkl6g25jwb47h"
 
 [sub_resource type="Animation" id="Animation_lfgm7"]
 length = 0.001
@@ -272,6 +311,22 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 15
 
+[node name="MoneyContainer" type="PanelContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1282215456]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBox_78nbc")
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/MoneyContainer" unique_id=2049614334]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/MoneyContainer/MarginContainer" unique_id=906373577]
+layout_mode = 2
+text = "100"
+horizontal_alignment = 2
+
 [node name="TextureRect" type="TextureRect" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer" unique_id=537004178]
 layout_mode = 2
 texture = ExtResource("4_6065m")
@@ -422,10 +477,10 @@ size_flags_horizontal = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer" unique_id=1634761736]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="PSContainer" type="VBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer/MarginContainer" unique_id=26407575]
 layout_mode = 2

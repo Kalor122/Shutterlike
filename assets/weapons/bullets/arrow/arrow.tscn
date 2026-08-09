@@ -14,7 +14,7 @@ data = ExtResource("2_h0dil")
 metadata/_custom_type_script = "uid://fm5l40dn2uxe"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1707677040]
-scale = Vector2(0.056497164, 0.05649717)
+scale = Vector2(0.06403013, 0.06403013)
 texture = ExtResource("3_mn84e")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=582306638]

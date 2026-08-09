@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://beyxvivytsusw"]
+
+[ext_resource type="Script" uid="uid://ddujpdbfm6dau" path="res://assets/weapons/bullets/firework_bullet/firework_bullet.gd" id="1_ndwl0"]
+[ext_resource type="Resource" uid="uid://doubg3j236075" path="res://assets/weapons/bullets/firework_bullet/firework_bullet_data.tres" id="2_126yf"]
+[ext_resource type="Texture2D" uid="uid://bb87ratykl408" path="res://assets/weapons/bullets/firework_bullet/firework_bullet1.png" id="3_7l6qr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf5fn"]
+radius = 6.0
+height = 54.0
+
+[node name="FireworkBullet" type="CharacterBody2D" unique_id=863998824]
+script = ExtResource("1_ndwl0")
+data = ExtResource("2_126yf")
+metadata/_custom_type_script = "uid://fm5l40dn2uxe"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1493743761]
+rotation = 1.565072
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_7l6qr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=565027233]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=354703548]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_yf5fn")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

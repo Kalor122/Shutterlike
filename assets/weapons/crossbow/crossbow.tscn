@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bwgdf4pn5siss"]
+
+[ext_resource type="Script" uid="uid://bwljthc3now8d" path="res://assets/weapons/crossbow/crossbow.gd" id="1_2x276"]
+[ext_resource type="Resource" uid="uid://ct4wfyu5j2xut" path="res://assets/weapons/crossbow/crossbow_data.tres" id="2_nx51t"]
+[ext_resource type="Texture2D" uid="uid://puxvgbpcnrvp" path="res://assets/weapons/crossbow/crossbow.png" id="4_ucms5"]
+
+[node name="Crossbow" type="Node2D" unique_id=1465972762]
+script = ExtResource("1_2x276")
+data = ExtResource("2_nx51t")
+metadata/_custom_type_script = "uid://cgugmfbarfajx"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1593604474]
+position = Vector2(-0.097020686, -0.9520123)
+rotation = -0.077595554
+scale = Vector2(0.076631315, 0.07663134)
+texture = ExtResource("4_ucms5")
+offset = Vector2(0, 38.57143)
+flip_h = true
+
+[node name="Exit" type="Marker2D" parent="." unique_id=998060308]
+position = Vector2(60.660255, -0.33974648)
+
+[node name="Exit2" type="Marker2D" parent="." unique_id=896688800]
+position = Vector2(60.660255, -0.33974648)
+rotation = -0.5235988
+
+[node name="Exit3" type="Marker2D" parent="." unique_id=886447435]
+position = Vector2(60.660255, -0.33974648)
+rotation = 0.5235988
+
+[node name="Timer" type="Timer" parent="." unique_id=1138641564]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

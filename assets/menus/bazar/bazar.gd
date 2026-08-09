@@ -17,8 +17,15 @@ const PLAYER_STAT_CONTAINER = preload("uid://q7bd6dgg8c8b")
 @onready var h_box_container: HBoxContainer = $HBoxContainer
 @onready var item_grid: GridContainer = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer2/ScrollContainer/MarginContainer/ItemGrid
 @onready var door_animation_player: AnimationPlayer = $HBoxContainer/DoorAnimationPlayer
+@onready var money: Label = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/MoneyContainer/MarginContainer/Label
 
 func _ready():
+	var price_add = log(Globals.zone * Globals.round) - 0.75
+	if price_add <= 0:
+		price_add = 0
+	Globals.global_weapon_price_mult += price_add
+	Globals.global_item_price_mult += price_add
+	
 	h_box_container.show()
 	GlobalSignals.thing_bought.connect(_thing_bought)
 	GlobalSignals.cant_afford.connect(_cant_afford)
@@ -53,6 +60,7 @@ func _choose_items():
 
 func _process(delta: float) -> void:
 	weapon_image.global_position = get_global_mouse_position()
+	money.text = str(Globals.format(Globals.rupies))
 
 func _thing_bought(what):
 	_create_item_grid()

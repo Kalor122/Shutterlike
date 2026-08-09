@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://8op4dvaff8kp"]
+
+[ext_resource type="Script" uid="uid://brsjv2im2q758" path="res://assets/weapons/firework_launcher/firework_launcher.gd" id="1_3s5i0"]
+[ext_resource type="Resource" uid="uid://bt3tqn5ukq6tm" path="res://assets/weapons/firework_launcher/firework_launcher_data.tres" id="2_3s5i0"]
+[ext_resource type="Texture2D" uid="uid://ckd0mkhs6x6ja" path="res://assets/weapons/firework_launcher/firework_launcher.png" id="2_pyd3g"]
+
+[node name="FireworkLauncher" type="Node2D" unique_id=627316776]
+script = ExtResource("1_3s5i0")
+data = ExtResource("2_3s5i0")
+metadata/_custom_type_script = "uid://cgugmfbarfajx"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1674670626]
+scale = Vector2(0.10897438, 0.10897434)
+texture = ExtResource("2_pyd3g")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1369771892]
+position = Vector2(105, -2)
+
+[node name="Timer" type="Timer" parent="." unique_id=1366933813]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
