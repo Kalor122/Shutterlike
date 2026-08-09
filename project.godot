@@ -56,7 +56,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/StyleboxFancy/plugin.cfg", "res://addons/ezcha_network/plugin.cfg", "res://addons/limbo_console/plugin.cfg", "res://addons/mod_loader/_export_plugin/plugin.cfg", "res://addons/quill-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/StyleboxFancy/plugin.cfg", "res://addons/ezcha_network/plugin.cfg", "res://addons/godot_gif/plugin.cfg", "res://addons/limbo_console/plugin.cfg", "res://addons/mod_loader/_export_plugin/plugin.cfg", "res://addons/quill-ide/plugin.cfg")
 
 [input]
 

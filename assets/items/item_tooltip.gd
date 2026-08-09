@@ -6,6 +6,8 @@ signal should_hide(visibility: bool)
 @onready var i_rarity: TextureRect = $MarginContainer/VBoxContainer/HBoxContainer/IRarity
 @onready var i_tags: Label = $MarginContainer/VBoxContainer/HBoxContainer2/ITags
 @onready var i_description: RichTextLabel = $MarginContainer/VBoxContainer/IDescription
+@onready var rainbow: Panel = $Rainbow
+@onready var godlike: GIFPlayer = $MarginContainer/VBoxContainer/HBoxContainer/GODLIKE
 
 const COMMON = preload("uid://b1vjvgdhqgb23")
 const EPIC = preload("uid://pobsvp0inmi4")
@@ -41,7 +43,20 @@ func _set_data():
 		match data.item_rarity:
 			Globals.Rarities.COMMON:
 				i_rarity.texture = COMMON
+				rainbow.hide()
+				godlike.hide()
+				i_rarity.show()
 			Globals.Rarities.RARE:
 				i_rarity.texture = RARE
+				rainbow.hide()
+				godlike.hide()
+				i_rarity.show()
 			Globals.Rarities.EPIC:
 				i_rarity.texture = EPIC
+				rainbow.hide()
+				godlike.hide()
+				i_rarity.show()
+			Globals.Rarities.GODLIKE:
+				rainbow.show()
+				godlike.show()
+				i_rarity.hide()

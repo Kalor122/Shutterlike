@@ -1,0 +1,16 @@
+[remap]
+
+importer="texture_gif"
+importer_version=2
+type="GIFTexture"
+uid="uid://cqdcr7ag30q8y"
+path="res://.godot/imported/godlike.gif-46b52d5d762a76e187f4c4fdcac19587.res"
+
+[deps]
+
+source_file="res://assets/menus/bazar/rarities/godlike.gif"
+dest_files=["res://.godot/imported/godlike.gif-46b52d5d762a76e187f4c4fdcac19587.res"]
+
+[params]
+
+storage/compress=true

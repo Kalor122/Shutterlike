@@ -1,11 +1,60 @@
 [gd_scene format=3 uid="uid://cxo33jspk8epc"]
 
 [ext_resource type="Script" uid="uid://pvc50vn4yfq4" path="res://assets/menus/bazar/bazar.gd" id="1_ulinv"]
+[ext_resource type="Texture2D" uid="uid://cqi3fw2t8hxca" path="res://assets/themes/bazar_shop_theme/wooden-planks-4.jpg" id="2_4txaj"]
 [ext_resource type="VideoStream" uid="uid://bpssptm36foa5" path="res://assets/menus/bazar/morshu/morshu_normal/morshu_normal1.ogv" id="2_34l6l"]
 [ext_resource type="PackedScene" uid="uid://cnnsmsto30nrb" path="res://assets/players/weapon_inventory.tscn" id="2_6685u"]
 [ext_resource type="Script" uid="uid://dmyujbuhnkas8" path="res://assets/classes/scene_loader_class.gd" id="2_ulinv"]
+[ext_resource type="Theme" uid="uid://dwl7finoljkpt" path="res://assets/themes/bazar_shop_theme.tres" id="2_wtkvo"]
 [ext_resource type="PackedScene" uid="uid://bnaco8rwm4sqm" path="res://assets/loading_scenes/loading_scene.tscn" id="3_34l6l"]
+[ext_resource type="Texture2D" uid="uid://dhx5k4qg0s3u1" path="res://assets/themes/bazar_shop_theme/2-23772_vintage-television-png-tv-aesthetic-transparent.png" id="5_hhkjh"]
+[ext_resource type="Texture2D" uid="uid://cyu8uw43t8yy3" path="res://assets/themes/bazar_shop_theme/static/164.png" id="5_hxebb"]
 [ext_resource type="Texture2D" uid="uid://dwao0t0bp0rba" path="res://assets/weapons/ak47/ak47_portrait.png" id="6_8hso1"]
+[ext_resource type="Texture2D" uid="uid://cgka70yufipkn" path="res://assets/themes/bazar_shop_theme/static/165.png" id="6_6065m"]
+[ext_resource type="Texture2D" uid="uid://cq5c3sfmoc85c" path="res://assets/themes/bazar_shop_theme/static/166.png" id="7_7org7"]
+[ext_resource type="Texture2D" uid="uid://c41n6pm45vo84" path="res://assets/themes/bazar_shop_theme/static/167.png" id="8_f3la5"]
+[ext_resource type="Texture2D" uid="uid://c4dgfx8b04bkg" path="res://assets/themes/bazar_shop_theme/static/168.png" id="9_kajfg"]
+[ext_resource type="Texture2D" uid="uid://dxpcfn8sk0nkh" path="res://assets/themes/bazar_shop_theme/static/169.png" id="10_yyujj"]
+[ext_resource type="Texture2D" uid="uid://rij4wpmd68df" path="res://assets/themes/bazar_shop_theme/static/170.png" id="11_78nbc"]
+[ext_resource type="Texture2D" uid="uid://dov0uufboykgn" path="res://assets/themes/bazar_shop_theme/static/171.png" id="12_aooyp"]
+
+[sub_resource type="Animation" id="Animation_lfgm7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_hxebb")]
+}
+
+[sub_resource type="Animation" id="Animation_hb80w"]
+resource_name = "new_animation"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_hxebb"), ExtResource("6_6065m"), ExtResource("7_7org7"), ExtResource("8_f3la5"), ExtResource("9_kajfg"), ExtResource("10_yyujj"), ExtResource("11_78nbc"), ExtResource("12_aooyp")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c75qq"]
+_data = {
+&"RESET": SubResource("Animation_lfgm7"),
+&"new_animation": SubResource("Animation_hb80w")
+}
 
 [node name="Bazar" type="Control" unique_id=1625850591]
 layout_mode = 3
@@ -15,6 +64,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ulinv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1630697842]
+modulate = Color(0.04, 0.04, 0.04, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4txaj")
+expand_mode = 1
 
 [node name="TabContainer" type="TabContainer" parent="." unique_id=852233891]
 layout_mode = 1
@@ -28,7 +88,16 @@ current_tab = 0
 
 [node name="Shop" type="Control" parent="TabContainer" unique_id=1835929956]
 layout_mode = 2
+theme = ExtResource("2_wtkvo")
 metadata/_tab_index = 0
+
+[node name="Panel" type="Panel" parent="TabContainer/Shop" unique_id=413613104]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Shop" unique_id=1270777814]
 layout_mode = 1
@@ -44,10 +113,12 @@ theme_override_constants/margin_bottom = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Shop/MarginContainer" unique_id=728292668]
 layout_mode = 2
+theme_override_constants/separation = 15
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer" unique_id=674107349]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 15
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer" unique_id=470540513]
 layout_mode = 2
@@ -84,6 +155,7 @@ theme_override_constants/margin_bottom = 10
 [node name="WSCBox" type="HBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=901001074]
 layout_mode = 2
 mouse_filter = 2
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1898247192]
@@ -118,11 +190,13 @@ theme_override_constants/margin_bottom = 10
 
 [node name="ISCBox" type="HBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/PanelContainer2/MarginContainer" unique_id=1468074962]
 layout_mode = 2
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer" unique_id=977027950]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 15
 
 [node name="PanelContainer" type="PanelContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=631281001]
 layout_mode = 2
@@ -138,9 +212,27 @@ theme_override_constants/margin_bottom = 15
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/MarginContainer" unique_id=944220737]
 layout_mode = 2
 size_flags_vertical = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(-75, 0)
+offset_transform_scale = Vector2(0.8, 0.8)
 stream = ExtResource("2_34l6l")
 autoplay = true
 expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer" unique_id=1354045888]
+modulate = Color(1, 1, 1, 0.078431375)
+layout_mode = 2
+texture = ExtResource("5_hxebb")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer/TextureRect2" unique_id=1712609585]
+libraries/ = SubResource("AnimationLibrary_c75qq")
+autoplay = &"new_animation"
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/PanelContainer" unique_id=1740895552]
+layout_mode = 2
+texture = ExtResource("5_hhkjh")
+expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=626513303]
 layout_mode = 2

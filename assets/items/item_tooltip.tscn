@@ -3,12 +3,34 @@
 [ext_resource type="Theme" uid="uid://ct5uvugrf1rtx" path="res://assets/themes/tooltip_theme.tres" id="1_e5lad"]
 [ext_resource type="Script" uid="uid://ce1kyoc8wauxi" path="res://assets/items/item_tooltip.gd" id="3_qxjvm"]
 [ext_resource type="Texture2D" uid="uid://b1vjvgdhqgb23" path="res://assets/menus/bazar/rarities/common.png" id="4_isjkx"]
+[ext_resource type="Shader" uid="uid://ci0hnpamj87ye" path="res://assets/shaders/rainbow_corner.gdshader" id="4_qxjvm"]
+[ext_resource type="Texture2D" uid="uid://cqdcr7ag30q8y" path="res://assets/menus/bazar/rarities/godlike.gif" id="4_s8efb"]
+[ext_resource type="Shader" uid="uid://248k74bv46yk" path="res://assets/shaders/rainbow.gdshader" id="5_of3xv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
 font_size = 20
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bip57"]
+shader = ExtResource("5_of3xv")
+shader_parameter/strength = 0.4070000193325
+shader_parameter/speed = 1.0750000510625
+shader_parameter/angle = 8.2750003930625
+
 [sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
 font_size = 14
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4aocr"]
+shader = ExtResource("4_qxjvm")
+shader_parameter/border_px = 2.0
+shader_parameter/speed = 0.9
+shader_parameter/glow_intensity = 2.0
+shader_parameter/node_size = Vector2(206.365, 84.32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8efb"]
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="ItemTooltip" type="PanelContainer" unique_id=1138871158]
 self_modulate = Color(1, 1, 1, 0.7647059)
@@ -57,6 +79,17 @@ layout_mode = 2
 texture = ExtResource("4_isjkx")
 expand_mode = 3
 
+[node name="GODLIKE" type="GIFPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2064832022]
+gif = ExtResource("4_s8efb")
+expand_mode = 1
+stretch_mode = 0
+visible = false
+material = SubResource("ShaderMaterial_bip57")
+custom_minimum_size = Vector2(200, 40)
+custom_maximum_size = Vector2(200, 40)
+layout_mode = 2
+mouse_filter = 2
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1311756449]
 propagate_maximum_size = false
 layout_mode = 2
@@ -77,3 +110,9 @@ mouse_filter = 2
 bbcode_enabled = true
 text = "grfddffhdd"
 fit_content = true
+
+[node name="Rainbow" type="Panel" parent="." unique_id=992632801]
+material = SubResource("ShaderMaterial_4aocr")
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s8efb")
