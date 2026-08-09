@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bukwr2yihji86"]
+
+[ext_resource type="Script" uid="uid://c0ege22loaddf" path="res://assets/classes/weapon_data_class.gd" id="1_uxklp"]
+[ext_resource type="Texture2D" uid="uid://8hoo53eocn5k" path="res://assets/weapons/double_barrel_shotgun/double_barrel_shotgun_portrait.png" id="2_10pve"]
+
+[resource]
+script = ExtResource("1_uxklp")
+weapon_id = 5
+weapon_name = "Double-Barrel Shotgun"
+weapon_portrait = ExtResource("2_10pve")
+weapon_rarity = 45
+price = 80.0
+damage = 3.0
+fire_rate = 1.0
+scene_path = "res://assets/weapons/double_barrel_shotgun/double_barrel_shotgun.tscn"
+metadata/_custom_type_script = "uid://c0ege22loaddf"

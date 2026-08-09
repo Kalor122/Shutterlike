@@ -11,6 +11,8 @@ extends PanelContainer
 
 var is_grab = false
 
+var empty_color = Color(1.0, 1.0, 1.0, 0.392)
+
 func _ready() -> void:
 	GlobalSignals.wi_weapon_grabbed.connect(_wi_weapon_grabbed)
 	GlobalSignals.wi_weapon_dropped.connect(_wi_weapon_dropped)
@@ -21,72 +23,200 @@ func _process(delta: float) -> void:
 		if not is_grab:
 			if wi_container.w_tooltip == null:
 				wi_container._create_tooltip()
+		match Globals.bought_weapons[0].weapon_rarity:
+			Globals.Rarities.COMMON:
+				wi_container.self_modulate = Color(0.25, 0.34, 0.218, 1.0)
+				wi_container.material = null
+			Globals.Rarities.RARE:
+				wi_container.self_modulate = Color(0.267, 0.218, 0.34, 1.0)
+				wi_container.material = null
+			Globals.Rarities.EPIC:
+				wi_container.self_modulate = Color(0.34, 0.218, 0.218, 1.0)
+				wi_container.material = null
+			Globals.Rarities.GODLIKE:
+				wi_container.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+				wi_container.material = ShaderMaterial.new()
+				wi_container.material.shader = load("uid://248k74bv46yk")
 	else:
 		wi_container.data = null
+		wi_container.material = null
 		wi_container._delete_tooltip()
+		wi_container.self_modulate = empty_color
 	
 	if Globals.bought_weapons[1] != null:
 		wi_container_2.data = Globals.bought_weapons[1]
 		if not is_grab:
 			if wi_container_2.w_tooltip == null:
 				wi_container_2._create_tooltip()
+		match Globals.bought_weapons[1].weapon_rarity:
+			Globals.Rarities.COMMON:
+				wi_container_2.self_modulate = Color(0.25, 0.34, 0.218, 1.0)
+				wi_container_2.material = null
+			Globals.Rarities.RARE:
+				wi_container_2.self_modulate = Color(0.267, 0.218, 0.34, 1.0)
+				wi_container_2.material = null
+			Globals.Rarities.EPIC:
+				wi_container_2.self_modulate = Color(0.34, 0.218, 0.218, 1.0)
+				wi_container_2.material = null
+			Globals.Rarities.GODLIKE:
+				wi_container_2.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+				wi_container_2.material = ShaderMaterial.new()
+				wi_container_2.material.shader = load("uid://248k74bv46yk")
 	else:
 		wi_container_2.data = null
+		wi_container_2.material = null
 		wi_container_2._delete_tooltip()
+		wi_container_2.self_modulate = empty_color
 	
 	if Globals.bought_weapons[2] != null:
 		wi_container_3.data = Globals.bought_weapons[2]
 		if not is_grab:
 			if wi_container_3.w_tooltip == null:
 				wi_container_3._create_tooltip()
+		match Globals.bought_weapons[2].weapon_rarity:
+			Globals.Rarities.COMMON:
+				wi_container_3.self_modulate = Color(0.25, 0.34, 0.218, 1.0)
+				wi_container_3.material = null
+			Globals.Rarities.RARE:
+				wi_container_3.self_modulate = Color(0.267, 0.218, 0.34, 1.0)
+				wi_container_3.material = null
+			Globals.Rarities.EPIC:
+				wi_container_3.self_modulate = Color(0.34, 0.218, 0.218, 1.0)
+				wi_container_3.material = null
+			Globals.Rarities.GODLIKE:
+				wi_container_3.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+				wi_container_3.material = ShaderMaterial.new()
+				wi_container_3.material.shader = load("uid://248k74bv46yk")
 	else:
 		wi_container_3.data = null
+		wi_container_3.material = null
 		wi_container_3._delete_tooltip()
+		wi_container_3.self_modulate = empty_color
 	
 	if Globals.bought_weapons[3] != null:
 		wi_container_4.data = Globals.bought_weapons[3]
 		if not is_grab:
 			if wi_container_4.w_tooltip == null:
 				wi_container_4._create_tooltip()
+		match Globals.bought_weapons[3].weapon_rarity:
+			Globals.Rarities.COMMON:
+				wi_container_4.self_modulate = Color(0.25, 0.34, 0.218, 1.0)
+				wi_container_4.material = null
+			Globals.Rarities.RARE:
+				wi_container_4.self_modulate = Color(0.267, 0.218, 0.34, 1.0)
+				wi_container_4.material = null
+			Globals.Rarities.EPIC:
+				wi_container_4.self_modulate = Color(0.34, 0.218, 0.218, 1.0)
+				wi_container_4.material = null
+			Globals.Rarities.GODLIKE:
+				wi_container_4.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+				wi_container_4.material = ShaderMaterial.new()
+				wi_container_4.material.shader = load("uid://248k74bv46yk")
 	else:
 		wi_container_4.data = null
+		wi_container_4.material = null
 		wi_container_4._delete_tooltip()
+		wi_container_4.self_modulate = empty_color
 	
 	if Globals.bought_weapons[4] != null:
 		wi_container_5.data = Globals.bought_weapons[4]
 		if not is_grab:
 			if wi_container_5.w_tooltip == null:
 				wi_container_5._create_tooltip()
+		match Globals.bought_weapons[4].weapon_rarity:
+			Globals.Rarities.COMMON:
+				wi_container_5.self_modulate = Color(0.25, 0.34, 0.218, 1.0)
+				wi_container_5.material = null
+			Globals.Rarities.RARE:
+				wi_container_5.self_modulate = Color(0.267, 0.218, 0.34, 1.0)
+				wi_container_5.material = null
+			Globals.Rarities.EPIC:
+				wi_container_5.self_modulate = Color(0.34, 0.218, 0.218, 1.0)
+				wi_container_5.material = null
+			Globals.Rarities.GODLIKE:
+				wi_container_5.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+				wi_container_5.material = ShaderMaterial.new()
+				wi_container_5.material.shader = load("uid://248k74bv46yk")
 	else:
 		wi_container_5.data = null
+		wi_container_5.material = null
 		wi_container_5._delete_tooltip()
+		wi_container_5.self_modulate = empty_color
 	
 	if Globals.bought_weapons[5] != null:
 		wi_container_6.data = Globals.bought_weapons[5]
 		if not is_grab:
 			if wi_container_6.w_tooltip == null:
 				wi_container_6._create_tooltip()
+		match Globals.bought_weapons[5].weapon_rarity:
+			Globals.Rarities.COMMON:
+				wi_container_6.self_modulate = Color(0.25, 0.34, 0.218, 1.0)
+				wi_container_6.material = null
+			Globals.Rarities.RARE:
+				wi_container_6.self_modulate = Color(0.267, 0.218, 0.34, 1.0)
+				wi_container_6.material = null
+			Globals.Rarities.EPIC:
+				wi_container_6.self_modulate = Color(0.34, 0.218, 0.218, 1.0)
+				wi_container_6.material = null
+			Globals.Rarities.GODLIKE:
+				wi_container_6.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+				wi_container_6.material = ShaderMaterial.new()
+				wi_container_6.material.shader = load("uid://248k74bv46yk")
 	else:
 		wi_container_6.data = null
+		wi_container_6.material = null
 		wi_container_6._delete_tooltip()
+		wi_container_6.self_modulate = empty_color
 	
 	if Globals.bought_weapons[6] != null:
 		wi_container_7.data = Globals.bought_weapons[6]
 		if not is_grab:
 			if wi_container_7.w_tooltip == null:
 				wi_container_7._create_tooltip()
+		match Globals.bought_weapons[6].weapon_rarity:
+			Globals.Rarities.COMMON:
+				wi_container_7.self_modulate = Color(0.25, 0.34, 0.218, 1.0)
+				wi_container_7.material = null
+			Globals.Rarities.RARE:
+				wi_container_7.self_modulate = Color(0.267, 0.218, 0.34, 1.0)
+				wi_container_7.material = null
+			Globals.Rarities.EPIC:
+				wi_container_7.self_modulate = Color(0.34, 0.218, 0.218, 1.0)
+				wi_container_7.material = null
+			Globals.Rarities.GODLIKE:
+				wi_container_7.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+				wi_container_7.material = ShaderMaterial.new()
+				wi_container_7.material.shader = load("uid://248k74bv46yk")
 	else:
 		wi_container_7.data = null
+		wi_container_7.material = null
 		wi_container_7._delete_tooltip()
+		wi_container_7.self_modulate = empty_color
 	
 	if Globals.bought_weapons[7] != null:
 		wi_container_8.data = Globals.bought_weapons[7]
 		if not is_grab:
 			if wi_container_8.w_tooltip == null:
 				wi_container_8._create_tooltip()
+		match Globals.bought_weapons[7].weapon_rarity:
+			Globals.Rarities.COMMON:
+				wi_container_8.self_modulate = Color(0.25, 0.34, 0.218, 1.0)
+				wi_container_8.material = null
+			Globals.Rarities.RARE:
+				wi_container_8.self_modulate = Color(0.267, 0.218, 0.34, 1.0)
+				wi_container_8.material = null
+			Globals.Rarities.EPIC:
+				wi_container_8.self_modulate = Color(0.34, 0.218, 0.218, 1.0)
+				wi_container_8.material = null
+			Globals.Rarities.GODLIKE:
+				wi_container_8.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+				wi_container_8.material = ShaderMaterial.new()
+				wi_container_8.material.shader = load("uid://248k74bv46yk")
 	else:
 		wi_container_8.data = null
+		wi_container_8.material = null
 		wi_container_8._delete_tooltip()
+		wi_container_8.self_modulate = empty_color
 
 func _wi_weapon_grabbed(what: WeaponData):
 	is_grab = true

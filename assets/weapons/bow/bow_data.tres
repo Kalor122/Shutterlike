@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://cu7h3xrtf3540"]
+
+[ext_resource type="Script" uid="uid://c0ege22loaddf" path="res://assets/classes/weapon_data_class.gd" id="1_3xk66"]
+[ext_resource type="Texture2D" uid="uid://blm2qiihe87s" path="res://assets/weapons/bow/bow_portrait.png" id="2_r2kxq"]
+
+[resource]
+script = ExtResource("1_3xk66")
+weapon_id = 4
+weapon_name = "Bow"
+weapon_portrait = ExtResource("2_r2kxq")
+weapon_rarity = 100
+price = 50.0
+damage = 3.0
+fire_rate = 1.0
+scene_path = "res://assets/weapons/bow/bow.tscn"
+metadata/_custom_type_script = "uid://c0ege22loaddf"

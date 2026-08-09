@@ -4,10 +4,12 @@
 [ext_resource type="Script" uid="uid://cjmmhbp1b5312" path="res://addons/StyleboxFancy/StyleBorder.gd" id="1_vl8ek"]
 [ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleboxFancy/StyleBoxFancy.gd" id="2_y7qcr"]
 [ext_resource type="Texture2D" uid="uid://b1vjvgdhqgb23" path="res://assets/menus/bazar/rarities/common.png" id="3_bb0dk"]
+[ext_resource type="Texture2D" uid="uid://cqdcr7ag30q8y" path="res://assets/menus/bazar/rarities/godlike.gif" id="5_8wi3x"]
+[ext_resource type="Shader" uid="uid://ci0hnpamj87ye" path="res://assets/shaders/rainbow_corner.gdshader" id="5_vl8ek"]
+[ext_resource type="Shader" uid="uid://248k74bv46yk" path="res://assets/shaders/rainbow.gdshader" id="6_c21vm"]
 
 [sub_resource type="Resource" id="Resource_57qmd"]
 script = ExtResource("1_vl8ek")
-blend = true
 width_left = 2
 width_top = 2
 width_right = 2
@@ -37,8 +39,27 @@ PanelContainer/styles/panel = SubResource("StyleBox_yf5fn")
 [sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
 font_size = 20
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_udlye"]
+shader = ExtResource("6_c21vm")
+shader_parameter/strength = 0.4070000193325
+shader_parameter/speed = 1.0750000510625
+shader_parameter/angle = 8.2750003930625
+
 [sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
 font_size = 14
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d0u6y"]
+shader = ExtResource("5_vl8ek")
+shader_parameter/border_px = 2.0
+shader_parameter/speed = 4.0
+shader_parameter/glow_intensity = 1.0
+shader_parameter/node_size = Vector2(206.365, 84.32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gngh"]
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="WeaponTooltip" type="PanelContainer" unique_id=1138871158]
 self_modulate = Color(1, 1, 1, 0.7647059)
@@ -80,6 +101,17 @@ custom_maximum_size = Vector2(145.725, 34)
 layout_mode = 2
 texture = ExtResource("3_bb0dk")
 expand_mode = 3
+
+[node name="GODLIKE" type="GIFPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=403988073]
+gif = ExtResource("5_8wi3x")
+expand_mode = 1
+stretch_mode = 0
+visible = false
+material = SubResource("ShaderMaterial_udlye")
+custom_minimum_size = Vector2(200, 40)
+custom_maximum_size = Vector2(200, 40)
+layout_mode = 2
+mouse_filter = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1311756449]
 layout_mode = 2
@@ -147,3 +179,10 @@ mouse_filter = 2
 bbcode_enabled = true
 text = "This is a description."
 fit_content = true
+
+[node name="Rainbow" type="Panel" parent="." unique_id=1522280651]
+visible = false
+material = SubResource("ShaderMaterial_d0u6y")
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3gngh")

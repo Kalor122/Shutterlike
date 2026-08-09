@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://f788xtfb06c0"]
+
+[ext_resource type="Script" uid="uid://cjmmhbp1b5312" path="res://addons/StyleboxFancy/StyleBorder.gd" id="1_g5uek"]
+[ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleboxFancy/StyleBoxFancy.gd" id="2_2gs32"]
+[ext_resource type="Texture2D" uid="uid://ciagt5g0i4ar7" path="res://assets/themes/bazar_shop_theme/Wrinkle-Paper-Textures-2-Deeezy-4.jpeg" id="3_sujbv"]
+[ext_resource type="Script" uid="uid://dmt0gni1bxuu5" path="res://assets/menus/bazar/item_grid_container.gd" id="4_2gs32"]
+[ext_resource type="Texture2D" uid="uid://ddb27j1mbett2" path="res://assets/weapons/pistol/pistol_portrait.png" id="4_ey63b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w1cl3"]
+
+[sub_resource type="StyleBox" id="StyleBox_yb31m"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("2_2gs32")
+texture = ExtResource("3_sujbv")
+texture_stretch_mode = 3
+texture_repeat = 2
+texture_scale = 2.455
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_enabled = true
+shadow_blur = 8
+shadow_spread = Vector2(-7.435, -7.435)
+metadata/_custom_type_script = "uid://bkl6g25jwb47h"
+
+[node name="ItemGridContainer" type="PanelContainer" unique_id=2022441885]
+material = SubResource("ShaderMaterial_w1cl3")
+custom_minimum_size = Vector2(70, 70)
+custom_maximum_size = Vector2(70, 70)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_yb31m")
+script = ExtResource("4_2gs32")
+
+[node name="ItemPortrait" type="TextureRect" parent="." unique_id=993628353]
+custom_minimum_size = Vector2(70, 0)
+custom_maximum_size = Vector2(70, -1)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("4_ey63b")
+expand_mode = 5
+
+[connection signal="mouse_entered" from="ItemPortrait" to="." method="_on_item_portrait_mouse_entered"]
+[connection signal="mouse_exited" from="ItemPortrait" to="." method="_on_item_portrait_mouse_exited"]

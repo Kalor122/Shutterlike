@@ -21,6 +21,8 @@ func _finish():
 		if i is EnemyEntity:
 			i.queue_free()
 	await get_tree().create_timer(1).timeout
+	stage_ui.animation_player.play("closing")
+	await stage_ui.animation_player.animation_finished
 	scene_loader.load_scene("res://assets/menus/bazar/bazar.tscn")
 	
 

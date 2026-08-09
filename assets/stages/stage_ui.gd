@@ -5,6 +5,7 @@ var stage: Stage
 @onready var time: Label = $Control/Time
 @onready var round_zone: Label = $Control/RoundZone
 @onready var cash: Label = $Control/Cash
+@onready var animation_player: AnimationPlayer = $HBoxContainer/AnimationPlayer
 
 func _ready() -> void:
 	stage = get_parent()

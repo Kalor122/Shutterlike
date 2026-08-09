@@ -7,6 +7,8 @@ signal should_hide(visibility: bool)
 @onready var w_tags: Label = $MarginContainer/VBoxContainer/HBoxContainer2/WTags
 @onready var bd_label: Label = $MarginContainer/VBoxContainer/BaseDamage/MarginContainer/HBoxContainer/Label2
 @onready var fr_label: Label = $MarginContainer/VBoxContainer/FireRate/MarginContainer/HBoxContainer/Label2
+@onready var rainbow: Panel = $Rainbow
+@onready var godlike: GIFPlayer = $MarginContainer/VBoxContainer/HBoxContainer/GODLIKE
 
 const COMMON = preload("uid://b1vjvgdhqgb23")
 const EPIC = preload("uid://pobsvp0inmi4")
@@ -38,10 +40,23 @@ func _process(delta: float) -> void:
 		match data.weapon_rarity:
 			Globals.Rarities.COMMON:
 				w_rarity.texture = COMMON
+				rainbow.hide()
+				godlike.hide()
+				w_rarity.show()
 			Globals.Rarities.RARE:
 				w_rarity.texture = RARE
+				rainbow.hide()
+				godlike.hide()
+				w_rarity.show()
 			Globals.Rarities.EPIC:
 				w_rarity.texture = EPIC
+				rainbow.hide()
+				godlike.hide()
+				w_rarity.show()
+			Globals.Rarities.GODLIKE:
+				rainbow.show()
+				godlike.show()
+				w_rarity.hide()
 		if get_tree().current_scene is Stage:
 			bd_label.text = Globals.format(get_tree().current_scene.player.held_weapons[slot].damage)
 			fr_label.text = str(get_tree().current_scene.player.held_weapons[slot].fire_rate) + "s"

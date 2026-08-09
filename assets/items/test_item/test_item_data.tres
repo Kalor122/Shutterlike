@@ -7,7 +7,7 @@
 script = ExtResource("2_ikjxs")
 item_name = "Test Item"
 item_portrait = ExtResource("1_r14vr")
-item_rarity = 100
+item_rarity = 1
 item_description = "[color=yellow]> Passive[/color]
 +x0.256 Damage Multiplier
 -5 Attack Speed"

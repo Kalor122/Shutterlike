@@ -1,7 +1,37 @@
 [gd_scene format=3 uid="uid://dojps7rk6v4sj"]
 
 [ext_resource type="Script" uid="uid://msixf4wxnirh" path="res://assets/menus/bazar/item_shop_container.gd" id="1_nx6kl"]
+[ext_resource type="Script" uid="uid://cjmmhbp1b5312" path="res://addons/StyleboxFancy/StyleBorder.gd" id="2_4d6c0"]
 [ext_resource type="Texture2D" uid="uid://ddb27j1mbett2" path="res://assets/weapons/pistol/pistol_portrait.png" id="2_r2h5y"]
+[ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleboxFancy/StyleBoxFancy.gd" id="3_aw0sg"]
+[ext_resource type="Texture2D" uid="uid://ciagt5g0i4ar7" path="res://assets/themes/bazar_shop_theme/Wrinkle-Paper-Textures-2-Deeezy-4.jpeg" id="4_5bchr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4d6c0"]
+
+[sub_resource type="StyleBox" id="StyleBox_8xeqf"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("3_aw0sg")
+texture = ExtResource("4_5bchr")
+texture_stretch_mode = 3
+texture_repeat = 2
+texture_scale = 2.455
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_curvature_top_left = -1.1950000000000003
+corner_curvature_top_right = -1.1950000000000003
+corner_curvature_bottom_right = -1.1950000000000003
+corner_curvature_bottom_left = -1.1950000000000003
+shadow_enabled = true
+shadow_blur = 8
+shadow_spread = Vector2(-7.435, -7.435)
+metadata/_custom_type_script = "uid://bkl6g25jwb47h"
 
 [node name="ItemShopContainer" type="PanelContainer" unique_id=1804938132]
 script = ExtResource("1_nx6kl")
@@ -18,9 +48,15 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 mouse_filter = 2
 
-[node name="ItemPortrait" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1585247712]
-custom_minimum_size = Vector2(120, 0)
-custom_maximum_size = Vector2(120, -1)
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1386674430]
+material = SubResource("ShaderMaterial_4d6c0")
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_8xeqf")
+
+[node name="ItemPortrait" type="TextureRect" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1585247712]
+custom_minimum_size = Vector2(140, 0)
+custom_maximum_size = Vector2(140, -1)
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_r2h5y")

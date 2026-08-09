@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://c01spn1mlse78"]
+
+[ext_resource type="Script" uid="uid://c0ege22loaddf" path="res://assets/classes/weapon_data_class.gd" id="1_vepif"]
+[ext_resource type="Texture2D" uid="uid://or6ys1560u8o" path="res://assets/weapons/minigun/minigun_portrait.png" id="2_7qwyq"]
+
+[resource]
+script = ExtResource("1_vepif")
+weapon_id = 8
+weapon_name = "Minigun"
+weapon_portrait = ExtResource("2_7qwyq")
+weapon_rarity = 15
+price = 145.0
+damage = 1.0
+fire_rate = 0.05
+scene_path = "res://assets/weapons/minigun/minigun.tscn"
+metadata/_custom_type_script = "uid://c0ege22loaddf"

@@ -5,6 +5,11 @@ var weapon_list = [
 	load("uid://cttxjglx1h1v1"),
 	load("uid://c01uhpbha1s5f"),
 	load("uid://bsbfvb8gebf10"),
+	load("uid://cu7h3xrtf3540"),
+	load("uid://bukwr2yihji86"),
+	load("uid://ct4wfyu5j2xut"),
+	load("uid://bt3tqn5ukq6tm"),
+	load("uid://c01spn1mlse78"),
 ]
 
 func get_weapon_by_id(id: int):

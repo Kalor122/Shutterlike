@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bt3tqn5ukq6tm"]
+
+[ext_resource type="Script" uid="uid://c0ege22loaddf" path="res://assets/classes/weapon_data_class.gd" id="1_axrpq"]
+[ext_resource type="Texture2D" uid="uid://l8bjuy0hh0pk" path="res://assets/weapons/firework_launcher/firework_launcher_portrait.png" id="2_wdpgh"]
+
+[resource]
+script = ExtResource("1_axrpq")
+weapon_id = 7
+weapon_name = "Firework Launcher"
+weapon_portrait = ExtResource("2_wdpgh")
+weapon_rarity = 15
+price = 145.0
+damage = 5.0
+fire_rate = 1.5
+scene_path = "res://assets/weapons/firework_launcher/firework_launcher.tscn"
+metadata/_custom_type_script = "uid://c0ege22loaddf"

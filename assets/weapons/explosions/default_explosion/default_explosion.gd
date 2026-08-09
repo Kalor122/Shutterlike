@@ -21,8 +21,5 @@ func explode(target_size, target_damage):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is EnemyEntity:
-		if not body.health.is_less_than_or_equal_to(damage):
-			body.health.minus_equals(damage)
-		else:
-			body.health.minus_equals(body.health)
+		body.take_damage(body.health, damage, entity_effects)
 		GlobalSignals.enemy_hit.emit(body, self, damage)

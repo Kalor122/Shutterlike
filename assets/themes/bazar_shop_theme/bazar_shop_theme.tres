@@ -1,0 +1,150 @@
+[gd_resource type="Theme" format=3 uid="uid://pm11u1c8tqw4"]
+
+[ext_resource type="Texture2D" uid="uid://cqi3fw2t8hxca" path="res://assets/themes/bazar_shop_theme/wooden-planks-4.jpg" id="1_fu7p0"]
+[ext_resource type="FontFile" uid="uid://v7yi4ptx6on4" path="res://assets/themes/fonts/MyUnderwood.ttf" id="1_yfye7"]
+[ext_resource type="Script" uid="uid://cjmmhbp1b5312" path="res://addons/StyleboxFancy/StyleBorder.gd" id="2_kkdna"]
+[ext_resource type="Texture2D" uid="uid://4kx55cncg7e8" path="res://assets/themes/bazar_shop_theme/Plastic 01.jpg" id="3_kkdna"]
+[ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleboxFancy/StyleBoxFancy.gd" id="3_yfye7"]
+[ext_resource type="FontFile" uid="uid://bmpi7resu5lea" path="res://assets/themes/fonts/SpecialElite.ttf" id="5_ff6or"]
+[ext_resource type="Texture2D" uid="uid://l7oxmfykwlxw" path="res://assets/themes/bazar_shop_theme/wooden-planks-4_2.png" id="6_eemui"]
+
+[sub_resource type="Resource" id="Resource_kkdna"]
+script = ExtResource("2_kkdna")
+blend = true
+width_left = 1
+width_top = 1
+width_right = 1
+width_bottom = 1
+metadata/_custom_type_script = "uid://cjmmhbp1b5312"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yfye7"]
+load_path = "res://.godot/imported/Plastic 01.jpg-6a0134501ef8be7a4ca342ec4da7e62a.ctex"
+
+[sub_resource type="StyleBox" id="StyleBox_8m7s8"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+script = ExtResource("3_yfye7")
+color = Color(1.2742168, 1.2742168, 1.2742168, 1)
+borders = Array[ExtResource("2_kkdna")]([SubResource("Resource_kkdna")])
+texture = SubResource("CompressedTexture2D_yfye7")
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_enabled = true
+shadow_blur = 10
+shadow_spread = Vector2(2.265, 2.265)
+metadata/_custom_type_script = "uid://bkl6g25jwb47h"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_58feb"]
+load_path = "res://.godot/imported/Plastic 01.jpg-6a0134501ef8be7a4ca342ec4da7e62a.ctex"
+
+[sub_resource type="StyleBox" id="StyleBox_ca501"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+script = ExtResource("3_yfye7")
+color = Color(0.5308632, 0.5308632, 0.5308632, 1)
+texture = SubResource("CompressedTexture2D_58feb")
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_enabled = true
+shadow_blur = 5
+shadow_spread = Vector2(0.25, 0.25)
+metadata/_custom_type_script = "uid://bkl6g25jwb47h"
+
+[sub_resource type="Resource" id="Resource_r2bes"]
+script = ExtResource("2_kkdna")
+blend = true
+width_left = 1
+width_top = 1
+width_right = 1
+width_bottom = 1
+metadata/_custom_type_script = "uid://cjmmhbp1b5312"
+
+[sub_resource type="StyleBox" id="StyleBox_hhkjh"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+script = ExtResource("3_yfye7")
+borders = Array[ExtResource("2_kkdna")]([SubResource("Resource_r2bes")])
+texture = ExtResource("3_kkdna")
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_enabled = true
+shadow_blur = 10
+shadow_spread = Vector2(2.265, 2.265)
+metadata/_custom_type_script = "uid://bkl6g25jwb47h"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ax4bq"]
+load_path = "res://.godot/imported/Plastic 01.jpg-6a0134501ef8be7a4ca342ec4da7e62a.ctex"
+
+[sub_resource type="StyleBox" id="StyleBox_8rgoa"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+script = ExtResource("3_yfye7")
+color = Color(0.41, 0.41, 0.41, 1)
+texture = SubResource("CompressedTexture2D_ax4bq")
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_enabled = true
+shadow_blur = 5
+shadow_spread = Vector2(0.25, 0.25)
+metadata/_custom_type_script = "uid://bkl6g25jwb47h"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4v7s"]
+texture = ExtResource("1_fu7p0")
+
+[sub_resource type="StyleBox" id="StyleBox_yf5fn"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("3_yfye7")
+texture = ExtResource("6_eemui")
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.39215687)
+shadow_blur = 13
+shadow_spread = Vector2(4.575, 4.575)
+metadata/_custom_type_script = "uid://bkl6g25jwb47h"
+
+[resource]
+Button/constants/outline_size = 5
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_yfye7")
+Button/styles/hover = SubResource("StyleBox_8m7s8")
+Button/styles/hover_pressed = SubResource("StyleBox_ca501")
+Button/styles/normal = SubResource("StyleBox_hhkjh")
+Button/styles/pressed = SubResource("StyleBox_8rgoa")
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 7
+Label/font_sizes/font_size = 22
+Label/fonts/font = ExtResource("5_ff6or")
+Panel/styles/panel = SubResource("StyleBoxTexture_g4v7s")
+PanelContainer/styles/panel = SubResource("StyleBox_yf5fn")
