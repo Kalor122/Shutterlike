@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cf3l7uu60m70b"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_rd8wh"]
+[ext_resource type="Resource" uid="uid://1s0j1kxx85bt" path="res://assets/items/protein_bar/protein_bar_data.tres" id="2_o40fe"]
+
+[node name="ProteinBar" type="Node" unique_id=110180532]
+script = ExtResource("1_rd8wh")
+data = ExtResource("2_o40fe")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_mlu1r")
-item_id = 1
+item_id = -2
 item_name = "Test Item 2"
 item_portrait = ExtResource("1_ga23p")
 item_rarity = 45

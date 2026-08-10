@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cculb0rbyidyi"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_ng2gu"]
+[ext_resource type="Resource" uid="uid://bhb060e7y7wf2" path="res://assets/items/birthday_cake/birthday_cake_data.tres" id="2_eg2co"]
+
+[node name="BirthdayCake" type="Node" unique_id=500683120]
+script = ExtResource("1_ng2gu")
+data = ExtResource("2_eg2co")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

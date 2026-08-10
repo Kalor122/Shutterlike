@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cbttrafjh1165"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_t5iji"]
+[ext_resource type="Resource" uid="uid://cvq8vst05xofn" path="res://assets/items/worm/worm_data.tres" id="2_gktwq"]
+
+[node name="Worm" type="Node" unique_id=411073780]
+script = ExtResource("1_t5iji")
+data = ExtResource("2_gktwq")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"
