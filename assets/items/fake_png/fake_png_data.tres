@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bcg71dnf3jnti"]
+
+[ext_resource type="Texture2D" uid="uid://nxpssey5eahi" path="res://assets/items/fake_png/fake_png.png" id="1_o2i6a"]
+[ext_resource type="Script" uid="uid://bn8hlonkpv137" path="res://assets/classes/item_data_class.gd" id="2_e0jn5"]
+
+[resource]
+script = ExtResource("2_e0jn5")
+item_id = 8
+item_name = "Fake PNG"
+item_portrait = ExtResource("1_o2i6a")
+item_rarity = 15
+item_description = "[color=yellow]> Passive[/color]
++2 Health
++2 Health Regeneration
++x0.5 Damage Mult
++2 Attack Speed
++2 Speed
+-4 Armour"
+price = 117.0
+scene_path = "res://assets/items/fake_png/fake_png.tscn"
+health = 2.0
+health_regeneration = 2.0
+damage_multiplier = 0.5
+attack_speed = 2
+speed = 2
+armour = 4
+arm_equation = 1
+metadata/_custom_type_script = "uid://bn8hlonkpv137"

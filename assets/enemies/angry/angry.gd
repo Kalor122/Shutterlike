@@ -37,3 +37,7 @@ func _entity_damaged(who: EnemyEntity, damage: BigNumber):
 		d.global_position.x = randf_range(who.global_position.x - 20, who.global_position.x + 20)
 		get_tree().current_scene.add_child(d)
 		d.display("-" + str(Globals.format(damage)))
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	GlobalSignals.player_take_damage.emit(1, self)
+	queue_free()

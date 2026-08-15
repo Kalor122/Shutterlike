@@ -4,7 +4,7 @@ const WEAPON_TOOLTIP = preload("uid://bl8iqg2wwr4a4")
 
 @onready var weapon_portrait: TextureRect = $MarginContainer/VBoxContainer/PanelContainer/WeaponPortrait
 @onready var buy: Button = $MarginContainer/VBoxContainer/Buy
-@onready var price: Label = $MarginContainer/VBoxContainer/HBoxContainer/Price
+@onready var price: Label = $MarginContainer/VBoxContainer/PanelContainer2/MarginContainer/HBoxContainer/Price
 @onready var paper: PanelContainer = $MarginContainer/VBoxContainer/PanelContainer
 
 @export var data: WeaponData
@@ -14,7 +14,6 @@ var w_tooltip
 func _ready() -> void:
 	if data:
 		data.calculate_money()
-		_create_tooltip()
 
 func _process(delta: float) -> void:
 	if data:
@@ -53,10 +52,14 @@ func _create_tooltip():
 	w.data = data
 	w_tooltip = w
 	get_tree().current_scene.add_child(w_tooltip)
-	w_tooltip.hide()
+
+func _delete_tooltip():
+	if w_tooltip:
+		w_tooltip.queue_free()
+	w_tooltip = null
 
 func _on_mouse_entered() -> void:
-	w_tooltip.should_hide.emit(false)
+	_create_tooltip()
 
 func _on_mouse_exited() -> void:
-	w_tooltip.should_hide.emit(true)
+	_delete_tooltip()

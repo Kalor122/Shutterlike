@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b8nngo6xbhwgv"]
+
+[ext_resource type="Texture2D" uid="uid://x0bluse4b3jg" path="res://assets/items/flowers/flowers.png" id="1_mu3bh"]
+[ext_resource type="Script" uid="uid://bn8hlonkpv137" path="res://assets/classes/item_data_class.gd" id="2_4c2j0"]
+
+[resource]
+script = ExtResource("2_4c2j0")
+item_id = 7
+item_name = "Flowers"
+item_portrait = ExtResource("1_mu3bh")
+item_rarity = 45
+item_description = "[color=yellow]> Passive[/color]
++10 Health"
+price = 89.0
+scene_path = "res://assets/items/flowers/flowers.tscn"
+health = 10.0
+metadata/_custom_type_script = "uid://bn8hlonkpv137"

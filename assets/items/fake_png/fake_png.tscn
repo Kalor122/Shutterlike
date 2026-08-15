@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b4gmu552ulv1u"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_jxdrg"]
+[ext_resource type="Resource" uid="uid://bcg71dnf3jnti" path="res://assets/items/fake_png/fake_png_data.tres" id="2_u50lo"]
+
+[node name="FakePNG" type="Node" unique_id=1667430142]
+script = ExtResource("1_jxdrg")
+data = ExtResource("2_u50lo")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

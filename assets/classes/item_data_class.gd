@@ -20,6 +20,8 @@ class_name ItemData
 @export_enum("Sum", "Sub", "Mult", "Div", "Pow") var as_equation: int
 @export var speed: int
 @export_enum("Sum", "Sub", "Mult", "Div", "Pow") var s_equation: int
+@export var armour: int
+@export_enum("Sum", "Sub", "Mult", "Div", "Pow") var arm_equation: int
 
 var big_price: BigNumber = BigNumber.new()
 

@@ -24,32 +24,50 @@ var acceleration: float
 var health: BigNumber = BigNumber.new()
 
 func _ready():
+	GlobalSignals.enemy_spawned.connect(_enemy_spawned)
+	GlobalSignals.enemy_killed.connect(_enemy_killed)
+	GlobalSignals.enemy_hit.connect(_enemy_hit)
+	GlobalSignals.entity_damaged.connect(_entity_damaged)
+	GlobalSignals.round_start.connect(_round_start)
+	GlobalSignals.round_end.connect(_round_end)
+	GlobalSignals.time_passed.connect(_time_passed)
+	GlobalSignals.player_take_damage.connect(_player_take_damage)
 	health.exponent = 0
 	health.mantissa = 0
-	speed = Globals.get_percentage(data.speed, 100 + PlayerStats.speed)
-	acceleration = Globals.get_percentage(data.acceleration, 100 + PlayerStats.speed)
+	speed = data.speed * (1 + (float(PlayerStats.speed) / 100))
 	health.plus_equals(PlayerStats.health)
 	_create_weapons()
 	_create_items()
 	GlobalSignals.recalculate_stats.emit()
 	GlobalSignals.round_start.emit()
+	_start()
 
 func _physics_process(delta: float) -> void:
+	if speed <= 10.0:
+		speed = 10.0
+	
 	direction_x = Input.get_axis("left", "right")
 	direction_y = Input.get_axis("up", "down")
 	
 	if direction_x != 0:
-		velocity.x = move_toward(velocity.x, speed * direction_x, acceleration * delta)
+		velocity.x = speed * direction_x
 	else:
-		velocity.x = move_toward(velocity.x, 0, acceleration * delta)
+		velocity.x = 0
 	
 	if direction_y != 0:
-		velocity.y = move_toward(velocity.y, speed * direction_y, acceleration * delta)
+		velocity.y = speed * direction_y
 	else:
-		velocity.y = move_toward(velocity.y, 0, acceleration * delta)
+		velocity.y = 0
+	
+	if health.is_less_than(1):
+		GlobalSignals.game_over.emit()
 	
 	_update_animation()
 	move_and_slide()
+	_physics_update(delta)
+
+func _process(delta: float) -> void:
+	_update(delta)
 
 func _update_animation():
 	if direction_x == 1:
@@ -88,3 +106,38 @@ func _create_weapons():
 func _create_items():
 	for i in Globals.bought_items:
 		add_child(load(i.scene_path).instantiate())
+
+func _player_take_damage(ammont: float, who: Node2D):
+	health.minus_equals(Globals.get_percentage(ammont, 100 - PlayerStats.armour))
+	if who is EnemyEntity:
+		print(who.data.enemy_name)
+
+func _start():
+	pass
+
+func _update(delta: float):
+	pass
+
+func _physics_update(delta: float):
+	pass
+
+func _enemy_spawned(who: EnemyEntity):
+	pass
+
+func _enemy_killed(who: EnemyEntity):
+	pass
+
+func _enemy_hit(who: EnemyEntity, parent: Node2D):
+	pass
+
+func _entity_damaged(who: EnemyEntity, damage: BigNumber):
+	pass
+
+func _round_start():
+	pass
+
+func _round_end():
+	pass
+
+func _time_passed(time: int):
+	pass

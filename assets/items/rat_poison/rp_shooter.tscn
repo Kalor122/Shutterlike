@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b0gvu8ty1nmyw"]
+
+[ext_resource type="Script" uid="uid://ck8kwbnwl0a7m" path="res://assets/items/rat_poison/rp_shooter.gd" id="1_q8i1b"]
+
+[node name="RPShooter" type="Marker2D" unique_id=1965675409]
+script = ExtResource("1_q8i1b")

@@ -8,6 +8,8 @@ var follow_mouse: bool = true
 var damage: BigNumber = BigNumber.new()
 var fire_rate: float
 
+var damage_per_second: float = 0.0
+
 var damage_extra_sum: float = 0
 var damage_extra_sub: float = 0
 var damage_extra_mult: float = 1
@@ -55,6 +57,7 @@ func _recalculate_stats():
 	fire_rate -= fire_rate_extra_sub
 	fire_rate /= fire_rate_extra_div
 	#print(damage.to_float(), " ", fire_rate)
+	damage_per_second = Globals.round_to_dec((1 / fire_rate) * damage.to_float(), 3)
 	GlobalSignals.after_recalculate.emit()
 
 func _process(delta: float) -> void:

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dsmt4yjcuntg5"]
+
+[ext_resource type="Script" uid="uid://ctrb086jxosqb" path="res://assets/items/magnifying_glass/magnifying_glass.gd" id="1_vm18b"]
+[ext_resource type="Resource" uid="uid://bj2il7ry2gxl4" path="res://assets/items/magnifying_glass/magnifying_glass_data.tres" id="2_vm18b"]
+
+[node name="MagnifyingGlass" type="Node" unique_id=1444397269]
+script = ExtResource("1_vm18b")
+data = ExtResource("2_vm18b")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cwl7of4i1suk5"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_r1n5e"]
+[ext_resource type="Resource" uid="uid://cpfhr3ettridc" path="res://assets/items/tactical_vest/tactical_vest_data.tres" id="2_a54kl"]
+
+[node name="TacticalVest" type="Node" unique_id=498475098]
+script = ExtResource("1_r1n5e")
+data = ExtResource("2_a54kl")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

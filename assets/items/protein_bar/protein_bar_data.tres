@@ -10,13 +10,13 @@ item_name = "Protein Bar"
 item_portrait = ExtResource("1_f50es")
 item_rarity = 100
 item_description = "[color=yellow]> Passive[/color]
-+x0.025 Damage Mult
++x0.05 Damage Mult
 +1 Attack Speed
 -2 Health Regeneration"
 price = 35.0
 scene_path = "res://assets/items/protein_bar/protein_bar.tscn"
 health_regeneration = 2.0
 hr_equation = 1
-damage_multiplier = 0.025
+damage_multiplier = 0.05
 attack_speed = 1
 metadata/_custom_type_script = "uid://bn8hlonkpv137"

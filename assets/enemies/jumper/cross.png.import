@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qseddvf8ljif"
-path="res://.godot/imported/body.png-cf7ff92ac91cdf698c131f729a64f145.ctex"
+uid="uid://b1wdkoid3nn2j"
+path="res://.godot/imported/cross.png-800fcca3340d4f6c3cd9c6e508c00856.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/crawler/body.png"
-dest_files=["res://.godot/imported/body.png-cf7ff92ac91cdf698c131f729a64f145.ctex"]
+source_file="res://assets/enemies/jumper/cross.png"
+dest_files=["res://.godot/imported/cross.png-800fcca3340d4f6c3cd9c6e508c00856.ctex"]
 
 [params]
 

@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_joocj")
-enemy_name = "TestEnemy"
-health = 3
+enemy_name = "Angry"
+health = 5
 cash = 5
-scene_path = "res://assets/enemies/test_enemy/test_enemy.tscn"
+scene_path = "res://assets/enemies/angry/angry.tscn"
 metadata/_custom_type_script = "uid://bnrca80fvc2tp"

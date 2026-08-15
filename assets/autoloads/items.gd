@@ -5,6 +5,13 @@ var item_list = [
 	load("uid://bhb060e7y7wf2"),
 	load("uid://1s0j1kxx85bt"),
 	load("uid://cvq8vst05xofn"),
+	load("uid://cpfhr3ettridc"),
+	load("uid://dtiq57fn13x3r"),
+	load("uid://r3cdlggiquah"),
+	load("uid://b8nngo6xbhwgv"),
+	load("uid://bcg71dnf3jnti"),
+	load("uid://bcyer2tev8baw"),
+	load("uid://bj2il7ry2gxl4"),
 ]
 
 func get_item_by_id(id: int):
