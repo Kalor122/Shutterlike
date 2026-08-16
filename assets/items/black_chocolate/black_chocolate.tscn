@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d1lt0olcns3r8"]
+
+[ext_resource type="Script" uid="uid://63k4ti88db3" path="res://assets/items/black_chocolate/black_chocolate.gd" id="1_5k5al"]
+[ext_resource type="Resource" uid="uid://6r3dtju0tcp8" path="res://assets/items/black_chocolate/black_chocolate_data.tres" id="2_mxypf"]
+
+[node name="BlackChocolate" type="Node" unique_id=803650768]
+script = ExtResource("1_5k5al")
+data = ExtResource("2_mxypf")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

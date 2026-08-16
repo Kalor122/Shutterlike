@@ -22,3 +22,4 @@ signal cant_afford(what)
 
 signal wi_weapon_grabbed(what: WeaponData)
 signal wi_weapon_dropped(what: WeaponData, slot: int, target_slot: int)
+signal sell_weapon(w_slot: int)

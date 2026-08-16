@@ -9,6 +9,7 @@ weapon_id = 3
 weapon_name = "Bazooka"
 weapon_portrait = ExtResource("2_31k1v")
 weapon_rarity = 45
+weapon_description = "Causes explosions on impact"
 price = 100.0
 damage = 10.0
 fire_rate = 2.0

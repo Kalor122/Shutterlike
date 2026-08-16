@@ -9,6 +9,7 @@ weapon_id = 5
 weapon_name = "Double-Barrel Shotgun"
 weapon_portrait = ExtResource("2_10pve")
 weapon_rarity = 45
+weapon_description = "Shoots 3 bullets twice that [color=red]dissappear[/color] after [color=yellow]0.3 seconds[/color]"
 price = 80.0
 damage = 3.0
 fire_rate = 1.0

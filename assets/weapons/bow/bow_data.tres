@@ -9,6 +9,7 @@ weapon_id = 4
 weapon_name = "Bow"
 weapon_portrait = ExtResource("2_r2kxq")
 weapon_rarity = 100
+weapon_description = "Shoots one arrow that pierces through [color=green]3[/color] enemies"
 price = 50.0
 damage = 3.0
 fire_rate = 1.0

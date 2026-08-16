@@ -10,6 +10,7 @@ signal should_hide(visibility: bool)
 @onready var rainbow: Panel = $Rainbow
 @onready var godlike: GIFPlayer = $MarginContainer/VBoxContainer/HBoxContainer/GODLIKE
 @onready var dps_label: Label = $MarginContainer/VBoxContainer/DPS/MarginContainer/HBoxContainer/Label2
+@onready var w_description: RichTextLabel = $MarginContainer/VBoxContainer/WDescription
 
 const COMMON = preload("uid://b1vjvgdhqgb23")
 const EPIC = preload("uid://pobsvp0inmi4")
@@ -38,6 +39,8 @@ func _process(delta: float) -> void:
 	
 	if data:
 		w_name.text = data.weapon_name
+		w_description.text = ""
+		w_description.append_text(data.weapon_description)
 		match data.weapon_rarity:
 			Globals.Rarities.COMMON:
 				w_rarity.texture = COMMON

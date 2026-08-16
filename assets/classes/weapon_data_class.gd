@@ -5,6 +5,7 @@ class_name WeaponData
 @export var weapon_name: String
 @export var weapon_portrait: CompressedTexture2D ##Should be a 600x600 PNG file.
 @export var weapon_rarity: Globals.Rarities
+@export_multiline() var weapon_description: String
 @export var price: float
 @export var damage: float
 @export var fire_rate: float

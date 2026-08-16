@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cvejcld02itv5"]
+
+[ext_resource type="Script" uid="uid://bp4dx377ymylp" path="res://assets/items/watermelon_koolaid/watermelon_koolaid.gd" id="1_i6oie"]
+[ext_resource type="Resource" uid="uid://cldawrj3e31o1" path="res://assets/items/watermelon_koolaid/watermelon_koolaid.tres" id="2_i6oie"]
+
+[node name="WatermelonKoolaid" type="Node" unique_id=1506896300]
+script = ExtResource("1_i6oie")
+data = ExtResource("2_i6oie")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

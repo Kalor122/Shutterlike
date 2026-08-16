@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c4nbthyumdm3h" path="res://assets/enemies/puncher/715-7157619_foot-transparent-hd-png-download.png" id="2_qlovf"]
 [ext_resource type="Texture2D" uid="uid://bonlvjq1ivajv" path="res://assets/enemies/puncher/136205-fist.png" id="3_invoo"]
 [ext_resource type="Texture2D" uid="uid://b4l7h5myhwto3" path="res://assets/enemies/puncher/puncher.png" id="4_rubu2"]
+[ext_resource type="PackedScene" uid="uid://cv76b18imrrpt" path="res://assets/enemies/entity_effects_container.tscn" id="6_rubu2"]
 
 [sub_resource type="Animation" id="Animation_2eieo"]
 length = 0.001
@@ -172,6 +173,7 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id="Animation_invoo"]
 resource_name = "punch"
+length = 0.7
 step = 0.016666668
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -180,7 +182,7 @@ tracks/0/path = NodePath("hand:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.26666668, 0.4, 0.48333332, 0.91666675),
+"times": PackedFloat32Array(0, 0.26666668, 0.36666667, 0.45, 0.7),
 "transitions": PackedFloat32Array(0.45062527, 0.45062512, 1, 0.39229202, 1),
 "update": 0,
 "values": [Vector2(-54.153854, -13), Vector2(-78.784, -13), Vector2(102.571, -13), Vector2(102.571, -13), Vector2(-54.153854, -13)]
@@ -192,7 +194,7 @@ tracks/1/path = NodePath("hand:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.26666668, 0.48333332, 0.91666675),
+"times": PackedFloat32Array(0, 0.26666668, 0.45, 0.7),
 "transitions": PackedFloat32Array(1, 0.45062512, 0.39229202, 1),
 "update": 0,
 "values": [0.24958208, 0.0, 0.0, 0.24958208]
@@ -204,7 +206,7 @@ tracks/2/path = NodePath("hand:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.26666668, 0.4, 0.48333332, 0.91666675),
+"times": PackedFloat32Array(0.26666668, 0.36666667, 0.45, 0.7),
 "transitions": PackedFloat32Array(0.45062512, 1, 0.39229202, 1),
 "update": 0,
 "values": [Vector2(0.045, 0.045), Vector2(0.085, 0.085), Vector2(0.085, 0.085), Vector2(0.045, 0.045)]
@@ -216,7 +218,7 @@ tracks/3/path = NodePath("Sprite2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.26666668, 0.4, 0.48333338, 0.91666675),
+"times": PackedFloat32Array(0, 0.26666668, 0.36666667, 0.45000005, 0.7),
 "transitions": PackedFloat32Array(1, 0.45062512, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 4), Vector2(-6.74, 4), Vector2(13.12, 4), Vector2(13.12, 4), Vector2(0, 4)]
@@ -288,7 +290,7 @@ tracks/9/path = NodePath("AnimationPlayer")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.7),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"walk", -1, 1.0, false],
@@ -310,6 +312,7 @@ tracks/10/keys = {
 
 [sub_resource type="Animation" id="Animation_rubu2"]
 resource_name = "punch_2"
+length = 0.7
 step = 0.016666668
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -318,7 +321,7 @@ tracks/0/path = NodePath("hand:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.26666668, 0.4, 0.48333332, 0.91666675),
+"times": PackedFloat32Array(0, 0.26666668, 0.36666667, 0.45, 0.7),
 "transitions": PackedFloat32Array(0.45062527, 0.45062512, 1, 0.39229202, 1),
 "update": 0,
 "values": [Vector2(-54.153854, -13), Vector2(4.839, -13), Vector2(-165.641, -13), Vector2(-165.641, -13), Vector2(-54.153854, -13)]
@@ -330,7 +333,7 @@ tracks/1/path = NodePath("hand:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.26666668, 0.48333332, 0.91666675),
+"times": PackedFloat32Array(0, 0.26666668, 0.45, 0.7),
 "transitions": PackedFloat32Array(1, 0.45062512, 0.39229202, 1),
 "update": 0,
 "values": [0.24958208, 0.0, 0.0, 0.24958208]
@@ -342,7 +345,7 @@ tracks/2/path = NodePath("hand:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.26666668, 0.4, 0.48333332, 0.91666675),
+"times": PackedFloat32Array(0.26666668, 0.36666667, 0.45, 0.7),
 "transitions": PackedFloat32Array(0.45062512, 1, 0.39229202, 1),
 "update": 0,
 "values": [Vector2(0.045, 0.045), Vector2(0.085, 0.085), Vector2(0.085, 0.085), Vector2(0.045, 0.045)]
@@ -354,10 +357,10 @@ tracks/3/path = NodePath("Sprite2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.26666668, 0.4, 0.48333338, 0.91666675),
+"times": PackedFloat32Array(0, 0.26666668, 0.36666667, 0.45000005, 0.7),
 "transitions": PackedFloat32Array(1, 0.45062512, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 4), Vector2(-6.74, 4), Vector2(13.12, 4), Vector2(13.12, 4), Vector2(0, 4)]
+"values": [Vector2(0, 4), Vector2(6.74, 4), Vector2(-15.08, 4), Vector2(-15.08, 4), Vector2(0, 4)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -426,7 +429,7 @@ tracks/9/path = NodePath("AnimationPlayer")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.7),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"walk", -1, 1.0, false],
@@ -448,7 +451,7 @@ tracks/10/keys = {
 
 [sub_resource type="Animation" id="Animation_4dsa2"]
 resource_name = "walk"
-length = 0.2
+length = 0.13333334
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -457,7 +460,7 @@ tracks/0/path = NodePath("feet:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [1.6859880574265227, 0.0, -1.3020156219877703]
@@ -469,7 +472,7 @@ tracks/1/path = NodePath("feet2:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [-1.3020156219877703, 0.0, 1.6859880574265227]
@@ -481,7 +484,7 @@ tracks/2/path = NodePath("Sprite2D:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0.205), Vector2(0, 4), Vector2(0, 0.205)]
@@ -493,7 +496,7 @@ tracks/3/path = NodePath("feet:position")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-18, -9.4), Vector2(-18.000004, -4.999998), Vector2(-18, -9.4)]
@@ -505,7 +508,7 @@ tracks/4/path = NodePath("feet2:position")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(14, -9.4), Vector2(13.999996, -4.9999986), Vector2(14, -9.4)]
@@ -614,6 +617,16 @@ collision_layer = 0
 position = Vector2(0, -16.153849)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_invoo")
+
+[node name="Label" type="Label" parent="." unique_id=489372345]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="EntityEffectsContainer" parent="." unique_id=982279357 instance=ExtResource("6_rubu2")]
+offset_left = -22.30769
+offset_top = 25.384617
+offset_right = 22.69231
+offset_bottom = 55.38462
 
 [connection signal="area_entered" from="hand/Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

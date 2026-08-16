@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ch8stav0o4wdw"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_lcj3w"]
+[ext_resource type="Resource" uid="uid://d2ngvofflxsg1" path="res://assets/items/steroids/steroids_data.tres" id="2_d6l7q"]
+
+[node name="Steroids" type="Node" unique_id=929826954]
+script = ExtResource("1_lcj3w")
+data = ExtResource("2_d6l7q")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

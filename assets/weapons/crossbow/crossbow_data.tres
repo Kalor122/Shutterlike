@@ -9,6 +9,7 @@ weapon_id = 6
 weapon_name = "Crossbow"
 weapon_portrait = ExtResource("2_thil3")
 weapon_rarity = 45
+weapon_description = "Shoots three arrows that pierce through [color=green]3[/color] enemies"
 price = 100.0
 damage = 3.0
 fire_rate = 1.0
