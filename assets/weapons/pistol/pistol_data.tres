@@ -8,6 +8,7 @@ script = ExtResource("1_w5ace")
 weapon_name = "Pistol"
 weapon_portrait = ExtResource("2_j44hx")
 weapon_rarity = 100
+weapon_description = "The most basic weapon"
 price = 5.0
 damage = 1.0
 fire_rate = 0.5

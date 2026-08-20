@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("2_ikjxs")
+item_id = -1
 item_name = "Test Item"
 item_portrait = ExtResource("1_r14vr")
 item_rarity = 1

@@ -9,6 +9,7 @@ weapon_id = 2
 weapon_name = "Tactical Shotgun"
 weapon_portrait = ExtResource("2_iwa1j")
 weapon_rarity = 100
+weapon_description = "Shoots 5 bullets that [color=red]dissappear[/color] after [color=yellow]0.3 seconds[/color]"
 price = 40.0
 damage = 2.0
 fire_rate = 1.0

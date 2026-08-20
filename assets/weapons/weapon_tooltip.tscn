@@ -1,43 +1,21 @@
 [gd_scene format=3 uid="uid://bl8iqg2wwr4a4"]
 
 [ext_resource type="Script" uid="uid://dsuiyru41103o" path="res://assets/weapons/weapon_tooltip.gd" id="1_p4uia"]
-[ext_resource type="Script" uid="uid://cjmmhbp1b5312" path="res://addons/StyleboxFancy/StyleBorder.gd" id="1_vl8ek"]
-[ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleboxFancy/StyleBoxFancy.gd" id="2_y7qcr"]
+[ext_resource type="Theme" uid="uid://ct5uvugrf1rtx" path="res://assets/themes/tooltip_theme.tres" id="1_y7qcr"]
+[ext_resource type="FontFile" uid="uid://oldukib0e055" path="res://assets/themes/fonts/old_stamper.ttf" id="3_8wi3x"]
 [ext_resource type="Texture2D" uid="uid://b1vjvgdhqgb23" path="res://assets/menus/bazar/rarities/common.png" id="3_bb0dk"]
 [ext_resource type="Texture2D" uid="uid://cqdcr7ag30q8y" path="res://assets/menus/bazar/rarities/godlike.gif" id="5_8wi3x"]
 [ext_resource type="Shader" uid="uid://ci0hnpamj87ye" path="res://assets/shaders/rainbow_corner.gdshader" id="5_vl8ek"]
 [ext_resource type="Shader" uid="uid://248k74bv46yk" path="res://assets/shaders/rainbow.gdshader" id="6_c21vm"]
 
-[sub_resource type="Resource" id="Resource_57qmd"]
-script = ExtResource("1_vl8ek")
-width_left = 2
-width_top = 2
-width_right = 2
-width_bottom = 2
-metadata/_custom_type_script = "uid://cjmmhbp1b5312"
-
-[sub_resource type="StyleBox" id="StyleBox_yf5fn"]
-resource_local_to_scene = false
-resource_name = ""
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-script = ExtResource("2_y7qcr")
-color = Color(0.00998121, 6.016344e-09, 0.14714798, 1)
-borders = Array[ExtResource("1_vl8ek")]([SubResource("Resource_57qmd")])
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-anti_aliasing = false
-metadata/_custom_type_script = "uid://bkl6g25jwb47h"
-
-[sub_resource type="Theme" id="Theme_g4v7s"]
-PanelContainer/styles/panel = SubResource("StyleBox_yf5fn")
-
 [sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
-font_size = 20
+font = ExtResource("3_8wi3x")
+font_size = 26
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.5529412)
+shadow_offset = Vector2(1.5, 1.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_udlye"]
 shader = ExtResource("6_c21vm")
@@ -46,7 +24,8 @@ shader_parameter/speed = 1.0750000510625
 shader_parameter/angle = 8.2750003930625
 
 [sub_resource type="LabelSettings" id="LabelSettings_57qmd"]
-font_size = 14
+font_size = 13
+font_color = Color(0.39999998, 0.9100001, 1, 0.7529412)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d0u6y"]
 shader = ExtResource("5_vl8ek")
@@ -55,18 +34,14 @@ shader_parameter/speed = 4.0
 shader_parameter/glow_intensity = 1.0
 shader_parameter/node_size = Vector2(206.365, 84.32)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gngh"]
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
 [node name="WeaponTooltip" type="PanelContainer" unique_id=1138871158]
 self_modulate = Color(1, 1, 1, 0.7647059)
+custom_minimum_size = Vector2(447.96, 121)
+custom_maximum_size = Vector2(1000, 3000)
 offset_right = 448.0
 offset_bottom = 192.0
 mouse_filter = 2
-theme = SubResource("Theme_g4v7s")
+theme = ExtResource("1_y7qcr")
 script = ExtResource("1_p4uia")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1784005232]
@@ -119,7 +94,7 @@ mouse_filter = 2
 
 [node name="WTags" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=789583993]
 layout_mode = 2
-text = "Gun, Automatic"
+text = "WEAPON"
 label_settings = SubResource("LabelSettings_57qmd")
 
 [node name="BaseDamage" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=719854738]
@@ -172,12 +147,37 @@ text = "Fire Rate:"
 layout_mode = 2
 text = "0.5s"
 
+[node name="DPS" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=2045928202]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/DPS" unique_id=237920399]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/DPS/MarginContainer" unique_id=155847534]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/DPS/MarginContainer/HBoxContainer" unique_id=1042058312]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Base Damage Per Second:"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/DPS/MarginContainer/HBoxContainer" unique_id=61318006]
+layout_mode = 2
+text = "0.5"
+
 [node name="WDescription" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=684270102]
+custom_minimum_size = Vector2(434.62, 22)
 custom_maximum_size = Vector2(434.62, 3000)
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
-text = "This is a description."
 fit_content = true
 
 [node name="Rainbow" type="Panel" parent="." unique_id=1522280651]
@@ -185,4 +185,3 @@ visible = false
 material = SubResource("ShaderMaterial_d0u6y")
 layout_mode = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_3gngh")

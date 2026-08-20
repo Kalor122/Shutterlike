@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://32j7k3gqdcpe"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_i4laj"]
+[ext_resource type="Resource" uid="uid://bdrjnjdooqlve" path="res://assets/items/grape_koolaid/grape_koolaid_data.tres" id="2_3x30l"]
+
+[node name="GrapeKoolaid" type="Node" unique_id=1633192024]
+script = ExtResource("1_i4laj")
+data = ExtResource("2_3x30l")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

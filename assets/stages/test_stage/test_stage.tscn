@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dmyujbuhnkas8" path="res://assets/classes/scene_loader_class.gd" id="5_lsbqo"]
 [ext_resource type="PackedScene" uid="uid://bnaco8rwm4sqm" path="res://assets/loading_scenes/loading_scene.tscn" id="6_68wdc"]
 [ext_resource type="PackedScene" uid="uid://b4g1y78ptq21" path="res://assets/enemies/test_big_enemy/test_big_enemy.tscn" id="7_am41p"]
+[ext_resource type="PackedScene" uid="uid://h2nrtdi6cvai" path="res://assets/enemies/puncher/puncher.tscn" id="8_2d83m"]
 
 [node name="TestStage" type="Node2D" unique_id=1105023431 node_paths=PackedStringArray("camera", "player", "stage_ui", "timer", "scene_loader")]
 script = ExtResource("1_y3224")
@@ -38,5 +39,11 @@ metadata/_custom_type_script = "uid://dmyujbuhnkas8"
 
 [node name="TestBigEnemy" parent="." unique_id=333818710 instance=ExtResource("7_am41p")]
 position = Vector2(1420, 177)
+
+[node name="Puncher" parent="." unique_id=1186128455 instance=ExtResource("8_2d83m")]
+position = Vector2(1463, 485)
+
+[node name="Puncher2" parent="." unique_id=1342078908 instance=ExtResource("8_2d83m")]
+position = Vector2(484, 735)
 
 [connection signal="timeout" from="TimerEnemy" to="." method="_on_timer_timeout"]

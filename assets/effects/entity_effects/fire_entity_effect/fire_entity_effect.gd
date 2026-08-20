@@ -3,6 +3,7 @@ extends EntityEffect
 var damage = BigNumber.new()
 @onready var duration: Timer = $Duration
 
+
 func _on_timer_timeout() -> void:
 	entity.take_damage(entity.health, damage, [])
 	print("FIREEEE")

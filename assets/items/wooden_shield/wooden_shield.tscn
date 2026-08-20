@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dtlbbynel60go"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_wt7y1"]
+[ext_resource type="Resource" uid="uid://8sta4cuqxvnn" path="res://assets/items/wooden_shield/wooden_shield_data.tres" id="2_x4p3w"]
+
+[node name="WoodenShield" type="Node" unique_id=379199967]
+script = ExtResource("1_wt7y1")
+data = ExtResource("2_x4p3w")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

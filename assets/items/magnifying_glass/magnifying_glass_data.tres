@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bj2il7ry2gxl4"]
+
+[ext_resource type="Texture2D" uid="uid://dppk27dlpwl4n" path="res://assets/items/magnifying_glass/magnifying_glass.png" id="1_k835f"]
+[ext_resource type="Script" uid="uid://bn8hlonkpv137" path="res://assets/classes/item_data_class.gd" id="2_j8tbg"]
+
+[resource]
+script = ExtResource("2_j8tbg")
+item_id = 9
+item_name = "Magnifying Glass"
+item_portrait = ExtResource("1_k835f")
+item_rarity = 1
+item_description = "[color=yellow]> Round Start[/color]
+[color=purple]^1.05[/color] Damage to weapon in [color=pink]slot #4[/color]"
+price = 258.0
+scene_path = "res://assets/items/magnifying_glass/magnifying_glass.tscn"
+metadata/_custom_type_script = "uid://bn8hlonkpv137"

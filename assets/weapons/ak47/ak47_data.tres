@@ -9,6 +9,7 @@ weapon_id = 1
 weapon_name = "AK-47"
 weapon_portrait = ExtResource("2_vocdl")
 weapon_rarity = 100
+weapon_description = "Rapid-fire automatic sovietic assault rifle"
 price = 35.0
 damage = 2.0
 fire_rate = 0.3

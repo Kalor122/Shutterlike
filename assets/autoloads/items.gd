@@ -1,9 +1,31 @@
 extends Node
 
 var item_list = [
-	load("uid://bcyer2tev8baw"),
-	load("uid://beqqge760ddf2"),
-	load("uid://c3pud6dpxcapx"),
+	load("uid://dhpn20xekek1n"),
+	load("uid://bhb060e7y7wf2"),
+	load("uid://1s0j1kxx85bt"),
+	load("uid://cvq8vst05xofn"),
+	load("uid://cpfhr3ettridc"),
+	load("uid://dtiq57fn13x3r"),
+	load("uid://r3cdlggiquah"),
+	load("uid://b8nngo6xbhwgv"),
+	load("uid://bcg71dnf3jnti"),
+	load("uid://bj2il7ry2gxl4"),
+	load("uid://bh5c52b7dx6rf"),
+	load("uid://cldawrj3e31o1"),
+	load("uid://bdrjnjdooqlve"),
+	load("uid://6r3dtju0tcp8"),
+	load("uid://dv1m72hishqip"),
+	load("uid://bn43ixm1rafn4"),
+	load("uid://d2ngvofflxsg1"),
+	load("uid://d1cmjl31os2b8"),
+	load("uid://bkki0uo0en2go"),
+	load("uid://bqtm21qtaq14w"),
+	load("uid://ctfasyu2crv35"),
+	load("uid://bvg24yatnknd4"),
+	load("uid://eq7ufnbmfnb2"),
+	load("uid://cq4ihhoh3n52s"),
+	load("uid://8sta4cuqxvnn"),
 ]
 
 func get_item_by_id(id: int):

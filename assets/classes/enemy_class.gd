@@ -19,7 +19,7 @@ func _give_cash():
 func _ready() -> void:
 	health.mantissa = 0
 	health.exponent = 0
-	health.plus_equals(data.health * (log(PlayerStats.damage_multiplier) + 1))
+	health.plus_equals((data.health * (Globals.round_to_dec(log(PlayerStats.damage_multiplier) + 1, 2))) * (1 + (log(Globals.zone * Globals.round) / 5)))
 	speed = data.speed
 	cash = data.cash
 	GlobalSignals.enemy_hit.connect(_enemy_hit)

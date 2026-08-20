@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cp705yuir1piv"]
+
+[ext_resource type="Script" uid="uid://du565ib08r5hq" path="res://assets/items/oxidized_watermelon/oxidized_watermelon.gd" id="1_0i7rl"]
+[ext_resource type="Resource" uid="uid://bkki0uo0en2go" path="res://assets/items/oxidized_watermelon/oxidized_watermelon_data.tres" id="2_0i7rl"]
+
+[node name="OxidizedWatermelon" type="Node" unique_id=593426323]
+script = ExtResource("1_0i7rl")
+data = ExtResource("2_0i7rl")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"
+
+[node name="Timer" type="Timer" parent="." unique_id=1955166463]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

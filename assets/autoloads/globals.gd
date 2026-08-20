@@ -55,6 +55,11 @@ var zone: int = 1
 var rupies: BigNumber = BigNumber.new()
 var global_weapon_price_mult: float = 1.0
 var global_item_price_mult: float = 1.0
+var reroll_price_rate: float = 1.75
+
+var total_rerolls: int = 0
+var wr_price = BigNumber.new()
+var ir_price = BigNumber.new()
 
 var current_weapon_pool = []
 
@@ -268,9 +273,13 @@ func format(number: Variant):
 		value.exponent = 0
 		value.plus_equals(number)
 	
-	if value.to_float() < 1_000_000_000.0:
-		return str(formatter.format(ceili(value.to_float())))
+	if value.to_float() < 1_000.0:
+		return str(round_to_dec(value.to_float(), 2))
 	else:
+		if value.to_float() >= 1_000.0 and value.to_float() < 999_999.0:
+			return value.to_prefix() + "k"
+		if value.to_float() >= 1_000_000.0 and value.to_float() < 999_999_999.0:
+			return value.to_prefix() + "M"
 		if value.to_float() >= 1_000_000_000.0 and value.to_float() < 999_999_999_999.0:
 			return value.to_prefix() + "B"
 		elif value.to_float() >= 1_000_000_000_000.0 and value.to_float() < 999_999_999_999_999.0:

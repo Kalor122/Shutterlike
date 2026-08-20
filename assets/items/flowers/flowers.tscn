@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://7wtyi3ung1d2"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_olod4"]
+[ext_resource type="Resource" uid="uid://b8nngo6xbhwgv" path="res://assets/items/flowers/flowers_data.tres" id="2_uu08k"]
+
+[node name="Flowers" type="Node" unique_id=1738302376]
+script = ExtResource("1_olod4")
+data = ExtResource("2_uu08k")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

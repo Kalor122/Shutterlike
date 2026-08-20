@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cvooxjsu0lygv"]
+
+[ext_resource type="Script" uid="uid://bnrca80fvc2tp" path="res://assets/classes/enemy_data_class.gd" id="1_6cc2k"]
+
+[resource]
+script = ExtResource("1_6cc2k")
+enemy_name = "Jumper"
+cash = 7
+scene_path = "res://assets/enemies/jumper/jumper.tscn"
+metadata/_custom_type_script = "uid://bnrca80fvc2tp"

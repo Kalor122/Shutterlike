@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bx0do8lkx7cr8"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_3etqp"]
+[ext_resource type="Resource" uid="uid://cq4ihhoh3n52s" path="res://assets/items/wheelchair/wheelchair_data.tres" id="2_ngw72"]
+
+[node name="Wheelchair" type="Node" unique_id=1087155033]
+script = ExtResource("1_3etqp")
+data = ExtResource("2_ngw72")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

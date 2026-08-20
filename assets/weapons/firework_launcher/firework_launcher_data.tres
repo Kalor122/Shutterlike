@@ -9,6 +9,7 @@ weapon_id = 7
 weapon_name = "Firework Launcher"
 weapon_portrait = ExtResource("2_wdpgh")
 weapon_rarity = 15
+weapon_description = "Shoots 4 fireworks that explode on impact"
 price = 145.0
 damage = 5.0
 fire_rate = 1.5

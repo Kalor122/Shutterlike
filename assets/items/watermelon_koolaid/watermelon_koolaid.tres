@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cldawrj3e31o1"]
+
+[ext_resource type="Texture2D" uid="uid://dhar20t53qd7o" path="res://assets/items/watermelon_koolaid/watermelon_koolaid.png" id="1_pvx7o"]
+[ext_resource type="Script" uid="uid://bn8hlonkpv137" path="res://assets/classes/item_data_class.gd" id="2_yofaj"]
+
+[resource]
+script = ExtResource("2_yofaj")
+item_id = 11
+item_name = "Watermelon Koolaid"
+item_portrait = ExtResource("1_pvx7o")
+item_rarity = 45
+item_description = "[color=yellow]> Round Start[/color]
+[color=cyan]x1.15[/color] Damage to weapons in [color=pink]even-numbered slots[/color]"
+price = 106.0
+scene_path = "res://assets/items/watermelon_koolaid/watermelon_koolaid.tscn"
+metadata/_custom_type_script = "uid://bn8hlonkpv137"

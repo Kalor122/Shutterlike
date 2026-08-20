@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cs0bi1s30i06d"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_hi1sm"]
+[ext_resource type="Resource" uid="uid://dv1m72hishqip" path="res://assets/items/small_dagger/small_dagger_data.tres" id="2_fmeta"]
+
+[node name="SmallDagger" type="Node" unique_id=1203298715]
+script = ExtResource("1_hi1sm")
+data = ExtResource("2_fmeta")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://6av15k5u4nj"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_odwbx"]
+[ext_resource type="Resource" uid="uid://bn43ixm1rafn4" path="res://assets/items/compressed_jpeg/compressed_jpeg_data.tres" id="2_oc6ym"]
+
+[node name="CompressedJpeg" type="Node" unique_id=1749023683]
+script = ExtResource("1_odwbx")
+data = ExtResource("2_oc6ym")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

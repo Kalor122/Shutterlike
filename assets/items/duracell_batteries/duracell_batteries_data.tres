@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bh5c52b7dx6rf"]
+
+[ext_resource type="Texture2D" uid="uid://be43f3k6rno7v" path="res://assets/items/duracell_batteries/duracell_batteries.png" id="1_mldp1"]
+[ext_resource type="Script" uid="uid://bn8hlonkpv137" path="res://assets/classes/item_data_class.gd" id="2_8xnq4"]
+
+[resource]
+script = ExtResource("2_8xnq4")
+item_id = 10
+item_name = "Duracell Batteries"
+item_portrait = ExtResource("1_mldp1")
+item_rarity = 45
+item_description = "[color=yellow]> Round Start[/color]
+[color=green]-0.025s[/color] Fire Rate to weapons in [color=pink]odd-numbered slots[/color]"
+price = 69.0
+scene_path = "res://assets/items/duracell_batteries/duracell_batteries.tscn"
+metadata/_custom_type_script = "uid://bn8hlonkpv137"

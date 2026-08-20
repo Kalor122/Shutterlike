@@ -6,9 +6,6 @@ const ITEM_TOOLTIP = preload("uid://5tfugo6smf6x")
 var data: ItemData
 var i_tooltip
 
-func _ready() -> void:
-	_create_tooltip()
-
 func _process(delta: float) -> void:
 	if data:
 		item_portrait.texture = data.item_portrait
@@ -32,10 +29,14 @@ func _create_tooltip():
 	i.data = data
 	i_tooltip = i
 	get_tree().current_scene.add_child(i_tooltip)
-	i_tooltip.hide()
+
+func _delete_tooltip():
+	if i_tooltip:
+		i_tooltip.queue_free()
+	i_tooltip = null
 
 func _on_item_portrait_mouse_entered() -> void:
-	i_tooltip.should_hide.emit(false)
+	_create_tooltip()
 
 func _on_item_portrait_mouse_exited() -> void:
-	i_tooltip.should_hide.emit(true)
+	_delete_tooltip()

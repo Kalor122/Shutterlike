@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dsod6rrc2jmof"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_xa6xp"]
+[ext_resource type="Resource" uid="uid://dtiq57fn13x3r" path="res://assets/items/rusty_nails/rusty_nails_data.tres" id="2_qb1b1"]
+
+[node name="RustyNails" type="Node" unique_id=1104315358]
+script = ExtResource("1_xa6xp")
+data = ExtResource("2_qb1b1")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

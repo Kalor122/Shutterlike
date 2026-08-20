@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bsirr1rcgr2ja"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_dkxyg"]
+[ext_resource type="Resource" uid="uid://ctfasyu2crv35" path="res://assets/items/perfect_smile/perfect_smile_data.tres" id="2_flc8r"]
+
+[node name="PerfectSmile" type="Node" unique_id=1021778868]
+script = ExtResource("1_dkxyg")
+data = ExtResource("2_flc8r")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

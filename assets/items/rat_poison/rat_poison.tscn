@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cij70a6xla7tl"]
+
+[ext_resource type="Script" uid="uid://dqw45i3gr0820" path="res://assets/items/rat_poison/rat_poison.gd" id="1_y4ap0"]
+[ext_resource type="Resource" uid="uid://r3cdlggiquah" path="res://assets/items/rat_poison/rat_poison_data.tres" id="2_y4ap0"]
+
+[node name="RatPoison" type="Node" unique_id=79606578]
+script = ExtResource("1_y4ap0")
+data = ExtResource("2_y4ap0")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"
+
+[node name="Timer" type="Timer" parent="." unique_id=1426072287]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

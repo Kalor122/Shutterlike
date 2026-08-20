@@ -1,0 +1,42 @@
+[gd_resource type="StyleBox" script_class="StyleBoxFancy" format=3 uid="uid://b47jt5cuvew1t"]
+
+[ext_resource type="Script" uid="uid://cjmmhbp1b5312" path="res://addons/StyleboxFancy/StyleBorder.gd" id="1_f42al"]
+[ext_resource type="Script" uid="uid://bkl6g25jwb47h" path="res://addons/StyleboxFancy/StyleBoxFancy.gd" id="2_tdgsp"]
+[ext_resource type="Texture2D" uid="uid://cqi3fw2t8hxca" path="res://assets/themes/bazar_shop_theme/wooden-planks-4.jpg" id="3_0uw47"]
+
+[sub_resource type="Resource" id="Resource_na3uy"]
+script = ExtResource("1_f42al")
+color = Color(1, 0.9116667, 0.47000003, 0.70980394)
+blend = true
+width_left = 2
+width_top = 2
+width_right = 2
+width_bottom = 2
+metadata/_custom_type_script = "uid://cjmmhbp1b5312"
+
+[resource]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 2.0
+content_margin_top = 3.0
+content_margin_right = 2.0
+content_margin_bottom = 0.0
+script = ExtResource("2_tdgsp")
+color = Color(0.27, 0.27, 0.27, 1)
+borders = Array[ExtResource("1_f42al")]([SubResource("Resource_na3uy")])
+texture = ExtResource("3_0uw47")
+texture_stretch_mode = 3
+texture_repeat = 2
+texture_scale = 2.068
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_curvature_top_left = -1.6050000000000004
+corner_curvature_top_right = -1.6050000000000004
+corner_curvature_bottom_right = -1.6050000000000004
+corner_curvature_bottom_left = -1.6050000000000004
+shadow_enabled = true
+shadow_blur = 8
+shadow_spread = Vector2(-7.435, -7.435)
+metadata/_custom_type_script = "uid://bkl6g25jwb47h"

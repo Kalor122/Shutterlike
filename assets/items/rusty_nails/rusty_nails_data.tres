@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dtiq57fn13x3r"]
+
+[ext_resource type="Texture2D" uid="uid://503uk0m01mdb" path="res://assets/items/rusty_nails/rusty_nails.png" id="1_7vdod"]
+[ext_resource type="Script" uid="uid://bn8hlonkpv137" path="res://assets/classes/item_data_class.gd" id="2_6ejla"]
+
+[resource]
+script = ExtResource("2_6ejla")
+item_id = 5
+item_name = "Rusty Nails"
+item_portrait = ExtResource("1_7vdod")
+item_rarity = 45
+item_description = "[color=yellow]> Passive[/color]
+[color=green]+x0.1[/color] Damage Mult
+[color=red]-2[/color] Health"
+price = 35.0
+scene_path = "res://assets/items/rusty_nails/rusty_nails.tscn"
+health = 2.0
+h_equation = 1
+damage_multiplier = 0.1
+metadata/_custom_type_script = "uid://bn8hlonkpv137"

@@ -17,10 +17,12 @@ const PLAYER_STAT_CONTAINER = preload("uid://q7bd6dgg8c8b")
 @onready var h_box_container: HBoxContainer = $HBoxContainer
 @onready var item_grid: GridContainer = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/PanelContainer2/ScrollContainer/MarginContainer/ItemGrid
 @onready var door_animation_player: AnimationPlayer = $HBoxContainer/DoorAnimationPlayer
-@onready var money: Label = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/MoneyContainer/MarginContainer/Label
+@onready var money: Label = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/MoneyContainer/MarginContainer/HBoxContainer/Label
+@onready var wr_price_label: Label = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/WRPrice/MarginContainer/HBoxContainer/Label
+@onready var ir_price_label: Label = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/IRPrice/MarginContainer/HBoxContainer/Label
 
 func _ready():
-	var price_add = log(Globals.zone * Globals.round) - 0.75
+	var price_add = log(Globals.zone * Globals.round) / 7
 	if price_add <= 0:
 		price_add = 0
 	Globals.global_weapon_price_mult += price_add
@@ -61,6 +63,8 @@ func _choose_items():
 func _process(delta: float) -> void:
 	weapon_image.global_position = get_global_mouse_position()
 	money.text = str(Globals.format(Globals.rupies))
+	wr_price_label.text = str(Globals.format(Globals.wr_price))
+	ir_price_label.text = str(Globals.format(Globals.ir_price))
 
 func _thing_bought(what):
 	_create_item_grid()
@@ -120,6 +124,17 @@ func _thing_bought(what):
 				PlayerStats.speed /= what.speed
 			4:
 				PlayerStats.speed **= what.speed
+		match what.arm_equation:
+			0:
+				PlayerStats.armour += what.armour
+			1:
+				PlayerStats.armour -= what.armour
+			2:
+				PlayerStats.armour *= what.armour
+			3:
+				PlayerStats.armour /= what.armour
+			4:
+				PlayerStats.armour **= what.armour
 
 func _cant_afford(what):
 	video_stream_player.stream = MORSHU_NORMAL_2
@@ -147,7 +162,11 @@ func _wi_weapon_dropped(what: WeaponData, slot: int, target_slot: int):
 		Globals.swap_weapons(slot, target_slot)
 
 func _on_weapon_reroll_pressed() -> void:
-	_choose_weapons()
+	if Globals.rupies.is_greater_than_or_equal_to(Globals.wr_price):
+		_choose_weapons()
+		Globals.total_rerolls += 1
+		Globals.rupies.minus_equals(Globals.wr_price)
+		_calculate_rerolls()
 
 func _create_stats():
 	for i in PlayerStats.stats.keys():
@@ -156,7 +175,11 @@ func _create_stats():
 		p.stat_name = i
 
 func _on_items_reroll_pressed() -> void:
-	_choose_items()
+	if Globals.rupies.is_greater_than_or_equal_to(Globals.ir_price):
+		_choose_items()
+		Globals.total_rerolls += 1
+		Globals.rupies.minus_equals(Globals.ir_price)
+		_calculate_rerolls()
 
 func _create_item_grid():
 	for i in item_grid.get_children():
@@ -165,3 +188,11 @@ func _create_item_grid():
 		var igc = ITEM_GRID_CONTAINER.instantiate()
 		igc.data = i
 		item_grid.add_child(igc)
+
+func _calculate_rerolls():
+	Globals.wr_price.mantissa = 0
+	Globals.wr_price.exponent = 0
+	Globals.wr_price.plus_equals(10 * (Globals.reroll_price_rate * Globals.total_rerolls))
+	Globals.ir_price.mantissa = 0
+	Globals.ir_price.exponent = 0
+	Globals.ir_price.plus_equals(10 * (Globals.reroll_price_rate * Globals.total_rerolls))

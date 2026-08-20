@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cc5iu400l2c5a"]
+
+[ext_resource type="Script" uid="uid://d3c7s116oc3xb" path="res://assets/items/duracell_batteries/duracell_batteries.gd" id="1_mjeke"]
+[ext_resource type="Resource" uid="uid://bh5c52b7dx6rf" path="res://assets/items/duracell_batteries/duracell_batteries_data.tres" id="2_mjeke"]
+
+[node name="DuracellBatteries" type="Node" unique_id=767015906]
+script = ExtResource("1_mjeke")
+data = ExtResource("2_mjeke")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"
