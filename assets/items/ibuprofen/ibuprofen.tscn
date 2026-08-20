@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cdbdqkf1bxgih"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_cho3x"]
+[ext_resource type="Resource" uid="uid://bvg24yatnknd4" path="res://assets/items/ibuprofen/ibuprofen_data.tres" id="2_pnbqc"]
+
+[node name="Ibuprofen" type="Node" unique_id=1697144337]
+script = ExtResource("1_cho3x")
+data = ExtResource("2_pnbqc")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

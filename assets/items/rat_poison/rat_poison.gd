@@ -13,6 +13,6 @@ func _on_timer_timeout() -> void:
 	var dmg = BigNumber.new()
 	dmg.exponent = 0
 	dmg.mantissa = 0
-	dmg.plus_equals(5 * PlayerStats.damage_multiplier)
+	dmg.plus_equals(1.5 * PlayerStats.damage_multiplier)
 	rps.rotation_degrees = randf_range(-360.0, 360.0)
 	rps._shoot(RAT_POISON_BULLET, rps, dmg)

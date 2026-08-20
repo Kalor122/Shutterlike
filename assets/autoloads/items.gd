@@ -18,6 +18,14 @@ var item_list = [
 	load("uid://dv1m72hishqip"),
 	load("uid://bn43ixm1rafn4"),
 	load("uid://d2ngvofflxsg1"),
+	load("uid://d1cmjl31os2b8"),
+	load("uid://bkki0uo0en2go"),
+	load("uid://bqtm21qtaq14w"),
+	load("uid://ctfasyu2crv35"),
+	load("uid://bvg24yatnknd4"),
+	load("uid://eq7ufnbmfnb2"),
+	load("uid://cq4ihhoh3n52s"),
+	load("uid://8sta4cuqxvnn"),
 ]
 
 func get_item_by_id(id: int):

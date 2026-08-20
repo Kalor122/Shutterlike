@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bkki0uo0en2go"]
+
+[ext_resource type="Texture2D" uid="uid://rnsdv6jmluw0" path="res://assets/items/oxidized_watermelon/oxidized_watermelon.png" id="1_1ggod"]
+[ext_resource type="Script" uid="uid://bn8hlonkpv137" path="res://assets/classes/item_data_class.gd" id="2_nqfsh"]
+
+[resource]
+script = ExtResource("2_nqfsh")
+item_id = 18
+item_name = "Oxidized Watermelon"
+item_portrait = ExtResource("1_1ggod")
+item_rarity = 45
+item_description = "[color=yellow]> Round Starts[/color]
+[color=green]+x1.5[/color] Damage Mult
+[color=yellow]> Every Second[/color]
+Loses [color=red]-x0.1[/color] Damage Mult, stops at [color=pink]x1.5[/color] Damage Mult lost"
+price = 149.0
+scene_path = "res://assets/items/oxidized_watermelon/oxidized_watermelon.tscn"
+metadata/_custom_type_script = "uid://bn8hlonkpv137"

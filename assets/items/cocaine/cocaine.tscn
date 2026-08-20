@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bqgqo47fgpfnb"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_76pqw"]
+[ext_resource type="Resource" uid="uid://d1cmjl31os2b8" path="res://assets/items/cocaine/cocaine_data.tres" id="2_y81te"]
+
+[node name="Cocaine" type="Node" unique_id=1799759260]
+script = ExtResource("1_76pqw")
+data = ExtResource("2_y81te")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

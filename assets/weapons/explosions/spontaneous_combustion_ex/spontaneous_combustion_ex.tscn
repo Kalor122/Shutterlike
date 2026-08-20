@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bgwkv7pkwvdiq"]
+
+[ext_resource type="Script" uid="uid://efadpm03seai" path="res://assets/weapons/explosions/spontaneous_combustion_ex/spontaneous_combustion_ex.gd" id="1_v8vo7"]
+[ext_resource type="Resource" uid="uid://dglibqjy3a6mt" path="res://assets/weapons/explosions/spontaneous_combustion_ex/spontaneous_combustion_ex.tres" id="2_5qlyt"]
+[ext_resource type="Texture2D" uid="uid://bwe00bykj84cq" path="res://assets/weapons/explosions/spontaneous_combustion_ex/spontaneous_combustion_ex.png" id="3_1abyq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 1.0
+
+[node name="SpontaneousCombustionEx" type="CharacterBody2D" unique_id=1679602240]
+script = ExtResource("1_v8vo7")
+data = ExtResource("2_5qlyt")
+metadata/_custom_type_script = "uid://dtdlsr4ys3osy"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1119283021]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=466552343]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=515762466]
+modulate = Color(1, 0.4666667, 0, 1)
+scale = Vector2(0.0037453186, 0.0037453182)
+texture = ExtResource("3_1abyq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

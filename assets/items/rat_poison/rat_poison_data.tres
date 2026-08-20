@@ -10,7 +10,7 @@ item_name = "Rat Poison"
 item_portrait = ExtResource("1_ph1ee")
 item_rarity = 45
 item_description = "[color=yellow]> Every 3 seconds[/color]
-Throws rat poison that deals [i][color=pink]5 X Damage Mult[/color][/i] damage to enemies on impact and gives [color=green]1[/color] stack of [color=pink]Poison[/color] on an area that lasts [color=yellow]3 seconds[/color]"
+Throws rat poison that deals [i][color=pink]1.5 X Damage Mult[/color][/i] damage to enemies on impact and gives [color=green]1[/color] stack of [color=pink]Poison[/color] on an area that lasts [color=yellow]3 seconds[/color]"
 price = 62.0
 scene_path = "res://assets/items/rat_poison/rat_poison.tscn"
 metadata/_custom_type_script = "uid://bn8hlonkpv137"

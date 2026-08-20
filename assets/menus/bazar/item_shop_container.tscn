@@ -51,6 +51,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1386674430]
+clip_children = 2
 material = SubResource("ShaderMaterial_4d6c0")
 layout_mode = 2
 mouse_filter = 2

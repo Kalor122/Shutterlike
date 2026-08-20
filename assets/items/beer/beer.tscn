@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://1tskctr7k2b1"]
+
+[ext_resource type="Script" uid="uid://btvj4udmwcjbg" path="res://assets/classes/item_class.gd" id="1_kg657"]
+[ext_resource type="Resource" uid="uid://eq7ufnbmfnb2" path="res://assets/items/beer/beer_data.tres" id="2_agpwg"]
+
+[node name="Beer" type="Node" unique_id=780755577]
+script = ExtResource("1_kg657")
+data = ExtResource("2_agpwg")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d1tcq04bpj7l3"]
+
+[ext_resource type="Script" uid="uid://diqrcxx0q6qb" path="res://assets/items/spontaneous_combustion/spontaneous_combustion.gd" id="1_d6k6v"]
+[ext_resource type="Resource" uid="uid://bqtm21qtaq14w" path="res://assets/items/spontaneous_combustion/spontaneous_combustion_data.tres" id="2_d6k6v"]
+
+[node name="SpontaneousCombustion" type="Node" unique_id=496903345]
+script = ExtResource("1_d6k6v")
+data = ExtResource("2_d6k6v")
+metadata/_custom_type_script = "uid://btvj4udmwcjbg"

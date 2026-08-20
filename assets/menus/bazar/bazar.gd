@@ -22,7 +22,7 @@ const PLAYER_STAT_CONTAINER = preload("uid://q7bd6dgg8c8b")
 @onready var ir_price_label: Label = $TabContainer/Shop/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/IRPrice/MarginContainer/HBoxContainer/Label
 
 func _ready():
-	var price_add = log(Globals.zone * Globals.round) / 10
+	var price_add = log(Globals.zone * Globals.round) / 7
 	if price_add <= 0:
 		price_add = 0
 	Globals.global_weapon_price_mult += price_add
